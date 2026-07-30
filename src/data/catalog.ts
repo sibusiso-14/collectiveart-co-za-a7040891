@@ -24,6 +24,11 @@ const GB1 = gb1.url;
 const GB2 = gb2.url;
 const GB3 = gb3.url;
 const GB4 = gb4.url;
+const BC1 = bc1.url;
+const BC2 = bc2.url;
+const BC3 = bc3.url;
+const BC4 = bc4.url;
+const BC5 = bc5.url;
 
 export const heroImage = GB4;
 
