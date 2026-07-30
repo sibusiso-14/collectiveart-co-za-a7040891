@@ -239,6 +239,71 @@ export const products: Product[] = [
       "A boxy hooded shell in high-visibility orange that flips to a clean white face — two jackets, one zip.",
     sizes: ["S", "M", "L", "XL"],
   },
+  {
+    id: "galaxy-zip-hoodie",
+    name: "Contagious Galaxy Zip Hoodie",
+    price: 260,
+    category: "Outerwear",
+    designer: "designing-balaclava",
+    images: [BC4, BC5],
+    fabric: "Galaxy-shimmer bouclé with coated iridescent collar",
+    care: "Hand wash cold. Dry flat away from heat.",
+    description:
+      "An oversized full-zip hoodie in midnight galaxy-shimmer bouclé, finished with an iridescent coated collar and a cropped, boxy shoulder.",
+    sizes: ["S", "M", "L", "XL"],
+  },
+  {
+    id: "balaclava-zip-hoodie-white",
+    name: "Balaclava Zip Hoodie — Bone",
+    price: 240,
+    category: "Outerwear",
+    designer: "designing-balaclava",
+    images: [BC3, BC4],
+    fabric: "Heavyweight brushed fleece, bone",
+    care: "Cold wash inside out. Hang dry.",
+    description:
+      "A bone-white full-zip hood with a deep pointed hood and the balaclava mark printed dead centre. Formal look 101, worn over a shirt and tie.",
+    sizes: ["S", "M", "L", "XL"],
+  },
+  {
+    id: "balaclava-tank",
+    name: "Balaclava Knit Tank",
+    price: 85,
+    category: "Tops",
+    designer: "designing-balaclava",
+    images: [BC1, BC3],
+    fabric: "Fine marled knit, ribbed hem",
+    care: "Hand wash cold. Dry flat.",
+    description:
+      "A lightweight marled knit tank with the balaclava mark at the chest — the summer release, cut close through the body.",
+    sizes: ["S", "M", "L", "XL"],
+  },
+  {
+    id: "contrast-cargo-denim",
+    name: "Contrast Stitch Cargo Denim",
+    price: 190,
+    category: "Bottoms",
+    designer: "designing-balaclava",
+    images: [BC2, BC1],
+    fabric: "Washed black denim, white contrast stitch",
+    care: "Cold wash separately. Expect fading.",
+    description:
+      "Wide-leg washed black cargo denim traced in white contrast stitch, with drop side pockets and a relaxed stack at the hem.",
+    sizes: ["28", "30", "32", "34", "36"],
+  },
+  {
+    id: "balaclava-crop-tank",
+    name: "Balaclava Cropped Tank",
+    price: 75,
+    category: "Tops",
+    designer: "designing-balaclava",
+    images: [BC2, BC5],
+    fabric: "Cotton rib jersey, black",
+    care: "Machine wash cold. Hang dry.",
+    description:
+      "A cropped black rib tank with the small balaclava mark at the chest — the everyday base layer of the studio wardrobe.",
+    sizes: ["XS", "S", "M", "L"],
+  },
 ];
 
 export const categories: Category[] = ["Tops", "Outerwear", "Bottoms", "Accessories"];
