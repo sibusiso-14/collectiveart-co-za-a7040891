@@ -8,7 +8,7 @@ export const Route = createFileRoute("/designers/")({
       {
         name: "description",
         content:
-          "The independent ateliers on Collaborate.art: sculptural outerwear, hand-dyed silk, vegetable-tanned leather and undyed tailoring.",
+          "The independent ateliers on Collaborate.art: destroyed skatewear from Damnation Designs and fur, denim and outerwear from Galbakaline.",
       },
       { property: "og:title", content: "Designers — Collaborate.art" },
       {
@@ -26,7 +26,7 @@ function DesignerIndex() {
       <header className="border-b border-border pb-10">
         <p className="label-xs text-muted-foreground">The Roster</p>
         <h1 className="mt-3 max-w-[14ch] font-serif text-4xl leading-tight md:text-6xl">
-          Four ateliers. No middle ground.
+          Two labels. No middle ground.
         </h1>
       </header>
 

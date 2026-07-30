@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import hero from "@/assets/hero.jpg";
+
 import { ProductCard } from "@/components/ProductCard";
-import { designers, products } from "@/data/catalog";
+import { designers, heroImage, products } from "@/data/catalog";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -10,7 +10,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "A curated multi-vendor marketplace for independent fashion designers. Shop small-run collections from ateliers in Antwerp, Kyoto, Lisbon and Mexico City.",
+          "A curated multi-vendor marketplace for independent fashion designers. Shop small-run collections from independent labels Damnation Designs and Galbakaline.",
       },
       {
         property: "og:title",
@@ -33,8 +33,8 @@ function Home() {
       <section className="border-b border-border">
         <div className="relative">
           <img
-            src={hero}
-            alt="Model in an oversized black wool coat in an empty concrete gallery"
+            src={heroImage}
+            alt="Model in a Galbakaline reversible orange shell jacket against a concrete wall"
             width={1600}
             height={1104}
             className="h-[70vh] w-full object-cover md:h-[86vh]"
@@ -98,7 +98,7 @@ function Home() {
         <div className="mx-auto max-w-[1600px] px-5 md:px-10">
           <p className="label-xs text-muted-foreground">Curated Collections</p>
           <h2 className="mt-3 max-w-[18ch] font-serif text-3xl leading-tight md:text-5xl">
-            Sixty-one pieces, chosen one at a time.
+            Eleven pieces, made one at a time.
           </h2>
 
           <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-14 md:grid-cols-12">
