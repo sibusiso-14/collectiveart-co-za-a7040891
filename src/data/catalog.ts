@@ -8,6 +8,11 @@ import gb1 from "@/assets/gb1.jpg.asset.json";
 import gb2 from "@/assets/gb2.jpg.asset.json";
 import gb3 from "@/assets/gb3.jpg.asset.json";
 import gb4 from "@/assets/gb4.jpg.asset.json";
+import bc1 from "@/assets/bc1.jpg.asset.json";
+import bc2 from "@/assets/bc2.jpg.asset.json";
+import bc3 from "@/assets/bc3.jpg.asset.json";
+import bc4 from "@/assets/bc4.jpg.asset.json";
+import bc5 from "@/assets/bc5.jpg.asset.json";
 
 const DD1 = dd1.url;
 const DD2 = dd2.url;
