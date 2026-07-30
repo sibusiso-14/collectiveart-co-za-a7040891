@@ -1,9 +1,26 @@
-import p1 from "@/assets/p1.jpg";
-import p2 from "@/assets/p2.jpg";
-import p3 from "@/assets/p3.jpg";
-import p4 from "@/assets/p4.jpg";
-import p5 from "@/assets/p5.jpg";
-import p6 from "@/assets/p6.jpg";
+import dd1 from "@/assets/dd1.jpg.asset.json";
+import dd2 from "@/assets/dd2.jpg.asset.json";
+import dd3 from "@/assets/dd3.jpg.asset.json";
+import dd4 from "@/assets/dd4.jpg.asset.json";
+import dd5 from "@/assets/dd5.jpg.asset.json";
+import dd6 from "@/assets/dd6.jpg.asset.json";
+import gb1 from "@/assets/gb1.jpg.asset.json";
+import gb2 from "@/assets/gb2.jpg.asset.json";
+import gb3 from "@/assets/gb3.jpg.asset.json";
+import gb4 from "@/assets/gb4.jpg.asset.json";
+
+const DD1 = dd1.url;
+const DD2 = dd2.url;
+const DD3 = dd3.url;
+const DD4 = dd4.url;
+const DD5 = dd5.url;
+const DD6 = dd6.url;
+const GB1 = gb1.url;
+const GB2 = gb2.url;
+const GB3 = gb3.url;
+const GB4 = gb4.url;
+
+export const heroImage = GB4;
 
 export type Category = "Tops" | "Outerwear" | "Bottoms" | "Accessories";
 
@@ -34,130 +51,172 @@ export type Product = {
 
 export const designers: Designer[] = [
   {
-    slug: "atelier-noir",
-    name: "Atelier Noir",
-    location: "Antwerp, BE",
-    discipline: "Sculptural outerwear",
-    since: "2016",
-    bio: "Atelier Noir works exclusively in black, treating the coat as architecture. Every seam is drafted from a paper maquette before a single metre of wool is cut.",
-    statement:
-      "A garment should hold its own volume. We design the space around the body, not the body itself.",
-    portrait: p2,
-    lookbook: [p2, p4, p6],
-  },
-  {
-    slug: "hana-veil",
-    name: "Hana Veil",
-    location: "Kyoto, JP",
-    discipline: "Silk & drape",
-    since: "2019",
-    bio: "Hana Veil hand-dyes and layers featherweight silks in a converted machiya studio, producing fewer than eighty pieces each season.",
-    statement: "Cloth remembers movement. I only try not to interrupt it.",
-    portrait: p5,
-    lookbook: [p5, p1, p4],
-  },
-  {
-    slug: "morrow-supply",
-    name: "Morrow Supply",
-    location: "Lisbon, PT",
-    discipline: "Leather & objects",
-    since: "2014",
-    bio: "A two-person leather workshop making unlined bags and hardware from vegetable-tanned offcuts sourced within fifty kilometres of the atelier.",
-    statement: "We make objects that get better the longer you refuse to replace them.",
-    portrait: p3,
-    lookbook: [p3, p6, p1],
-  },
-  {
-    slug: "linea-blanca",
-    name: "Linea Blanca",
-    location: "Mexico City, MX",
-    discipline: "Everyday tailoring",
+    slug: "damnation-designs",
+    name: "Damnation Designs",
+    location: "Maseru, LS",
+    discipline: "Skatewear & destroyed knits",
     since: "2021",
-    bio: "Linea Blanca reduces the wardrobe to nine repeatable shapes in undyed linen and cotton, cut and finished in a family-run workshop in Roma Norte.",
-    statement: "Restraint is the only luxury that never dates.",
-    portrait: p1,
-    lookbook: [p1, p4, p5],
+    bio: "Damnation Designs builds skate-worn silhouettes out of destroyed jersey, frayed denim and hand-pulled graphics. Every piece is cut, shredded and rebuilt by hand in small drops.",
+    statement: "Destroy to create.",
+    portrait: DD2,
+    lookbook: [DD1, DD4, DD3],
+  },
+  {
+    slug: "galbakaline",
+    name: "Galbakaline",
+    location: "Maseru, LS",
+    discipline: "Fur, denim & outerwear",
+    since: "2022",
+    bio: "Galbakaline makes premium hoodies and outerwear from luxurious fur, reclaimed denim and technical shells, finished with hand-drawn character graphics. Comfort meets style in every stitch.",
+    statement: "Every stitch is a signature.",
+    portrait: GB1,
+    lookbook: [GB1, GB3, GB2],
   },
 ];
 
 export const products: Product[] = [
   {
-    id: "poplin-shirt",
-    name: "Unlined Poplin Shirt",
-    price: 240,
+    id: "destroyed-tee",
+    name: "Destroyed Layered Tee",
+    price: 120,
     category: "Tops",
-    designer: "linea-blanca",
-    images: [p1, p5, p4],
-    fabric: "100% undyed European linen, 145gsm",
-    care: "Cold hand wash. Dry flat in shade. Warm iron while damp.",
+    designer: "damnation-designs",
+    images: [DD1, DD2, DD6],
+    fabric: "Heavyweight cotton jersey, hand-distressed",
+    care: "Cold wash inside out. Hang dry. Do not bleach.",
     description:
-      "An oversized shirt drafted from a single pattern block, with a soft collar stand and mother-of-pearl buttons. Finished with French seams throughout.",
-    sizes: ["XS", "S", "M", "L", "XL"],
+      "A boxy double-sleeve tee with hand-cut openings and raw hems, screen-printed with the Damnation script. No two are shredded the same way.",
+    sizes: ["S", "M", "L", "XL"],
   },
   {
-    id: "monolith-coat",
-    name: "Monolith Wool Coat",
-    price: 1180,
-    category: "Outerwear",
-    designer: "atelier-noir",
-    images: [p2, p4, p6],
-    fabric: "Double-faced virgin wool, milled in Biella",
-    care: "Dry clean only. Store on a broad wooden hanger.",
+    id: "damnation-graphic-tee",
+    name: "Damnation Skate Graphic Tee",
+    price: 95,
+    category: "Tops",
+    designer: "damnation-designs",
+    images: [DD5, DD6, DD4],
+    fabric: "260gsm cotton, DTG print",
+    care: "Machine wash cold. Tumble dry low.",
     description:
-      "A floor-skimming double-breasted coat cut with a dropped shoulder and a hand-set collar that stands unaided.",
-    sizes: ["XS", "S", "M", "L"],
+      "The iconic skatewear graphic returns in white with electrifying purple and blue undersleeves — an oversized body cut long through the shoulder.",
+    sizes: ["S", "M", "L", "XL", "XXL"],
   },
   {
-    id: "carry-tote",
-    name: "Carry Tote, Tan",
-    price: 380,
+    id: "skate-crossbody",
+    name: "Crossbody Skateboard Bag",
+    price: 180,
     category: "Accessories",
-    designer: "morrow-supply",
-    images: [p3, p6, p2],
-    fabric: "Vegetable-tanned full-grain calf leather",
-    care: "Wipe with a dry cloth. Condition twice yearly.",
+    designer: "damnation-designs",
+    images: [DD3, DD1],
+    fabric: "Coated canvas with webbing straps",
+    care: "Spot clean with a damp cloth.",
     description:
-      "An unlined tote with saddle-stitched handles, made to slouch and patina. Each bag is stamped with its maker's initials.",
+      "A full-length carry sling that holds a deck across the back, with a zipped utility pocket and adjustable webbing. Get ready to roll.",
     sizes: ["One size"],
   },
   {
-    id: "pleated-trouser",
-    name: "Wide Pleated Trouser",
-    price: 420,
+    id: "frayed-shorts",
+    name: "Frayed Patchwork Shorts",
+    price: 140,
     category: "Bottoms",
-    designer: "atelier-noir",
-    images: [p4, p2, p1],
-    fabric: "Japanese wool-mohair, permanent pleat",
-    care: "Dry clean. Do not press pleats flat.",
+    designer: "damnation-designs",
+    images: [DD4, DD6],
+    fabric: "Patchworked black denim, frayed by hand",
+    care: "Cold wash separately. Fraying will develop with wear.",
     description:
-      "A voluminous trouser with a concealed hook closure and pleats set to fall from the hip rather than the waist.",
-    sizes: ["XS", "S", "M", "L"],
+      "Knee-length shorts assembled from overlapping denim panels, every edge pulled open so the texture grows with each session.",
+    sizes: ["28", "30", "32", "34", "36"],
   },
   {
-    id: "veil-dress",
-    name: "Veil Silk Dress",
-    price: 690,
-    category: "Tops",
-    designer: "hana-veil",
-    images: [p5, p1, p4],
-    fabric: "Hand-dyed mulberry silk georgette",
-    care: "Professional silk clean only.",
+    id: "stacked-trouser",
+    name: "Stacked Padded Trouser",
+    price: 210,
+    category: "Bottoms",
+    designer: "damnation-designs",
+    images: [DD2, DD1],
+    fabric: "Padded cotton twill, contrast stitch",
+    care: "Cold wash. Dry flat.",
     description:
-      "Two layers of georgette knotted at the waist, cut on the bias so the skirt opens with the wearer's stride.",
-    sizes: ["XS", "S", "M", "L"],
+      "An extra-long padded trouser built to stack at the ankle, quilted through the leg for impact and volume.",
+    sizes: ["S", "M", "L", "XL"],
   },
   {
-    id: "forged-hoop",
-    name: "Forged Hoop, Silver",
-    price: 190,
+    id: "frayed-bucket-hat",
+    name: "Frayed Bucket Hat",
+    price: 70,
     category: "Accessories",
-    designer: "morrow-supply",
-    images: [p6, p3, p5],
-    fabric: "Recycled 925 sterling silver, brushed finish",
-    care: "Polish with a soft cloth. Remove before swimming.",
+    designer: "damnation-designs",
+    images: [DD6, DD4],
+    fabric: "Distressed black denim",
+    care: "Spot clean only.",
     description:
-      "A hand-forged open hoop with a flattened outer face, finished individually so no two catch the light the same way.",
+      "A deep-brim bucket hat in shredded denim panels, stitched to keep its shape while the surface keeps unravelling.",
     sizes: ["One size"],
+  },
+  {
+    id: "fur-hoodie",
+    name: "Signature Fur Hoodie",
+    price: 320,
+    category: "Outerwear",
+    designer: "galbakaline",
+    images: [GB1, GB2],
+    fabric: "High-pile faux fur with brushed fleece body",
+    care: "Hand wash cold. Dry flat away from heat.",
+    description:
+      "A premium hoodie crafted from luxurious high-pile fur with a hand-drawn character graphic across the back. Comfort meets style in every stitch.",
+    sizes: ["S", "M", "L", "XL"],
+  },
+  {
+    id: "galba-hoodie",
+    name: "Galbakaline Flame Hoodie",
+    price: 180,
+    category: "Tops",
+    designer: "galbakaline",
+    images: [GB2, GB1],
+    fabric: "Cotton fleece with fur-trim sleeves",
+    care: "Cold wash inside out. Hang dry.",
+    description:
+      "A cream heavyweight hoodie with flame-streaked sleeves and hood, finished with the Galbakaline stamp across the chest.",
+    sizes: ["S", "M", "L", "XL"],
+  },
+  {
+    id: "cross-leather-pant",
+    name: "Cross Panel Leather Pant",
+    price: 390,
+    category: "Bottoms",
+    designer: "galbakaline",
+    images: [GB2, GB4],
+    fabric: "Panelled leather, oxblood and black",
+    care: "Wipe clean. Condition twice yearly.",
+    description:
+      "A baggy leather trouser built from oxblood and black panels with appliqué crosses set down each leg.",
+    sizes: ["28", "30", "32", "34", "36"],
+  },
+  {
+    id: "denim-patch-set",
+    name: "Denim Patchwork Hooded Set",
+    price: 450,
+    category: "Outerwear",
+    designer: "galbakaline",
+    images: [GB3, GB1],
+    fabric: "Reclaimed denim patchwork, raw edges",
+    care: "Cold wash alone. Expect fading.",
+    description:
+      "A hooded jacket and trouser cut entirely from reclaimed denim offcuts, each panel placed by hand so no two sets repeat.",
+    sizes: ["S", "M", "L", "XL"],
+  },
+  {
+    id: "reversible-shell",
+    name: "Reversible Waterproof Jacket",
+    price: 280,
+    category: "Outerwear",
+    designer: "galbakaline",
+    images: [GB4, GB3],
+    fabric: "Waterproof shell, reversible to white lining",
+    care: "Wipe clean. Do not tumble dry.",
+    description:
+      "A boxy hooded shell in high-visibility orange that flips to a clean white face — two jackets, one zip.",
+    sizes: ["S", "M", "L", "XL"],
   },
 ];
 
