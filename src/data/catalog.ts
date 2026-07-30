@@ -82,6 +82,17 @@ export const designers: Designer[] = [
     portrait: GB1,
     lookbook: [GB1, GB3, GB2],
   },
+  {
+    slug: "designing-balaclava",
+    name: "Designing Balaclava",
+    location: "Maseru, LS",
+    discipline: "Balaclava-marked knits & studio outerwear",
+    since: "2023",
+    bio: "Designing Balaclava builds a studio-lit wardrobe around one mark: the balaclava. Galaxy-shimmer zip hoodies, contrast-stitch cargo denim and light knit tanks, cut clean and released in short runs.",
+    statement: "One mark. Every fit.",
+    portrait: BC4,
+    lookbook: [BC3, BC1, BC2],
+  },
 ];
 
 export const products: Product[] = [
