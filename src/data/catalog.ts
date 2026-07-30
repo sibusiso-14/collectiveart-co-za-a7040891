@@ -8,6 +8,11 @@ import gb1 from "@/assets/gb1.jpg.asset.json";
 import gb2 from "@/assets/gb2.jpg.asset.json";
 import gb3 from "@/assets/gb3.jpg.asset.json";
 import gb4 from "@/assets/gb4.jpg.asset.json";
+import bc1 from "@/assets/bc1.jpg.asset.json";
+import bc2 from "@/assets/bc2.jpg.asset.json";
+import bc3 from "@/assets/bc3.jpg.asset.json";
+import bc4 from "@/assets/bc4.jpg.asset.json";
+import bc5 from "@/assets/bc5.jpg.asset.json";
 
 const DD1 = dd1.url;
 const DD2 = dd2.url;
@@ -19,6 +24,11 @@ const GB1 = gb1.url;
 const GB2 = gb2.url;
 const GB3 = gb3.url;
 const GB4 = gb4.url;
+const BC1 = bc1.url;
+const BC2 = bc2.url;
+const BC3 = bc3.url;
+const BC4 = bc4.url;
+const BC5 = bc5.url;
 
 export const heroImage = GB4;
 
@@ -71,6 +81,17 @@ export const designers: Designer[] = [
     statement: "Every stitch is a signature.",
     portrait: GB1,
     lookbook: [GB1, GB3, GB2],
+  },
+  {
+    slug: "designing-balaclava",
+    name: "Designing Balaclava",
+    location: "Maseru, LS",
+    discipline: "Balaclava-marked knits & studio outerwear",
+    since: "2023",
+    bio: "Designing Balaclava builds a studio-lit wardrobe around one mark: the balaclava. Galaxy-shimmer zip hoodies, contrast-stitch cargo denim and light knit tanks, cut clean and released in short runs.",
+    statement: "One mark. Every fit.",
+    portrait: BC4,
+    lookbook: [BC3, BC1, BC2],
   },
 ];
 
@@ -217,6 +238,71 @@ export const products: Product[] = [
     description:
       "A boxy hooded shell in high-visibility orange that flips to a clean white face — two jackets, one zip.",
     sizes: ["S", "M", "L", "XL"],
+  },
+  {
+    id: "galaxy-zip-hoodie",
+    name: "Contagious Galaxy Zip Hoodie",
+    price: 260,
+    category: "Outerwear",
+    designer: "designing-balaclava",
+    images: [BC4, BC5],
+    fabric: "Galaxy-shimmer bouclé with coated iridescent collar",
+    care: "Hand wash cold. Dry flat away from heat.",
+    description:
+      "An oversized full-zip hoodie in midnight galaxy-shimmer bouclé, finished with an iridescent coated collar and a cropped, boxy shoulder.",
+    sizes: ["S", "M", "L", "XL"],
+  },
+  {
+    id: "balaclava-zip-hoodie-white",
+    name: "Balaclava Zip Hoodie — Bone",
+    price: 240,
+    category: "Outerwear",
+    designer: "designing-balaclava",
+    images: [BC3, BC4],
+    fabric: "Heavyweight brushed fleece, bone",
+    care: "Cold wash inside out. Hang dry.",
+    description:
+      "A bone-white full-zip hood with a deep pointed hood and the balaclava mark printed dead centre. Formal look 101, worn over a shirt and tie.",
+    sizes: ["S", "M", "L", "XL"],
+  },
+  {
+    id: "balaclava-tank",
+    name: "Balaclava Knit Tank",
+    price: 85,
+    category: "Tops",
+    designer: "designing-balaclava",
+    images: [BC1, BC3],
+    fabric: "Fine marled knit, ribbed hem",
+    care: "Hand wash cold. Dry flat.",
+    description:
+      "A lightweight marled knit tank with the balaclava mark at the chest — the summer release, cut close through the body.",
+    sizes: ["S", "M", "L", "XL"],
+  },
+  {
+    id: "contrast-cargo-denim",
+    name: "Contrast Stitch Cargo Denim",
+    price: 190,
+    category: "Bottoms",
+    designer: "designing-balaclava",
+    images: [BC2, BC1],
+    fabric: "Washed black denim, white contrast stitch",
+    care: "Cold wash separately. Expect fading.",
+    description:
+      "Wide-leg washed black cargo denim traced in white contrast stitch, with drop side pockets and a relaxed stack at the hem.",
+    sizes: ["28", "30", "32", "34", "36"],
+  },
+  {
+    id: "balaclava-crop-tank",
+    name: "Balaclava Cropped Tank",
+    price: 75,
+    category: "Tops",
+    designer: "designing-balaclava",
+    images: [BC2, BC5],
+    fabric: "Cotton rib jersey, black",
+    care: "Machine wash cold. Hang dry.",
+    description:
+      "A cropped black rib tank with the small balaclava mark at the chest — the everyday base layer of the studio wardrobe.",
+    sizes: ["XS", "S", "M", "L"],
   },
 ];
 
