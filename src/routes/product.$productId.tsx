@@ -56,7 +56,7 @@ function ProductPage() {
       <div className="mx-auto grid max-w-[1600px] gap-10 px-5 py-10 md:grid-cols-12 md:gap-14 md:px-10 md:py-16">
         {/* Gallery */}
         <div className="flex flex-col gap-4 md:col-span-7">
-          {product.images.map((img, i) => (
+          {product.images.map((img: string, i: number) => (
             <div key={i} className="aspect-[4/5] overflow-hidden bg-secondary">
               <img
                 src={img}
@@ -89,7 +89,7 @@ function ProductPage() {
             <div className="mt-10">
               <p className="label-xs text-muted-foreground">Size</p>
               <div className="mt-3 flex flex-wrap gap-2">
-                {product.sizes.map((s) => (
+                {product.sizes.map((s: string) => (
                   <button
                     key={s}
                     type="button"

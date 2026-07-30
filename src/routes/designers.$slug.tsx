@@ -72,7 +72,7 @@ function DesignerPage() {
 
       <section className="border-y border-border">
         <div className="grid md:grid-cols-3">
-          {designer.lookbook.map((img, i) => (
+          {designer.lookbook.map((img: string, i: number) => (
             <div
               key={i}
               className={`aspect-[3/4] overflow-hidden bg-secondary ${
