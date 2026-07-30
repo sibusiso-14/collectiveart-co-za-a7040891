@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import p4 from "@/assets/p4.jpg";
+import { products } from "@/data/catalog";
 
 export const Route = createFileRoute("/apply")({
   head: () => ({
@@ -65,7 +65,7 @@ function Apply() {
           <div className="md:col-span-5 md:col-start-8">
             <div className="aspect-[3/4] overflow-hidden bg-secondary">
               <img
-                src={p4}
+                src={products[3].images[0]}
                 alt="Designer piece photographed in an empty studio"
                 loading="lazy"
                 className="h-full w-full object-cover"
