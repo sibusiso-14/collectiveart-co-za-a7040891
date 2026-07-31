@@ -1,6 +1,11 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ProductCard } from "@/components/ProductCard";
-import { getDesigner, productsByDesigner } from "@/data/catalog";
+import {
+  getDesigner,
+  instagramDM,
+  instagramProfile,
+  productsByDesigner,
+} from "@/data/catalog";
 
 export const Route = createFileRoute("/designers/$slug")({
   loader: ({ params }) => {
@@ -65,6 +70,27 @@ function DesignerPage() {
             </p>
             <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
               {designer.bio}
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href={instagramDM(designer.instagram)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border border-foreground bg-foreground px-6 py-3 text-[0.7rem] uppercase tracking-[0.22em] text-background transition-colors duration-300 hover:bg-background hover:text-foreground"
+              >
+                Message on Instagram
+              </a>
+              <a
+                href={instagramProfile(designer.instagram)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border border-border px-6 py-3 text-[0.7rem] uppercase tracking-[0.22em] transition-colors duration-300 hover:border-foreground"
+              >
+                @{designer.instagram}
+              </a>
+            </div>
+            <p className="mt-4 text-xs text-muted-foreground">
+              Orders and payment are arranged directly with the atelier.
             </p>
           </div>
         </div>
