@@ -1,6 +1,13 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { useState } from "react";
-import { formatPrice, getDesigner, getProduct, productsByDesigner } from "@/data/catalog";
+import {
+  formatPrice,
+  getDesigner,
+  getProduct,
+  instagramDM,
+  instagramProfile,
+  productsByDesigner,
+} from "@/data/catalog";
 import { ProductCard } from "@/components/ProductCard";
 
 export const Route = createFileRoute("/product/$productId")({
