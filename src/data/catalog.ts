@@ -54,7 +54,11 @@ export type Designer = {
   since: string;
   portrait: string;
   lookbook: string[];
+  instagram: string; // handle without @
 };
+
+export const instagramProfile = (handle: string) => `https://instagram.com/${handle}`;
+export const instagramDM = (handle: string) => `https://ig.me/m/${handle}`;
 
 export type Product = {
   id: string;
@@ -80,6 +84,7 @@ export const designers: Designer[] = [
     statement: "Destroy to create.",
     portrait: DD2,
     lookbook: [DD1, DD4, DD3],
+    instagram: "damnationdesigns",
   },
   {
     slug: "galbakaline",
@@ -91,6 +96,7 @@ export const designers: Designer[] = [
     statement: "Every stitch is a signature.",
     portrait: GB1,
     lookbook: [GB1, GB3, GB2],
+    instagram: "galbakaline",
   },
   {
     slug: "designing-balaclava",
@@ -102,6 +108,7 @@ export const designers: Designer[] = [
     statement: "One mark. Every fit.",
     portrait: BC4,
     lookbook: [BC3, BC1, BC2],
+    instagram: "designingbalaclava",
   },
   {
     slug: "last-cloud-designs",
@@ -113,6 +120,7 @@ export const designers: Designer[] = [
     statement: "Last Cloud to the world.",
     portrait: LC3,
     lookbook: [LC4, LC2, LC5],
+    instagram: "lastcloud_designs",
   },
 ];
 

@@ -1,6 +1,13 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { useState } from "react";
-import { formatPrice, getDesigner, getProduct, productsByDesigner } from "@/data/catalog";
+import {
+  formatPrice,
+  getDesigner,
+  getProduct,
+  instagramDM,
+  instagramProfile,
+  productsByDesigner,
+} from "@/data/catalog";
 import { ProductCard } from "@/components/ProductCard";
 
 export const Route = createFileRoute("/product/$productId")({
@@ -47,7 +54,7 @@ function ProductNotFound() {
 function ProductPage() {
   const { product, designer } = Route.useLoaderData();
   const [size, setSize] = useState<string | null>(null);
-  const [added, setAdded] = useState(false);
+  
 
   const related = productsByDesigner(product.designer).filter((p) => p.id !== product.id);
 
@@ -81,7 +88,12 @@ function ProductPage() {
             <h1 className="mt-4 font-serif text-4xl leading-tight md:text-5xl">
               {product.name}
             </h1>
-            <p className="mt-4 text-lg">{formatPrice(product.price)}</p>
+            <p className="mt-4 text-lg">
+              {formatPrice(product.price)}{" "}
+              <span className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                guide price
+              </span>
+            </p>
             <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
               {product.description}
             </p>
@@ -93,10 +105,7 @@ function ProductPage() {
                   <button
                     key={s}
                     type="button"
-                    onClick={() => {
-                      setSize(s);
-                      setAdded(false);
-                    }}
+                    onClick={() => setSize(s)}
                     className={`min-w-14 border px-4 py-3 text-xs uppercase tracking-[0.15em] transition-colors duration-200 ${
                       size === s
                         ? "border-foreground bg-foreground text-background"
@@ -109,18 +118,29 @@ function ProductPage() {
               </div>
             </div>
 
-            <button
-              type="button"
-              disabled={!size}
-              onClick={() => setAdded(true)}
-              className="mt-8 w-full border border-foreground bg-foreground px-8 py-4 text-[0.7rem] uppercase tracking-[0.22em] text-background transition-colors duration-300 hover:bg-background hover:text-foreground disabled:cursor-not-allowed disabled:border-border disabled:bg-transparent disabled:text-muted-foreground"
+            <a
+              href={designer ? instagramDM(designer.instagram) : "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 block w-full border border-foreground bg-foreground px-8 py-4 text-center text-[0.7rem] uppercase tracking-[0.22em] text-background transition-colors duration-300 hover:bg-background hover:text-foreground"
             >
-              {added ? "Added to bag" : size ? "Add to bag" : "Select a size"}
-            </button>
+              Message {designer?.name} on Instagram
+            </a>
+            <a
+              href={designer ? instagramProfile(designer.instagram) : "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 block w-full border border-border px-8 py-4 text-center text-[0.7rem] uppercase tracking-[0.22em] transition-colors duration-300 hover:border-foreground"
+            >
+              @{designer?.instagram}
+            </a>
             <p className="mt-3 text-xs text-muted-foreground">
-              Ships from {designer?.location}. Checkout settles directly with the atelier
-              via a split payout.
+              {size ? `Mention size ${size}. ` : "Pick a size to mention. "}
+              No checkout here — you order and pay directly with the atelier, so sizing,
+              colourway and shipping from {designer?.location} are confirmed before any
+              money changes hands.
             </p>
+
 
             <dl className="mt-12 border-t border-border text-sm">
               <Spec term="Fabric" detail={product.fabric} />
