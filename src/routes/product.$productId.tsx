@@ -54,7 +54,7 @@ function ProductNotFound() {
 function ProductPage() {
   const { product, designer } = Route.useLoaderData();
   const [size, setSize] = useState<string | null>(null);
-  const [added, setAdded] = useState(false);
+  
 
   const related = productsByDesigner(product.designer).filter((p) => p.id !== product.id);
 
@@ -88,7 +88,12 @@ function ProductPage() {
             <h1 className="mt-4 font-serif text-4xl leading-tight md:text-5xl">
               {product.name}
             </h1>
-            <p className="mt-4 text-lg">{formatPrice(product.price)}</p>
+            <p className="mt-4 text-lg">
+              {formatPrice(product.price)}{" "}
+              <span className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                guide price
+              </span>
+            </p>
             <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
               {product.description}
             </p>
@@ -100,10 +105,7 @@ function ProductPage() {
                   <button
                     key={s}
                     type="button"
-                    onClick={() => {
-                      setSize(s);
-                      setAdded(false);
-                    }}
+                    onClick={() => setSize(s)}
                     className={`min-w-14 border px-4 py-3 text-xs uppercase tracking-[0.15em] transition-colors duration-200 ${
                       size === s
                         ? "border-foreground bg-foreground text-background"
