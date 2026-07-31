@@ -8,7 +8,7 @@ export const Route = createFileRoute("/designers/")({
       {
         name: "description",
         content:
-          "The independent ateliers on Collaborate.art: destroyed skatewear from Damnation Designs, fur, denim and outerwear from Galbakaline, and balaclava-marked knits from Designing Balaclava.",
+          "The independent ateliers on Collaborate.art: destroyed skatewear from Damnation Designs, fur, denim and outerwear from Galbakaline, balaclava-marked knits from Designing Balaclava and panelled satin from Last Cloud Designs.",
       },
       { property: "og:title", content: "Designers — Collaborate.art" },
       {
