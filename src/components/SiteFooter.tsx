@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { designers, instagramProfile } from "@/data/catalog";
 
 export function SiteFooter() {
   return (
@@ -31,12 +32,22 @@ export function SiteFooter() {
 
         <div className="flex flex-col gap-3 text-sm">
           <span className="text-[0.7rem] uppercase tracking-[0.22em] text-muted-foreground">
-            Contact
+            Contact the ateliers
           </span>
+          {designers.map((d) => (
+            <a
+              key={d.slug}
+              href={instagramProfile(d.instagram)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-fit hover:underline"
+            >
+              {d.name} — @{d.instagram}
+            </a>
+          ))}
           <a href="mailto:studio@collaborate.art" className="w-fit hover:underline">
             studio@collaborate.art
           </a>
-          <span className="text-muted-foreground">Damnation Designs — Galbakaline — Designing Balaclava — Last Cloud Designs</span>
         </div>
       </div>
       <div className="border-t border-border px-5 py-6 text-[0.7rem] uppercase tracking-[0.22em] text-muted-foreground md:px-10">
