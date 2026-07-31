@@ -103,7 +103,19 @@ export const designers: Designer[] = [
     portrait: BC4,
     lookbook: [BC3, BC1, BC2],
   },
+  {
+    slug: "last-cloud-designs",
+    name: "Last Cloud Designs",
+    location: "Maseru, LS",
+    discipline: "Panelled satin, denim tailoring & streetwear",
+    since: "2024",
+    bio: "Last Cloud Designs works in story-driven collections — panelled satin trousers, red-stitch denim two-pieces and soft-green streetwear sets, all cut in studio and released as short narrative drops.",
+    statement: "Last Cloud to the world.",
+    portrait: LC3,
+    lookbook: [LC4, LC2, LC5],
+  },
 ];
+
 
 export const products: Product[] = [
   {
