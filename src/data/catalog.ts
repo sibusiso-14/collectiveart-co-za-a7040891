@@ -13,6 +13,11 @@ import bc2 from "@/assets/bc2.jpg.asset.json";
 import bc3 from "@/assets/bc3.jpg.asset.json";
 import bc4 from "@/assets/bc4.jpg.asset.json";
 import bc5 from "@/assets/bc5.jpg.asset.json";
+import lc1 from "@/assets/lc1.jpg.asset.json";
+import lc2 from "@/assets/lc2.jpg.asset.json";
+import lc3 from "@/assets/lc3.jpg.asset.json";
+import lc4 from "@/assets/lc4.jpg.asset.json";
+import lc5 from "@/assets/lc5.jpg.asset.json";
 
 const DD1 = dd1.url;
 const DD2 = dd2.url;
@@ -29,6 +34,11 @@ const BC2 = bc2.url;
 const BC3 = bc3.url;
 const BC4 = bc4.url;
 const BC5 = bc5.url;
+const LC1 = lc1.url;
+const LC2 = lc2.url;
+const LC3 = lc3.url;
+const LC4 = lc4.url;
+const LC5 = lc5.url;
 
 export const heroImage = GB4;
 
@@ -93,7 +103,19 @@ export const designers: Designer[] = [
     portrait: BC4,
     lookbook: [BC3, BC1, BC2],
   },
+  {
+    slug: "last-cloud-designs",
+    name: "Last Cloud Designs",
+    location: "Maseru, LS",
+    discipline: "Panelled satin, denim tailoring & streetwear",
+    since: "2024",
+    bio: "Last Cloud Designs works in story-driven collections — panelled satin trousers, red-stitch denim two-pieces and soft-green streetwear sets, all cut in studio and released as short narrative drops.",
+    statement: "Last Cloud to the world.",
+    portrait: LC3,
+    lookbook: [LC4, LC2, LC5],
+  },
 ];
+
 
 export const products: Product[] = [
   {
@@ -304,7 +326,73 @@ export const products: Product[] = [
       "A cropped black rib tank with the small balaclava mark at the chest — the everyday base layer of the studio wardrobe.",
     sizes: ["XS", "S", "M", "L"],
   },
+  {
+    id: "quantum-strider-trouser",
+    name: "Quantum Strider Panelled Trouser",
+    price: 290,
+    category: "Bottoms",
+    designer: "last-cloud-designs",
+    images: [LC3, LC5],
+    fabric: "Satin and textured black panels, wide leg",
+    care: "Hand wash cold. Cool iron on reverse.",
+    description:
+      "A wide-leg trouser built from silver satin shards set into textured black panels — the centrepiece of the Quantum Strider storyline.",
+    sizes: ["28", "30", "32", "34", "36"],
+  },
+  {
+    id: "aetheline-satin-stack",
+    name: "Aetheline Stacked Satin Pant",
+    price: 260,
+    category: "Bottoms",
+    designer: "last-cloud-designs",
+    images: [LC4, LC3],
+    fabric: "Liquid satin with contrast cream cuff panels",
+    care: "Hand wash cold. Dry flat.",
+    description:
+      "A high-rise satin pant in mauve with cream cuff banding, ruched to stack deep over the boot.",
+    sizes: ["XS", "S", "M", "L"],
+  },
+  {
+    id: "aetheline-crop-set",
+    name: "Aetheline Mesh Crop Tee",
+    price: 110,
+    category: "Tops",
+    designer: "last-cloud-designs",
+    images: [LC5, LC4],
+    fabric: "Printed mesh overlay on cotton jersey",
+    care: "Cold wash inside out. Hang dry.",
+    description:
+      "A cropped white tee layered with a printed mesh bodice panel — soft armour from the Echoes of Aetheline drop.",
+    sizes: ["XS", "S", "M", "L"],
+  },
+  {
+    id: "lastcloud-mint-set",
+    name: "To The World Mint Set",
+    price: 240,
+    category: "Outerwear",
+    designer: "last-cloud-designs",
+    images: [LC2, LC1],
+    fabric: "Cotton twill, soft mint",
+    care: "Machine wash cold. Hang dry.",
+    description:
+      "An overshirt and short set in soft mint twill, worn over the graphic Last Cloud streetwear tee. Boxy through the shoulder, relaxed at the leg.",
+    sizes: ["S", "M", "L", "XL"],
+  },
+  {
+    id: "denim-cut-kids-set",
+    name: "Denim Cut Two-Piece — Kids",
+    price: 150,
+    category: "Outerwear",
+    designer: "last-cloud-designs",
+    images: [LC1, LC2],
+    fabric: "Chambray denim, red contrast stitch",
+    care: "Cold wash separately. Tumble dry low.",
+    description:
+      "The SS2025 unisex kids two-piece: a short-sleeve denim camp shirt and cargo short traced in red stitch, with the embroidered Last Cloud mark on the pocket.",
+    sizes: ["4Y", "6Y", "8Y", "10Y"],
+  },
 ];
+
 
 export const categories: Category[] = ["Tops", "Outerwear", "Bottoms", "Accessories"];
 
