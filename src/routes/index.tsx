@@ -10,7 +10,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "A curated multi-vendor marketplace for independent fashion designers. Shop small-run collections from independent labels Damnation Designs, Galbakaline and Designing Balaclava.",
+          "A curated multi-vendor marketplace for independent fashion designers. Shop small-run collections from Damnation Designs, Galbakaline, Designing Balaclava and Last Cloud Designs.",
       },
       {
         property: "og:title",
