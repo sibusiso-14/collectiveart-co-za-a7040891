@@ -326,7 +326,73 @@ export const products: Product[] = [
       "A cropped black rib tank with the small balaclava mark at the chest — the everyday base layer of the studio wardrobe.",
     sizes: ["XS", "S", "M", "L"],
   },
+  {
+    id: "quantum-strider-trouser",
+    name: "Quantum Strider Panelled Trouser",
+    price: 290,
+    category: "Bottoms",
+    designer: "last-cloud-designs",
+    images: [LC3, LC5],
+    fabric: "Satin and textured black panels, wide leg",
+    care: "Hand wash cold. Cool iron on reverse.",
+    description:
+      "A wide-leg trouser built from silver satin shards set into textured black panels — the centrepiece of the Quantum Strider storyline.",
+    sizes: ["28", "30", "32", "34", "36"],
+  },
+  {
+    id: "aetheline-satin-stack",
+    name: "Aetheline Stacked Satin Pant",
+    price: 260,
+    category: "Bottoms",
+    designer: "last-cloud-designs",
+    images: [LC4, LC3],
+    fabric: "Liquid satin with contrast cream cuff panels",
+    care: "Hand wash cold. Dry flat.",
+    description:
+      "A high-rise satin pant in mauve with cream cuff banding, ruched to stack deep over the boot.",
+    sizes: ["XS", "S", "M", "L"],
+  },
+  {
+    id: "aetheline-crop-set",
+    name: "Aetheline Mesh Crop Tee",
+    price: 110,
+    category: "Tops",
+    designer: "last-cloud-designs",
+    images: [LC5, LC4],
+    fabric: "Printed mesh overlay on cotton jersey",
+    care: "Cold wash inside out. Hang dry.",
+    description:
+      "A cropped white tee layered with a printed mesh bodice panel — soft armour from the Echoes of Aetheline drop.",
+    sizes: ["XS", "S", "M", "L"],
+  },
+  {
+    id: "lastcloud-mint-set",
+    name: "To The World Mint Set",
+    price: 240,
+    category: "Outerwear",
+    designer: "last-cloud-designs",
+    images: [LC2, LC1],
+    fabric: "Cotton twill, soft mint",
+    care: "Machine wash cold. Hang dry.",
+    description:
+      "An overshirt and short set in soft mint twill, worn over the graphic Last Cloud streetwear tee. Boxy through the shoulder, relaxed at the leg.",
+    sizes: ["S", "M", "L", "XL"],
+  },
+  {
+    id: "denim-cut-kids-set",
+    name: "Denim Cut Two-Piece — Kids",
+    price: 150,
+    category: "Outerwear",
+    designer: "last-cloud-designs",
+    images: [LC1, LC2],
+    fabric: "Chambray denim, red contrast stitch",
+    care: "Cold wash separately. Tumble dry low.",
+    description:
+      "The SS2025 unisex kids two-piece: a short-sleeve denim camp shirt and cargo short traced in red stitch, with the embroidered Last Cloud mark on the pocket.",
+    sizes: ["4Y", "6Y", "8Y", "10Y"],
+  },
 ];
+
 
 export const categories: Category[] = ["Tops", "Outerwear", "Bottoms", "Accessories"];
 
