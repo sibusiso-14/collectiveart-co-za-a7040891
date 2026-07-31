@@ -54,7 +54,11 @@ export type Designer = {
   since: string;
   portrait: string;
   lookbook: string[];
+  instagram: string; // handle without @
 };
+
+export const instagramProfile = (handle: string) => `https://instagram.com/${handle}`;
+export const instagramDM = (handle: string) => `https://ig.me/m/${handle}`;
 
 export type Product = {
   id: string;
