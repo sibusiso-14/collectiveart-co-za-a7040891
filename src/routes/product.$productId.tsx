@@ -109,18 +109,29 @@ function ProductPage() {
               </div>
             </div>
 
-            <button
-              type="button"
-              disabled={!size}
-              onClick={() => setAdded(true)}
-              className="mt-8 w-full border border-foreground bg-foreground px-8 py-4 text-[0.7rem] uppercase tracking-[0.22em] text-background transition-colors duration-300 hover:bg-background hover:text-foreground disabled:cursor-not-allowed disabled:border-border disabled:bg-transparent disabled:text-muted-foreground"
+            <a
+              href={designer ? instagramDM(designer.instagram) : "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 block w-full border border-foreground bg-foreground px-8 py-4 text-center text-[0.7rem] uppercase tracking-[0.22em] text-background transition-colors duration-300 hover:bg-background hover:text-foreground"
             >
-              {added ? "Added to bag" : size ? "Add to bag" : "Select a size"}
-            </button>
+              Message {designer?.name} on Instagram
+            </a>
+            <a
+              href={designer ? instagramProfile(designer.instagram) : "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 block w-full border border-border px-8 py-4 text-center text-[0.7rem] uppercase tracking-[0.22em] transition-colors duration-300 hover:border-foreground"
+            >
+              @{designer?.instagram}
+            </a>
             <p className="mt-3 text-xs text-muted-foreground">
-              Ships from {designer?.location}. Checkout settles directly with the atelier
-              via a split payout.
+              {size ? `Mention size ${size}. ` : "Pick a size to mention. "}
+              No checkout here — you order and pay directly with the atelier, so sizing,
+              colourway and shipping from {designer?.location} are confirmed before any
+              money changes hands.
             </p>
+
 
             <dl className="mt-12 border-t border-border text-sm">
               <Spec term="Fabric" detail={product.fabric} />
