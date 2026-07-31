@@ -98,7 +98,7 @@ function Home() {
         <div className="mx-auto max-w-[1600px] px-5 md:px-10">
           <p className="label-xs text-muted-foreground">Curated Collections</p>
           <h2 className="mt-3 max-w-[18ch] font-serif text-3xl leading-tight md:text-5xl">
-            Eleven pieces, made one at a time.
+            Twenty-one pieces, made one at a time.
           </h2>
 
           <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-14 md:grid-cols-12">
