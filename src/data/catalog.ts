@@ -13,6 +13,11 @@ import bc2 from "@/assets/bc2.jpg.asset.json";
 import bc3 from "@/assets/bc3.jpg.asset.json";
 import bc4 from "@/assets/bc4.jpg.asset.json";
 import bc5 from "@/assets/bc5.jpg.asset.json";
+import lc1 from "@/assets/lc1.jpg.asset.json";
+import lc2 from "@/assets/lc2.jpg.asset.json";
+import lc3 from "@/assets/lc3.jpg.asset.json";
+import lc4 from "@/assets/lc4.jpg.asset.json";
+import lc5 from "@/assets/lc5.jpg.asset.json";
 
 const DD1 = dd1.url;
 const DD2 = dd2.url;
