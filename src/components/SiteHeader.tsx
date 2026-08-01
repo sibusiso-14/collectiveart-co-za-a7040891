@@ -38,9 +38,18 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center justify-end gap-6">
+          {!loading && (
+            <Link
+              to={isAuthenticated ? "/account" : "/auth"}
+              className="hidden text-[0.7rem] uppercase tracking-[0.22em] text-foreground/70 transition-colors hover:text-foreground md:inline"
+            >
+              {isAuthenticated ? "Account" : "Sign in"}
+            </Link>
+          )}
           <span className="hidden text-[0.7rem] uppercase tracking-[0.22em] text-foreground/70 md:inline">
             Bag (0)
           </span>
+
           <button
             type="button"
             aria-label={open ? "Close menu" : "Open menu"}
