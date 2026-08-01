@@ -69,7 +69,7 @@ export function SiteHeader() {
 
       <div
         className={`overflow-hidden border-border transition-[max-height,opacity] duration-300 md:hidden ${
-          open ? "max-h-72 border-t opacity-100" : "max-h-0 opacity-0"
+          open ? "max-h-96 border-t opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <nav className="flex flex-col px-5 py-2">
@@ -78,12 +78,20 @@ export function SiteHeader() {
               key={item.to}
               to={item.to}
               onClick={() => setOpen(false)}
-              className="border-b border-border py-4 font-serif text-2xl last:border-0"
+              className="border-b border-border py-4 font-serif text-2xl"
             >
               {item.label}
             </Link>
           ))}
+          <Link
+            to={isAuthenticated ? "/account" : "/auth"}
+            onClick={() => setOpen(false)}
+            className="py-4 font-serif text-2xl"
+          >
+            {isAuthenticated ? "Account" : "Sign in"}
+          </Link>
         </nav>
+
       </div>
     </header>
   );
