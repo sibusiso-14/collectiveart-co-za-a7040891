@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
+import { useAuth } from "@/hooks/useAuth";
 
 const nav = [
   { to: "/shop", label: "Shop" },
@@ -9,6 +10,8 @@ const nav = [
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const { isAuthenticated, loading } = useAuth();
+
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur-sm">
@@ -35,9 +38,18 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center justify-end gap-6">
+          {!loading && (
+            <Link
+              to={isAuthenticated ? "/account" : "/auth"}
+              className="hidden text-[0.7rem] uppercase tracking-[0.22em] text-foreground/70 transition-colors hover:text-foreground md:inline"
+            >
+              {isAuthenticated ? "Account" : "Sign in"}
+            </Link>
+          )}
           <span className="hidden text-[0.7rem] uppercase tracking-[0.22em] text-foreground/70 md:inline">
             Bag (0)
           </span>
+
           <button
             type="button"
             aria-label={open ? "Close menu" : "Open menu"}
@@ -57,7 +69,7 @@ export function SiteHeader() {
 
       <div
         className={`overflow-hidden border-border transition-[max-height,opacity] duration-300 md:hidden ${
-          open ? "max-h-72 border-t opacity-100" : "max-h-0 opacity-0"
+          open ? "max-h-96 border-t opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <nav className="flex flex-col px-5 py-2">
@@ -66,12 +78,20 @@ export function SiteHeader() {
               key={item.to}
               to={item.to}
               onClick={() => setOpen(false)}
-              className="border-b border-border py-4 font-serif text-2xl last:border-0"
+              className="border-b border-border py-4 font-serif text-2xl"
             >
               {item.label}
             </Link>
           ))}
+          <Link
+            to={isAuthenticated ? "/account" : "/auth"}
+            onClick={() => setOpen(false)}
+            className="py-4 font-serif text-2xl"
+          >
+            {isAuthenticated ? "Account" : "Sign in"}
+          </Link>
         </nav>
+
       </div>
     </header>
   );
