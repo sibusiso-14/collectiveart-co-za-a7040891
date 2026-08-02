@@ -4,7 +4,7 @@ import { designers, instagramProfile } from "@/data/catalog";
 export function SiteFooter() {
   return (
     <footer className="border-t border-border">
-      <div className="mx-auto grid max-w-[1600px] gap-10 px-5 py-16 md:grid-cols-[1.5fr_1fr_1fr] md:px-10">
+      <div className="mx-auto grid max-w-[1600px] gap-10 px-5 py-16 md:grid-cols-[1.5fr_1fr_1fr_1fr] md:px-10">
         <div>
           <p className="font-serif text-3xl leading-tight md:text-4xl">
             Where independent fashion meets art.
