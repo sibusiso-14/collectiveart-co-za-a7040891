@@ -41,6 +41,21 @@ function Home() {
             className="h-[72vh] w-full object-cover md:h-[88vh]"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
+
+          {/* Brand seal — the couture button mark */}
+          <div className="absolute right-5 top-5 md:right-10 md:top-10">
+            <div className="group relative grid h-24 w-24 place-items-center rounded-full bg-background/85 backdrop-blur-sm md:h-36 md:w-36">
+              <img
+                src={markAsset.url}
+                alt="Collaborate.art monogram — a copper button stitched into a cursive C"
+                width={800}
+                height={800}
+                className="h-[78%] w-[78%] object-contain mix-blend-multiply transition-transform duration-[1200ms] ease-out group-hover:rotate-[8deg]"
+              />
+              <span className="pointer-events-none absolute inset-0 rounded-full border border-foreground/15" />
+            </div>
+          </div>
+
           <div className="absolute inset-0 flex items-end">
             <div className="w-full px-5 pb-12 md:px-10 md:pb-20">
               <p className="label-xs text-foreground/70">Curated in South Africa</p>
