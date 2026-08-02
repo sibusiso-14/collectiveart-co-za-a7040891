@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
+import markAsset from "@/assets/collaborate-mark-square.png.asset.json";
 import { ProductCard } from "@/components/ProductCard";
 import { designers, heroImage, products } from "@/data/catalog";
 
@@ -40,6 +41,21 @@ function Home() {
             className="h-[72vh] w-full object-cover md:h-[88vh]"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
+
+          {/* Brand seal — the couture button mark */}
+          <div className="absolute right-5 top-5 md:right-10 md:top-10">
+            <div className="group relative grid h-24 w-24 place-items-center overflow-hidden rounded-full bg-background shadow-[0_18px_40px_-18px_rgba(0,0,0,0.45)] md:h-36 md:w-36">
+              <img
+                src={markAsset.url}
+                alt="Collaborate.art monogram — a copper button stitched into a cursive C"
+                width={800}
+                height={800}
+                className="h-full w-full scale-[1.02] object-cover transition-transform duration-[1200ms] ease-out group-hover:rotate-[8deg]"
+              />
+              <span className="pointer-events-none absolute inset-0 rounded-full border border-foreground/15" />
+            </div>
+          </div>
+
           <div className="absolute inset-0 flex items-end">
             <div className="w-full px-5 pb-12 md:px-10 md:pb-20">
               <p className="label-xs text-foreground/70">Curated in South Africa</p>
@@ -179,8 +195,21 @@ function Home() {
       </section>
 
       {/* Become a creator */}
-      <section className="py-20 md:py-32">
-        <div className="mx-auto grid max-w-[1600px] gap-10 px-5 md:grid-cols-12 md:px-10">
+      <section className="relative overflow-hidden py-20 md:py-32">
+        {/* Oversized monogram watermark */}
+        <img
+          src={markAsset.url}
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          className="pointer-events-none absolute right-2 top-1/2 w-[52vw] max-w-[420px] -translate-y-1/2 object-contain opacity-[0.5] mix-blend-multiply md:right-10"
+          style={{
+            maskImage: "radial-gradient(closest-side, #000 38%, transparent 78%)",
+            WebkitMaskImage: "radial-gradient(closest-side, #000 38%, transparent 78%)",
+          }}
+        />
+        <div className="relative mx-auto grid max-w-[1600px] gap-10 px-5 md:grid-cols-12 md:px-10">
+
           <p className="label-xs text-muted-foreground md:col-span-3">
             Become a Creator
           </p>
