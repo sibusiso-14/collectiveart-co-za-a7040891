@@ -4,7 +4,7 @@ import { designers, instagramProfile } from "@/data/catalog";
 export function SiteFooter() {
   return (
     <footer className="border-t border-border">
-      <div className="mx-auto grid max-w-[1600px] gap-10 px-5 py-16 md:grid-cols-[1.5fr_1fr_1fr] md:px-10">
+      <div className="mx-auto grid max-w-[1600px] gap-10 px-5 py-16 md:grid-cols-[1.5fr_1fr_1fr_1fr] md:px-10">
         <div>
           <p className="font-serif text-3xl leading-tight md:text-4xl">
             Where independent fashion meets art.
@@ -32,6 +32,21 @@ export function SiteFooter() {
 
         <div className="flex flex-col gap-3 text-sm">
           <span className="text-[0.7rem] uppercase tracking-[0.22em] text-muted-foreground">
+            Info
+          </span>
+          <Link to="/terms" className="w-fit hover:underline">
+            Terms & Conditions
+          </Link>
+          <a
+            href="mailto:studio@collaborate.art"
+            className="w-fit hover:underline"
+          >
+            studio@collaborate.art
+          </a>
+        </div>
+
+        <div className="flex flex-col gap-3 text-sm">
+          <span className="text-[0.7rem] uppercase tracking-[0.22em] text-muted-foreground">
             Contact the ateliers
           </span>
           {designers.map((d) => (
@@ -45,9 +60,6 @@ export function SiteFooter() {
               {d.name} — @{d.instagram}
             </a>
           ))}
-          <a href="mailto:studio@collaborate.art" className="w-fit hover:underline">
-            studio@collaborate.art
-          </a>
         </div>
       </div>
       <div className="border-t border-border px-5 py-6 text-[0.7rem] uppercase tracking-[0.22em] text-muted-foreground md:px-10">
