@@ -44,13 +44,13 @@ function Home() {
 
           {/* Brand seal — the couture button mark */}
           <div className="absolute right-5 top-5 md:right-10 md:top-10">
-            <div className="group relative grid h-24 w-24 place-items-center rounded-full bg-background/85 backdrop-blur-sm md:h-36 md:w-36">
+            <div className="group relative grid h-24 w-24 place-items-center overflow-hidden rounded-full bg-background shadow-[0_18px_40px_-18px_rgba(0,0,0,0.45)] md:h-36 md:w-36">
               <img
                 src={markAsset.url}
                 alt="Collaborate.art monogram — a copper button stitched into a cursive C"
                 width={800}
                 height={800}
-                className="h-[78%] w-[78%] object-contain mix-blend-multiply transition-transform duration-[1200ms] ease-out group-hover:rotate-[8deg]"
+                className="h-full w-full scale-[1.02] object-cover transition-transform duration-[1200ms] ease-out group-hover:rotate-[8deg]"
               />
               <span className="pointer-events-none absolute inset-0 rounded-full border border-foreground/15" />
             </div>
