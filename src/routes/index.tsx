@@ -6,20 +6,20 @@ import { designers, heroImage, products } from "@/data/catalog";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Collaborate.art — Where Independent Fashion Meets Art" },
+      { title: "CollaborateArt — South Africa's Finest Curated Fashion Designers" },
       {
         name: "description",
         content:
-          "A curated multi-vendor marketplace for independent fashion designers. Shop small-run collections from Damnation Designs, Galbakaline, Designing Balaclava and Last Cloud Designs.",
+          "CollaborateArt connects you directly to South Africa's finest curated fashion designers. Discover small-run collections from independent ateliers and message designers for orders.",
       },
       {
         property: "og:title",
-        content: "Collaborate.art — Where Independent Fashion Meets Art",
+        content: "CollaborateArt — South Africa's Finest Curated Fashion Designers",
       },
       {
         property: "og:description",
         content:
-          "Curated collections from independent ateliers. Small runs, signed by the designer who made them.",
+          "A curated marketplace connecting you directly to independent South African fashion designers. Small runs, made to order, settled with the atelier.",
       },
     ],
   }),
@@ -29,7 +29,7 @@ export const Route = createFileRoute("/")({
 function Home() {
   return (
     <>
-      {/* Hero */}
+      {/* Hero — premium editorial */}
       <section className="border-b border-border">
         <div className="relative">
           <img
@@ -37,22 +37,58 @@ function Home() {
             alt="Model in a Galbakaline reversible orange shell jacket against a concrete wall"
             width={1600}
             height={1104}
-            className="h-[70vh] w-full object-cover md:h-[86vh]"
+            className="h-[72vh] w-full object-cover md:h-[88vh]"
           />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
           <div className="absolute inset-0 flex items-end">
-            <div className="w-full px-5 pb-10 md:px-10 md:pb-16">
-              <p className="label-xs text-foreground/60">Issue 01 — Autumn</p>
-              <h1 className="mt-4 max-w-[16ch] font-serif text-[2.75rem] leading-[0.95] tracking-tight md:text-[6.5rem]">
-                Where Independent Fashion Meets Art.
+            <div className="w-full px-5 pb-12 md:px-10 md:pb-20">
+              <p className="label-xs text-foreground/70">Curated in South Africa</p>
+              <h1 className="mt-5 max-w-[18ch] font-serif text-[2.5rem] leading-[0.95] tracking-tight md:max-w-[20ch] md:text-[6rem] lg:text-[7rem]">
+                CollaborateArt: Connecting you directly to South Africa's finest curated fashion designers.
               </h1>
-              <div className="mt-8 flex flex-wrap gap-8">
-                <Link to="/shop" className="label-xs rule-link">
+              <p className="mt-6 max-w-xl text-base leading-relaxed text-foreground/80 md:text-lg">
+                A link-only gallery for independent ateliers. Browse the collections, then message the designer to confirm sizing, colour and payment — every order is settled directly with the maker.
+              </p>
+              <div className="mt-10 flex flex-wrap items-center gap-8">
+                <Link
+                  to="/shop"
+                  className="inline-flex items-center border border-foreground bg-foreground px-8 py-4 text-[0.7rem] uppercase tracking-[0.22em] text-primary-foreground transition-colors duration-300 hover:bg-transparent hover:text-foreground"
+                >
                   Shop the collections
                 </Link>
-                <Link to="/designers" className="label-xs rule-link text-foreground/60">
+                <Link to="/designers" className="label-xs rule-link">
                   Meet the designers
                 </Link>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Value proposition — three pillars */}
+      <section className="border-b border-border py-16 md:py-24">
+        <div className="mx-auto max-w-[1600px] px-5 md:px-10">
+          <div className="grid gap-12 md:grid-cols-3 md:gap-8">
+            <div>
+              <p className="label-xs text-muted-foreground">01 — Curated</p>
+              <h3 className="mt-4 font-serif text-2xl md:text-3xl">Hand-picked ateliers</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                Every designer on CollaborateArt is selected for craft, point of view and small-run production. No mass-market listings — only work worth wearing.
+              </p>
+            </div>
+            <div>
+              <p className="label-xs text-muted-foreground">02 — Direct</p>
+              <h3 className="mt-4 font-serif text-2xl md:text-3xl">Message the maker</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                Prices shown are guide prices. Tap through to Instagram, ask about fit and fabric, then settle payment and delivery directly with the designer.
+              </p>
+            </div>
+            <div>
+              <p className="label-xs text-muted-foreground">03 — Local</p>
+              <h3 className="mt-4 font-serif text-2xl md:text-3xl">South African design</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                From Maseru to Johannesburg, we spotlight independent labels building the next chapter of African fashion — and keep the value in their hands.
+              </p>
             </div>
           </div>
         </div>
@@ -153,9 +189,9 @@ function Home() {
               Your atelier deserves a gallery, not a shelf.
             </h2>
             <p className="mt-8 max-w-xl text-base leading-relaxed text-muted-foreground">
-              Collaborate.art hosts independent designers with their own boutique page,
-              inventory and payout schedule. You set the prices, we handle the storefront,
-              the checkout and the commission split.
+              CollaborateArt hosts independent designers with their own boutique page,
+              lookbook and direct contact link. You set the prices, we handle the
+              storefront — and customers reach you directly for every order.
             </p>
             <div className="mt-10">
               <Link
