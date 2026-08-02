@@ -32,6 +32,21 @@ export function SiteFooter() {
 
         <div className="flex flex-col gap-3 text-sm">
           <span className="text-[0.7rem] uppercase tracking-[0.22em] text-muted-foreground">
+            Info
+          </span>
+          <Link to="/terms" className="w-fit hover:underline">
+            Terms & Conditions
+          </Link>
+          <a
+            href="mailto:studio@collaborate.art"
+            className="w-fit hover:underline"
+          >
+            studio@collaborate.art
+          </a>
+        </div>
+
+        <div className="flex flex-col gap-3 text-sm">
+          <span className="text-[0.7rem] uppercase tracking-[0.22em] text-muted-foreground">
             Contact the ateliers
           </span>
           {designers.map((d) => (
