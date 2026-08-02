@@ -195,8 +195,17 @@ function Home() {
       </section>
 
       {/* Become a creator */}
-      <section className="py-20 md:py-32">
-        <div className="mx-auto grid max-w-[1600px] gap-10 px-5 md:grid-cols-12 md:px-10">
+      <section className="relative overflow-hidden py-20 md:py-32">
+        {/* Oversized monogram watermark */}
+        <img
+          src={markAsset.url}
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          className="pointer-events-none absolute -right-24 top-1/2 w-[70vw] max-w-[720px] -translate-y-1/2 object-contain opacity-[0.14] mix-blend-multiply md:-right-16"
+        />
+        <div className="relative mx-auto grid max-w-[1600px] gap-10 px-5 md:grid-cols-12 md:px-10">
+
           <p className="label-xs text-muted-foreground md:col-span-3">
             Become a Creator
           </p>
