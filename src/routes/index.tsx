@@ -202,7 +202,11 @@ function Home() {
           alt=""
           aria-hidden="true"
           loading="lazy"
-          className="pointer-events-none absolute -right-24 top-1/2 w-[70vw] max-w-[720px] -translate-y-1/2 object-contain opacity-[0.14] mix-blend-multiply md:-right-16"
+          className="pointer-events-none absolute -right-24 top-1/2 w-[70vw] max-w-[720px] -translate-y-1/2 object-contain opacity-[0.18] mix-blend-multiply md:-right-16"
+          style={{
+            maskImage: "radial-gradient(closest-side, #000 52%, transparent 92%)",
+            WebkitMaskImage: "radial-gradient(closest-side, #000 52%, transparent 92%)",
+          }}
         />
         <div className="relative mx-auto grid max-w-[1600px] gap-10 px-5 md:grid-cols-12 md:px-10">
 
