@@ -60,9 +60,6 @@ export function SiteFooter() {
               {d.name} — @{d.instagram}
             </a>
           ))}
-          <a href="mailto:studio@collaborate.art" className="w-fit hover:underline">
-            studio@collaborate.art
-          </a>
         </div>
       </div>
       <div className="border-t border-border px-5 py-6 text-[0.7rem] uppercase tracking-[0.22em] text-muted-foreground md:px-10">
