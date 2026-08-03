@@ -208,10 +208,8 @@ function Home() {
             <h2 className="max-w-[20ch] font-serif text-4xl leading-[1.05] md:text-7xl">
               Your atelier deserves a gallery, not a shelf.
             </h2>
-            <p className="mt-8 max-w-xl text-base leading-relaxed text-muted-foreground">
-              CollaborateArt hosts independent designers with their own boutique page,
-              lookbook and direct contact link. You set the prices, we handle the
-              storefront — and customers reach you directly for every order.
+            <p className="mt-8 max-w-md text-base leading-relaxed text-muted-foreground">
+              Your own boutique page. Your prices. Direct orders.
             </p>
             <div className="mt-10">
               <Link
