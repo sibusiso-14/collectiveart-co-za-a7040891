@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 
 import markAsset from "@/assets/collaborate-mark-square.png.asset.json";
 import { ProductCard } from "@/components/ProductCard";
-import { designers, heroImage, products } from "@/data/catalog";
+import { designers, products } from "@/data/catalog";
 
 export const Route = createFileRoute("/")({
   head: () => ({
