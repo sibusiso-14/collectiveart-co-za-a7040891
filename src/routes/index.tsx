@@ -59,21 +59,21 @@ function Home() {
           <div className="absolute inset-0 flex items-end">
             <div className="w-full px-5 pb-12 md:px-10 md:pb-20">
               <p className="label-xs text-foreground/70">Curated in South Africa</p>
-              <h1 className="mt-5 max-w-[18ch] font-serif text-[2.5rem] leading-[0.95] tracking-tight md:max-w-[20ch] md:text-[6rem] lg:text-[7rem]">
-                CollaborateArt: Connecting you directly to South Africa's finest curated fashion designers.
+              <h1 className="mt-5 max-w-[14ch] font-serif text-[3rem] leading-[0.95] tracking-tight md:text-[7rem]">
+                South Africa's finest designers.
               </h1>
-              <p className="mt-6 max-w-xl text-base leading-relaxed text-foreground/80 md:text-lg">
-                A link-only gallery for independent ateliers. Browse the collections, then message the designer to confirm sizing, colour and payment — every order is settled directly with the maker.
+              <p className="mt-5 max-w-md text-base leading-relaxed text-foreground/80">
+                Browse. Message the maker. Done.
               </p>
               <div className="mt-10 flex flex-wrap items-center gap-8">
                 <Link
                   to="/shop"
                   className="inline-flex items-center border border-foreground bg-foreground px-8 py-4 text-[0.7rem] uppercase tracking-[0.22em] text-primary-foreground transition-colors duration-300 hover:bg-transparent hover:text-foreground"
                 >
-                  Shop the collections
+                  Shop
                 </Link>
                 <Link to="/designers" className="label-xs rule-link">
-                  Meet the designers
+                  Designers
                 </Link>
               </div>
             </div>
@@ -88,23 +88,14 @@ function Home() {
             <div>
               <p className="label-xs text-muted-foreground">01 — Curated</p>
               <h3 className="mt-4 font-serif text-2xl md:text-3xl">Hand-picked ateliers</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                Every designer on CollaborateArt is selected for craft, point of view and small-run production. No mass-market listings — only work worth wearing.
-              </p>
             </div>
             <div>
               <p className="label-xs text-muted-foreground">02 — Direct</p>
               <h3 className="mt-4 font-serif text-2xl md:text-3xl">Message the maker</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                Prices shown are guide prices. Tap through to Instagram, ask about fit and fabric, then settle payment and delivery directly with the designer.
-              </p>
             </div>
             <div>
               <p className="label-xs text-muted-foreground">03 — Local</p>
               <h3 className="mt-4 font-serif text-2xl md:text-3xl">South African design</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                From Maseru to Johannesburg, we spotlight independent labels building the next chapter of African fashion — and keep the value in their hands.
-              </p>
             </div>
           </div>
         </div>
