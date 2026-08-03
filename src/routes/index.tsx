@@ -30,22 +30,28 @@ export const Route = createFileRoute("/")({
 function Home() {
   return (
     <>
-      {/* Hero — clean off-white with logo above label */}
-      <section className="border-b border-border bg-background">
-        <div className="mx-auto max-w-[1600px] px-5 py-20 md:px-10 md:py-32">
-          <img
-            src={markAsset.url}
-            alt="Collaborate.art monogram — a copper button stitched into a cursive C"
-            width={800}
-            height={800}
-            className="h-20 w-20 object-contain md:h-28 md:w-28"
-          />
-          <p className="label-xs mt-8 text-foreground/70">Curated in South Africa</p>
+      {/* Hero — oversized logo watermark with wording in front */}
+      <section className="relative overflow-hidden border-b border-border bg-background">
+        {/* Large logo watermark */}
+        <img
+          src={markAsset.url}
+          alt=""
+          aria-hidden="true"
+          width={800}
+          height={800}
+          className="pointer-events-none absolute right-1/2 top-1/2 z-0 w-[90vw] max-w-[700px] -translate-y-1/2 translate-x-1/2 object-contain opacity-[0.22] md:right-0 md:translate-x-0"
+          style={{
+            maskImage: "radial-gradient(closest-side, #000 30%, transparent 75%)",
+            WebkitMaskImage: "radial-gradient(closest-side, #000 30%, transparent 75%)",
+          }}
+        />
+        <div className="relative z-10 mx-auto max-w-[1600px] px-5 py-20 md:px-10 md:py-32">
+          <p className="label-xs text-foreground/70">Curated in South Africa</p>
           <h1 className="mt-5 max-w-[14ch] font-serif text-[3rem] leading-[0.95] tracking-tight md:text-[7rem]">
             South Africa's finest designers.
           </h1>
           <p className="mt-5 max-w-md text-base leading-relaxed text-foreground/80">
-            Browse. Message the maker. Done.
+            Fashion as Unique as Your Fingerprint
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-8">
             <Link
