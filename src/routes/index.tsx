@@ -67,25 +67,30 @@ function Home() {
         </div>
       </section>
 
-      {/* Value proposition — three pillars */}
-      <section className="border-b border-border py-16 md:py-24">
+      {/* Image compilation — the wardrobe at a glance */}
+      <section className="border-b border-border py-10 md:py-16">
         <div className="mx-auto max-w-[1600px] px-5 md:px-10">
-          <div className="grid gap-12 md:grid-cols-3 md:gap-8">
-            <div>
-              <p className="label-xs text-muted-foreground">01 — Curated</p>
-              <h3 className="mt-4 font-serif text-2xl md:text-3xl">Hand-picked ateliers</h3>
-            </div>
-            <div>
-              <p className="label-xs text-muted-foreground">02 — Direct</p>
-              <h3 className="mt-4 font-serif text-2xl md:text-3xl">Message the maker</h3>
-            </div>
-            <div>
-              <p className="label-xs text-muted-foreground">03 — Local</p>
-              <h3 className="mt-4 font-serif text-2xl md:text-3xl">South African design</h3>
-            </div>
-          </div>
+          <p className="label-xs text-muted-foreground">The Wardrobe</p>
+        </div>
+        <div className="mt-6 grid grid-cols-3 gap-1 md:grid-cols-6 md:gap-1.5">
+          {products.slice(0, 18).map((p) => (
+            <Link
+              key={p.id}
+              to="/product/$productId"
+              params={{ productId: p.id }}
+              className="group relative block aspect-square overflow-hidden bg-secondary"
+            >
+              <img
+                src={p.images[0]}
+                alt={p.name}
+                loading="lazy"
+                className="h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.06]"
+              />
+            </Link>
+          ))}
         </div>
       </section>
+
 
       {/* Featured designers — horizontal scroll */}
       <section className="border-b border-border py-16 md:py-24">
