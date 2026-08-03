@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { useAuth } from "@/hooks/useAuth";
+import markAsset from "@/assets/collaborate-mark-square.png.asset.json";
 
 const nav = [
   { to: "/shop", label: "Shop" },
@@ -18,10 +19,20 @@ export function SiteHeader() {
       <div className="mx-auto grid max-w-[1600px] grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-4 px-5 py-4 md:px-10">
         <Link
           to="/"
-          className="font-serif text-xl tracking-tight text-foreground md:text-2xl"
+          className="flex items-center gap-3"
           onClick={() => setOpen(false)}
+          aria-label="Collaborate.art home"
         >
-          Collaborate<span className="text-muted-foreground">.art</span>
+          <img
+            src={markAsset.url}
+            alt="Collaborate.art monogram"
+            width={800}
+            height={800}
+            className="h-9 w-9 rounded-full object-cover md:h-11 md:w-11"
+          />
+          <span className="font-serif text-xl tracking-tight text-foreground md:text-2xl">
+            Collaborate<span className="text-muted-foreground">.art</span>
+          </span>
         </Link>
 
         <nav className="hidden justify-center gap-10 md:flex">
