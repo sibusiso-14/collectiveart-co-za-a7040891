@@ -30,53 +30,33 @@ export const Route = createFileRoute("/")({
 function Home() {
   return (
     <>
-      {/* Hero — premium editorial */}
-      <section className="border-b border-border">
-        <div className="relative">
+      {/* Hero — clean off-white with logo above label */}
+      <section className="border-b border-border bg-background">
+        <div className="mx-auto max-w-[1600px] px-5 py-20 md:px-10 md:py-32">
           <img
-            src={heroImage}
-            alt="Model in a Galbakaline reversible orange shell jacket against a concrete wall"
-            width={1600}
-            height={1104}
-            className="h-[72vh] w-full object-cover md:h-[88vh]"
+            src={markAsset.url}
+            alt="Collaborate.art monogram — a copper button stitched into a cursive C"
+            width={800}
+            height={800}
+            className="h-20 w-20 object-contain md:h-28 md:w-28"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
-
-          {/* Brand seal — the couture button mark */}
-          <div className="absolute right-5 top-5 md:right-10 md:top-10">
-            <div className="group relative grid h-24 w-24 place-items-center overflow-hidden rounded-full bg-background shadow-[0_18px_40px_-18px_rgba(0,0,0,0.45)] md:h-36 md:w-36">
-              <img
-                src={markAsset.url}
-                alt="Collaborate.art monogram — a copper button stitched into a cursive C"
-                width={800}
-                height={800}
-                className="h-full w-full scale-[1.02] object-cover transition-transform duration-[1200ms] ease-out group-hover:rotate-[8deg]"
-              />
-              <span className="pointer-events-none absolute inset-0 rounded-full border border-foreground/15" />
-            </div>
-          </div>
-
-          <div className="absolute inset-0 flex items-end">
-            <div className="w-full px-5 pb-12 md:px-10 md:pb-20">
-              <p className="label-xs text-foreground/70">Curated in South Africa</p>
-              <h1 className="mt-5 max-w-[14ch] font-serif text-[3rem] leading-[0.95] tracking-tight md:text-[7rem]">
-                South Africa's finest designers.
-              </h1>
-              <p className="mt-5 max-w-md text-base leading-relaxed text-foreground/80">
-                Browse. Message the maker. Done.
-              </p>
-              <div className="mt-10 flex flex-wrap items-center gap-8">
-                <Link
-                  to="/shop"
-                  className="inline-flex items-center border border-foreground bg-foreground px-8 py-4 text-[0.7rem] uppercase tracking-[0.22em] text-primary-foreground transition-colors duration-300 hover:bg-transparent hover:text-foreground"
-                >
-                  Shop
-                </Link>
-                <Link to="/designers" className="label-xs rule-link">
-                  Designers
-                </Link>
-              </div>
-            </div>
+          <p className="label-xs mt-8 text-foreground/70">Curated in South Africa</p>
+          <h1 className="mt-5 max-w-[14ch] font-serif text-[3rem] leading-[0.95] tracking-tight md:text-[7rem]">
+            South Africa's finest designers.
+          </h1>
+          <p className="mt-5 max-w-md text-base leading-relaxed text-foreground/80">
+            Browse. Message the maker. Done.
+          </p>
+          <div className="mt-10 flex flex-wrap items-center gap-8">
+            <Link
+              to="/shop"
+              className="inline-flex items-center border border-foreground bg-foreground px-8 py-4 text-[0.7rem] uppercase tracking-[0.22em] text-primary-foreground transition-colors duration-300 hover:bg-transparent hover:text-foreground"
+            >
+              Shop
+            </Link>
+            <Link to="/designers" className="label-xs rule-link">
+              Designers
+            </Link>
           </div>
         </div>
       </section>
