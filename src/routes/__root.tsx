@@ -150,8 +150,10 @@ function RootComponent() {
         </main>
         <SiteFooter />
       </div>
+      <CuteBot />
       <Toaster />
     </QueryClientProvider>
+
   );
 }
 
