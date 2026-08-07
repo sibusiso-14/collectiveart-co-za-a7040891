@@ -21,7 +21,7 @@ const designerContext = designers
   .join("\n");
 
 const productContext = products
-  .map((p) => `- ${p.name} — ${p.designerSlug} — R${p.price} — ${p.category}`)
+  .map((p) => `- ${p.name} — ${p.designer} — R${p.price} — ${p.category}`)
   .join("\n");
 
 const systemPrompt = `You are CUTE bot, the friendly assistant for Collaborate.art — a curated South African marketplace for independent fashion designers.
