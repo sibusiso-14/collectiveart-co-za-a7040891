@@ -160,8 +160,7 @@ function ChatPanel({
 
   const busy = status === "submitted" || status === "streaming";
 
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
+  const handleSubmit = () => {
     const text = input.trim();
     if (!text || busy) return;
     setInput("");
@@ -234,7 +233,7 @@ function ChatPanel({
                   if (part.type === "tool-capture_enquiry") {
                     return (
                       <Tool defaultOpen={false} key={index}>
-                        <ToolHeader type="Enquiry saved" state={part.state} />
+                        <ToolHeader type="tool-capture_enquiry" state={part.state} />
                         <ToolContent>
                           <ToolInput input={part.input} />
                           <ToolOutput output={part.output} errorText={part.errorText} />
