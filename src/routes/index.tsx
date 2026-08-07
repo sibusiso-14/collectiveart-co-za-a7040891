@@ -50,9 +50,10 @@ function Home() {
           <h1 className="mt-5 max-w-[14ch] font-serif text-[3rem] leading-[0.95] tracking-tight md:text-[7rem]">
             South Africa's finest designers.
           </h1>
-          <p className="mt-5 max-w-md text-base leading-relaxed text-foreground/80">
-            Fashion as Unique as Your Fingerprint
+          <p className="mt-6 max-w-xl font-serif text-2xl italic leading-tight tracking-tight text-foreground md:text-4xl">
+            Fashion as Unique as Your Fingerprint.
           </p>
+
           <div className="mt-10 flex flex-wrap items-center gap-8">
             <Link
               to="/shop"
