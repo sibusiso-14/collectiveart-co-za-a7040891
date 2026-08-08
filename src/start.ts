@@ -50,7 +50,12 @@ const securityHeadersMiddleware = createMiddleware().server(async ({ next }) => 
   const headers = response instanceof Response ? response.headers : undefined;
   if (!headers) return result;
 
-  headers.set("Content-Security-Policy", contentSecurityPolicy);
+  // The Lovable editor preview injects its own tooling/bridge scripts and
+  // websockets; a strict CSP breaks that iframe, so only enforce it in prod.
+  if (process.env['NODE_ENV'] === "production") {
+    headers.set("Content-Security-Policy", contentSecurityPolicy);
+    headers.set("Strict-Transport-Security", "max-age=63072000; includeSubDomains");
+  }
   headers.set("X-Content-Type-Options", "nosniff");
   headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
   headers.set("X-XSS-Protection", "0");
