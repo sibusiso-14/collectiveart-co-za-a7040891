@@ -63,7 +63,6 @@ const securityHeadersMiddleware = createMiddleware().server(async ({ next }) => 
     "Permissions-Policy",
     "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()",
   );
-  headers.set("Strict-Transport-Security", "max-age=63072000; includeSubDomains");
   return result;
 });
 
