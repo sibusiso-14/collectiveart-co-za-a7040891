@@ -59,6 +59,11 @@ export const Route = createFileRoute("/api/chat")({
           return new Response("Invalid request", { status: 400 });
         }
 
+        // Abuse guards: keep a single visitor from flooding the bot.
+        if (messages.length > 80) {
+          return new Response("Conversation too long. Please start a new chat.", { status: 413 });
+        }
+
         const key = process.env["LOVABLE_API_KEY"];
         if (!key) return new Response("Missing LOVABLE_API_KEY", { status: 500 });
 
