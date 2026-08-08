@@ -14,69 +14,6 @@ export type Database = {
   }
   public: {
     Tables: {
-      bot_messages: {
-        Row: {
-          content: string
-          created_at: string
-          id: string
-          role: string
-          session_id: string
-        }
-        Insert: {
-          content: string
-          created_at?: string
-          id?: string
-          role: string
-          session_id: string
-        }
-        Update: {
-          content?: string
-          created_at?: string
-          id?: string
-          role?: string
-          session_id?: string
-        }
-        Relationships: []
-      }
-      customer_enquiries: {
-        Row: {
-          created_at: string
-          designer: string | null
-          email: string | null
-          id: string
-          message: string
-          name: string
-          phone: string | null
-          session_id: string | null
-          status: string
-          updated_at: string
-        }
-        Insert: {
-          created_at?: string
-          designer?: string | null
-          email?: string | null
-          id?: string
-          message: string
-          name: string
-          phone?: string | null
-          session_id?: string | null
-          status?: string
-          updated_at?: string
-        }
-        Update: {
-          created_at?: string
-          designer?: string | null
-          email?: string | null
-          id?: string
-          message?: string
-          name?: string
-          phone?: string | null
-          session_id?: string | null
-          status?: string
-          updated_at?: string
-        }
-        Relationships: []
-      }
       profiles: {
         Row: {
           avatar_url: string | null

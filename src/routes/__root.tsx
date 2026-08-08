@@ -13,8 +13,6 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { CuteBot } from "@/components/CuteBot";
-
 import { Toaster } from "@/components/ui/sonner";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -150,10 +148,8 @@ function RootComponent() {
         </main>
         <SiteFooter />
       </div>
-      <CuteBot />
       <Toaster />
     </QueryClientProvider>
-
   );
 }
 
