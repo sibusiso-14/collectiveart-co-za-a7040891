@@ -143,6 +143,16 @@ export const Route = createFileRoute("/api/chat")({
                     reason: "Need a name and at least one contact method.",
                   };
                 }
+                const { count } = await supabaseAdmin
+                  .from("customer_enquiries")
+                  .select("id", { count: "exact", head: true })
+                  .eq("session_id", sessionId);
+                if ((count ?? 0) >= 5) {
+                  return {
+                    saved: false,
+                    reason: "Too many enquiries from this visitor already. Ask them to email the studio.",
+                  };
+                }
                 const { error } = await supabaseAdmin.from("customer_enquiries").insert({
                   session_id: sessionId,
                   name: name.trim().slice(0, 120),
