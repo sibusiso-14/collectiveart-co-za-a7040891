@@ -45,7 +45,8 @@ const contentSecurityPolicy = [
 
 const securityHeadersMiddleware = createMiddleware().server(async ({ next }) => {
   const result = await next();
-  const response = (result as { response?: Response }).response;
+  const response =
+    result instanceof Response ? result : (result as { response?: Response }).response;
   const headers = response instanceof Response ? response.headers : undefined;
   if (!headers) return result;
 
