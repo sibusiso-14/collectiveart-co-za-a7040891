@@ -59,6 +59,11 @@ export const Route = createFileRoute("/api/chat")({
           return new Response("Invalid request", { status: 400 });
         }
 
+        // Abuse guards: keep a single visitor from flooding the bot.
+        if (messages.length > 80) {
+          return new Response("Conversation too long. Please start a new chat.", { status: 413 });
+        }
+
         const key = process.env["LOVABLE_API_KEY"];
         if (!key) return new Response("Missing LOVABLE_API_KEY", { status: 500 });
 
@@ -73,6 +78,36 @@ export const Route = createFileRoute("/api/chat")({
                 .join("")
                 .trim()
             : "";
+
+        if (lastText.length > 2000) {
+          return new Response("Message too long. Please keep it short and sweet.", {
+            status: 413,
+          });
+        }
+
+        // Rolling rate limit per visitor session, counted from stored history.
+        const windowStart = new Date(Date.now() - 10 * 60 * 1000).toISOString();
+        const dayStart = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString();
+        const [recent, daily] = await Promise.all([
+          supabaseAdmin
+            .from("bot_messages")
+            .select("id", { count: "exact", head: true })
+            .eq("session_id", sessionId)
+            .eq("role", "user")
+            .gte("created_at", windowStart),
+          supabaseAdmin
+            .from("bot_messages")
+            .select("id", { count: "exact", head: true })
+            .eq("session_id", sessionId)
+            .eq("role", "user")
+            .gte("created_at", dayStart),
+        ]);
+        if ((recent.count ?? 0) >= 20 || (daily.count ?? 0) >= 150) {
+          return new Response(
+            "You've hit the chat limit for now. Please try again a bit later, or message the designer directly on Instagram.",
+            { status: 429, headers: { "retry-after": "600" } },
+          );
+        }
 
         if (lastText) {
           const { error } = await supabaseAdmin
@@ -106,6 +141,16 @@ export const Route = createFileRoute("/api/chat")({
                   return {
                     saved: false,
                     reason: "Need a name and at least one contact method.",
+                  };
+                }
+                const { count } = await supabaseAdmin
+                  .from("customer_enquiries")
+                  .select("id", { count: "exact", head: true })
+                  .eq("session_id", sessionId);
+                if ((count ?? 0) >= 5) {
+                  return {
+                    saved: false,
+                    reason: "Too many enquiries from this visitor already. Ask them to email the studio.",
                   };
                 }
                 const { error } = await supabaseAdmin.from("customer_enquiries").insert({
