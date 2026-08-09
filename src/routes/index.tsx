@@ -45,12 +45,12 @@ function Home() {
             WebkitMaskImage: "radial-gradient(closest-side, #000 30%, transparent 75%)",
           }}
         />
-        <div className="relative z-10 mx-auto max-w-[1600px] px-5 py-20 md:px-10 md:py-32">
+        <div className="relative z-10 mx-auto flex max-w-[1600px] flex-col items-start px-5 py-16 md:px-10 md:py-32">
           <p className="label-xs text-foreground/70">Curated in South Africa</p>
-          <h1 className="mt-5 max-w-[14ch] font-serif text-[3rem] leading-[0.95] tracking-tight md:text-[7rem]">
+          <h1 className="mt-4 max-w-[14ch] text-balance font-serif text-[2.75rem] leading-[0.95] tracking-tight md:mt-5 md:text-[7rem]">
             South Africa's finest designers.
           </h1>
-          <p className="mt-5 max-w-md text-base leading-relaxed text-foreground/80">
+          <p className="mt-5 max-w-md text-balance text-base leading-relaxed text-foreground/80">
             The blueprint of life is through clothes — SiB
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-8">
