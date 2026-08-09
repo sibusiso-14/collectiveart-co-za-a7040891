@@ -6,6 +6,8 @@ import markAsset from "@/assets/collaborate-mark-square.png.asset.json";
 const nav = [
   { to: "/shop", label: "Shop" },
   { to: "/designers", label: "Designers" },
+  { to: "/stylists", label: "Stylists" },
+  { to: "/ambassadors", label: "Ambassadors" },
   { to: "/apply", label: "Become a Creator" },
 ] as const;
 

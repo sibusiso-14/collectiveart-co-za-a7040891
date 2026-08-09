@@ -11,10 +11,12 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
+import { Route as AmbassadorsRouteImport } from './routes/ambassadors'
 import { Route as ApplyRouteImport } from './routes/apply'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as ResetPasswordRouteImport } from './routes/reset-password'
 import { Route as ShopRouteImport } from './routes/shop'
+import { Route as StylistsRouteImport } from './routes/stylists'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as AuthenticatedAccountRouteImport } from './routes/_authenticated/account'
 import { Route as DesignersIndexRouteImport } from './routes/designers.index'
@@ -28,6 +30,11 @@ const IndexRoute = IndexRouteImport.update({
 } as any)
 const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
   id: '/_authenticated',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AmbassadorsRoute = AmbassadorsRouteImport.update({
+  id: '/ambassadors',
+  path: '/ambassadors',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApplyRoute = ApplyRouteImport.update({
@@ -48,6 +55,11 @@ const ResetPasswordRoute = ResetPasswordRouteImport.update({
 const ShopRoute = ShopRouteImport.update({
   id: '/shop',
   path: '/shop',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StylistsRoute = StylistsRouteImport.update({
+  id: '/stylists',
+  path: '/stylists',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TermsRoute = TermsRouteImport.update({
@@ -78,10 +90,12 @@ const ProductProductIdRoute = ProductProductIdRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/ambassadors': typeof AmbassadorsRoute
   '/apply': typeof ApplyRoute
   '/auth': typeof AuthRoute
   '/reset-password': typeof ResetPasswordRoute
   '/shop': typeof ShopRoute
+  '/stylists': typeof StylistsRoute
   '/terms': typeof TermsRoute
   '/account': typeof AuthenticatedAccountRoute
   '/designers/$slug': typeof DesignersSlugRoute
@@ -90,10 +104,12 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/ambassadors': typeof AmbassadorsRoute
   '/apply': typeof ApplyRoute
   '/auth': typeof AuthRoute
   '/reset-password': typeof ResetPasswordRoute
   '/shop': typeof ShopRoute
+  '/stylists': typeof StylistsRoute
   '/terms': typeof TermsRoute
   '/account': typeof AuthenticatedAccountRoute
   '/designers/$slug': typeof DesignersSlugRoute
@@ -104,10 +120,12 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
+  '/ambassadors': typeof AmbassadorsRoute
   '/apply': typeof ApplyRoute
   '/auth': typeof AuthRoute
   '/reset-password': typeof ResetPasswordRoute
   '/shop': typeof ShopRoute
+  '/stylists': typeof StylistsRoute
   '/terms': typeof TermsRoute
   '/_authenticated/account': typeof AuthenticatedAccountRoute
   '/designers/$slug': typeof DesignersSlugRoute
@@ -118,10 +136,12 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/ambassadors'
     | '/apply'
     | '/auth'
     | '/reset-password'
     | '/shop'
+    | '/stylists'
     | '/terms'
     | '/account'
     | '/designers/$slug'
@@ -130,10 +150,12 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/ambassadors'
     | '/apply'
     | '/auth'
     | '/reset-password'
     | '/shop'
+    | '/stylists'
     | '/terms'
     | '/account'
     | '/designers/$slug'
@@ -143,10 +165,12 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/_authenticated'
+    | '/ambassadors'
     | '/apply'
     | '/auth'
     | '/reset-password'
     | '/shop'
+    | '/stylists'
     | '/terms'
     | '/_authenticated/account'
     | '/designers/$slug'
@@ -157,10 +181,12 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
+  AmbassadorsRoute: typeof AmbassadorsRoute
   ApplyRoute: typeof ApplyRoute
   AuthRoute: typeof AuthRoute
   ResetPasswordRoute: typeof ResetPasswordRoute
   ShopRoute: typeof ShopRoute
+  StylistsRoute: typeof StylistsRoute
   TermsRoute: typeof TermsRoute
   DesignersSlugRoute: typeof DesignersSlugRoute
   ProductProductIdRoute: typeof ProductProductIdRoute
@@ -181,6 +207,13 @@ declare module '@tanstack/react-router' {
       path: ''
       fullPath: '/'
       preLoaderRoute: typeof AuthenticatedRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ambassadors': {
+      id: '/ambassadors'
+      path: '/ambassadors'
+      fullPath: '/ambassadors'
+      preLoaderRoute: typeof AmbassadorsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/apply': {
@@ -209,6 +242,13 @@ declare module '@tanstack/react-router' {
       path: '/shop'
       fullPath: '/shop'
       preLoaderRoute: typeof ShopRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/stylists': {
+      id: '/stylists'
+      path: '/stylists'
+      fullPath: '/stylists'
+      preLoaderRoute: typeof StylistsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/terms': {
@@ -263,10 +303,12 @@ const AuthenticatedRouteRouteWithChildren =
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
+  AmbassadorsRoute: AmbassadorsRoute,
   ApplyRoute: ApplyRoute,
   AuthRoute: AuthRoute,
   ResetPasswordRoute: ResetPasswordRoute,
   ShopRoute: ShopRoute,
+  StylistsRoute: StylistsRoute,
   TermsRoute: TermsRoute,
   DesignersSlugRoute: DesignersSlugRoute,
   ProductProductIdRoute: ProductProductIdRoute,
@@ -275,13 +317,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
