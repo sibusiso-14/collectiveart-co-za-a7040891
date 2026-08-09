@@ -25,6 +25,12 @@ export function SiteFooter() {
           <Link to="/designers" className="w-fit hover:underline">
             Designers
           </Link>
+          <Link to="/stylists" className="w-fit hover:underline">
+            Stylists
+          </Link>
+          <Link to="/ambassadors" className="w-fit hover:underline">
+            Brand ambassadors
+          </Link>
           <Link to="/apply" className="w-fit hover:underline">
             Become a creator
           </Link>
