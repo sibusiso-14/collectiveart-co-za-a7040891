@@ -51,7 +51,7 @@ function Home() {
             South Africa's finest designers.
           </h1>
           <p className="mt-5 max-w-md text-base leading-relaxed text-foreground/80">
-            Fashion as Unique as Your Fingerprint
+            The blueprint of life is through clothes — SiB
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-8">
             <Link
