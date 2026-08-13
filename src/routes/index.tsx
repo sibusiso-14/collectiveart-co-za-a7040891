@@ -30,22 +30,24 @@ export const Route = createFileRoute("/")({
 function Home() {
   return (
     <>
-      {/* Hero — oversized logo watermark with wording in front */}
-      <section className="relative overflow-hidden border-b border-border bg-background">
-        {/* Large logo watermark */}
+      {/* Hero — button monogram on warm cream paper, wording overlaid */}
+      <section className="relative overflow-hidden border-b border-border">
+        {/* Cream paper button image fills the hero, button biased to the right */}
         <img
-          src={markAsset.url}
+          src="/1785664352696.png"
           alt=""
           aria-hidden="true"
-          width={800}
-          height={800}
-          className="pointer-events-none absolute right-1/2 top-1/2 z-0 w-[90vw] max-w-[700px] -translate-y-1/2 translate-x-1/2 object-contain opacity-[0.22] md:right-0 md:translate-x-0"
+          className="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover object-[75%_center] md:object-[65%_center]"
+        />
+        {/* Left-to-right cream wash so the headline stays legible over the paper */}
+        <div
+          className="pointer-events-none absolute inset-0 z-0"
           style={{
-            maskImage: "radial-gradient(closest-side, #000 30%, transparent 75%)",
-            WebkitMaskImage: "radial-gradient(closest-side, #000 30%, transparent 75%)",
+            background:
+              "linear-gradient(90deg, rgba(244,241,234,0.92) 0%, rgba(244,241,234,0.78) 38%, rgba(244,241,234,0.15) 70%, rgba(244,241,234,0) 100%)",
           }}
         />
-        <div className="relative z-10 mx-auto max-w-[1600px] px-5 py-20 md:px-10 md:py-32">
+        <div className="relative z-10 mx-auto max-w-[1600px] px-5 py-24 md:px-10 md:py-40">
           <p className="label-xs text-foreground/70">Curated in South Africa</p>
           <h1 className="mt-5 max-w-[14ch] font-serif text-[3rem] leading-[0.95] tracking-tight md:text-[7rem]">
             South Africa's finest designers.
