@@ -12,4 +12,9 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Override the sandbox-detected port so the dev/preview server runs on 3000.
+  vite: {
+    server: { port: 3000, strictPort: true },
+    preview: { port: 3000, strictPort: true },
+  },
 });
