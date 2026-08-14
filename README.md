@@ -1,6 +1,6 @@
-# Collectiveart
+# Collaborateart
 
-Project Name: Collaborate.art
+Project Name: Collaborateart.co.za
 
 Concept: A minimalist, artsy, and modern multi-vendor fashion marketplace where independent fashion designers can showcase and sell their clothing collections.
 
@@ -42,21 +42,13 @@ Checkout & Payout Integration: Integration ready for Stripe Connect or automated
 
 Mobile Responsiveness: Mobile-first editorial feel with sleek drawer navigation and fast-loading image galleries.
 
-This project was built with [Lovable](https://lovable.dev).
 
-**Live app**: https://collectiveart-co-za.lovable.app
+**Live app**: https://collaborateart.co.za
 
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/4a84ef00-eaeb-4b53-bd21-f257d31d079f).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+## .
 
 ## Development
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
 
 ```sh
 git clone <this-repository-url>
