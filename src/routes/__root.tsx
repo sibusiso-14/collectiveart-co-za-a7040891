@@ -81,8 +81,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { name: "author", content: "Collaborate.art" },
+      { name: "author", content: "Collaborate Art" },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Collaborate Art" },
+      { property: "og:url", content: "https://collaborateart.co.za" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
