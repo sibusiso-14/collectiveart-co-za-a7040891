@@ -52,7 +52,7 @@ Mobile Responsiveness: Mobile-first editorial feel with sleek drawer navigation 
 
 ```sh
 git clone <this-repository-url>
-cd <repository-name>
+cd <Collaborateart-co-za-a7040891>
 npm i
 npm run dev
 ```
