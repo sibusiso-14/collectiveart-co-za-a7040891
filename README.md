@@ -1,6 +1,6 @@
-# Collectiveart
+# collaborateart
 
-Project Name: Collaborate.art
+Project Name: Collaborateart.co.za
 
 Concept: A minimalist, artsy, and modern multi-vendor fashion marketplace where independent fashion designers can showcase and sell their clothing collections.
 
