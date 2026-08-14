@@ -40,7 +40,7 @@ const LC3 = lc3.url;
 const LC4 = lc4.url;
 const LC5 = lc5.url;
 
-export const heroImage = GB4;
+export const heroImage = 2F1785664352696 ;
 
 export type Category = "Tops" | "Outerwear" | "Bottoms" | "Accessories";
 
