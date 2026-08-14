@@ -15,7 +15,6 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const { isAuthenticated, loading } = useAuth();
 
-
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur-sm">
       <div className="mx-auto grid max-w-[1600px] grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-4 px-5 py-4 md:px-10">
@@ -104,7 +103,6 @@ export function SiteHeader() {
             {isAuthenticated ? "Account" : "Sign in"}
           </Link>
         </nav>
-
       </div>
     </header>
   );

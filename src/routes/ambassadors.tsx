@@ -58,8 +58,8 @@ function Ambassadors() {
             Wear it. Share it. 30% off.
           </h1>
           <p className="mt-8 max-w-lg text-base leading-relaxed text-muted-foreground">
-            Ambassadors of Collaborate.art get 30% off every piece on the site — and 30%
-            off any fee a stylist charges them.
+            Ambassadors of Collaborate.art get 30% off every piece on the site — and 30% off any fee
+            a stylist charges them.
           </p>
         </div>
       </section>
@@ -92,8 +92,8 @@ function Ambassadors() {
               Apply to be an ambassador
             </h2>
             <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-              Tell us who you are and where you post. Approved ambassadors get a discount
-              name to quote when messaging designers and stylists.
+              Tell us who you are and where you post. Approved ambassadors get a discount name to
+              quote when messaging designers and stylists.
             </p>
             <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
               New here?{" "}
@@ -147,15 +147,7 @@ function Ambassadors() {
   );
 }
 
-function Field({
-  label,
-  name,
-  type = "text",
-}: {
-  label: string;
-  name: string;
-  type?: string;
-}) {
+function Field({ label, name, type = "text" }: { label: string; name: string; type?: string }) {
   return (
     <div className="border-b border-border py-5">
       <label htmlFor={name} className="label-xs block text-muted-foreground">

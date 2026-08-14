@@ -54,7 +54,6 @@ function ProductNotFound() {
 function ProductPage() {
   const { product, designer } = Route.useLoaderData();
   const [size, setSize] = useState<string | null>(null);
-  
 
   const related = productsByDesigner(product.designer).filter((p) => p.id !== product.id);
 
@@ -85,9 +84,7 @@ function ProductPage() {
             >
               {designer?.name}
             </Link>
-            <h1 className="mt-4 font-serif text-4xl leading-tight md:text-5xl">
-              {product.name}
-            </h1>
+            <h1 className="mt-4 font-serif text-4xl leading-tight md:text-5xl">{product.name}</h1>
             <p className="mt-4 text-lg">
               {formatPrice(product.price)}{" "}
               <span className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
@@ -136,11 +133,9 @@ function ProductPage() {
             </a>
             <p className="mt-3 text-xs text-muted-foreground">
               {size ? `Mention size ${size}. ` : "Pick a size to mention. "}
-              No checkout here — you order and pay directly with the atelier, so sizing,
-              colourway and shipping from {designer?.location} are confirmed before any
-              money changes hands.
+              No checkout here — you order and pay directly with the atelier, so sizing, colourway
+              and shipping from {designer?.location} are confirmed before any money changes hands.
             </p>
-
 
             <dl className="mt-12 border-t border-border text-sm">
               <Spec term="Fabric" detail={product.fabric} />
@@ -158,9 +153,7 @@ function ProductPage() {
       {related.length > 0 && (
         <section className="border-t border-border">
           <div className="mx-auto max-w-[1600px] px-5 py-16 md:px-10 md:py-20">
-            <h2 className="font-serif text-3xl md:text-4xl">
-              More from {designer?.name}
-            </h2>
+            <h2 className="font-serif text-3xl md:text-4xl">More from {designer?.name}</h2>
             <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
               {related.map((p) => (
                 <ProductCard key={p.id} product={p} />

@@ -37,8 +37,8 @@ function Stylists() {
             Styled by people, not algorithms.
           </h1>
           <p className="mt-8 max-w-lg text-base leading-relaxed text-muted-foreground">
-            Stylists showcase how they wear the labels on Collaborate.art — and clients
-            book them directly for fittings, shoots and wardrobe work.
+            Stylists showcase how they wear the labels on Collaborate.art — and clients book them
+            directly for fittings, shoots and wardrobe work.
           </p>
         </div>
       </section>
@@ -73,8 +73,8 @@ function Stylists() {
               Join the stylist roster
             </h2>
             <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-              Send us your look book. Approved stylists get a profile, their looks on the
-              site, and enquiries sent straight to them. Rates are set and settled by you.
+              Send us your look book. Approved stylists get a profile, their looks on the site, and
+              enquiries sent straight to them. Rates are set and settled by you.
             </p>
           </div>
 
@@ -121,15 +121,7 @@ function Stylists() {
   );
 }
 
-function Field({
-  label,
-  name,
-  type = "text",
-}: {
-  label: string;
-  name: string;
-  type?: string;
-}) {
+function Field({ label, name, type = "text" }: { label: string; name: string; type?: string }) {
   return (
     <div className="border-b border-border py-5">
       <label htmlFor={name} className="label-xs block text-muted-foreground">

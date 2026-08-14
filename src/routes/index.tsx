@@ -93,7 +93,6 @@ function Home() {
         </div>
       </section>
 
-
       {/* Featured designers — horizontal scroll */}
       <section className="border-b border-border py-16 md:py-24">
         <div className="mx-auto max-w-[1600px] px-5 md:px-10">
@@ -138,11 +137,7 @@ function Home() {
           </h2>
 
           <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-14 md:grid-cols-12">
-            <ProductCard
-              product={products[0]}
-              className="md:col-span-7"
-              ratio="aspect-[4/5]"
-            />
+            <ProductCard product={products[0]} className="md:col-span-7" ratio="aspect-[4/5]" />
             <ProductCard
               product={products[1]}
               className="md:col-span-4 md:col-start-9 md:mt-32"
@@ -158,11 +153,7 @@ function Home() {
               className="md:col-span-5 md:col-start-7 md:-mt-20"
               ratio="aspect-[3/4]"
             />
-            <ProductCard
-              product={products[4]}
-              className="md:col-span-5"
-              ratio="aspect-[3/4]"
-            />
+            <ProductCard product={products[4]} className="md:col-span-5" ratio="aspect-[3/4]" />
             <ProductCard
               product={products[5]}
               className="md:col-span-4 md:col-start-8 md:mt-24"
@@ -193,10 +184,7 @@ function Home() {
           }}
         />
         <div className="relative mx-auto grid max-w-[1600px] gap-10 px-5 md:grid-cols-12 md:px-10">
-
-          <p className="label-xs text-muted-foreground md:col-span-3">
-            Become a Creator
-          </p>
+          <p className="label-xs text-muted-foreground md:col-span-3">Become a Creator</p>
           <div className="md:col-span-8">
             <h2 className="max-w-[20ch] font-serif text-4xl leading-[1.05] md:text-7xl">
               Your atelier deserves a gallery, not a shelf.

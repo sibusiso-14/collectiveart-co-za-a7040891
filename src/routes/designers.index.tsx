@@ -57,9 +57,7 @@ function DesignerIndex() {
                 {productsByDesigner(d.slug).length} pieces
               </span>
             </div>
-            <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
-              {d.bio}
-            </p>
+            <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">{d.bio}</p>
           </Link>
         ))}
       </div>

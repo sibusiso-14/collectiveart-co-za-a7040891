@@ -10,8 +10,8 @@ export function SiteFooter() {
             Where independent fashion meets art.
           </p>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
-            A curated marketplace for independent ateliers. Every piece is made in small
-            runs by the designer who signed it.
+            A curated marketplace for independent ateliers. Every piece is made in small runs by the
+            designer who signed it.
           </p>
         </div>
 
@@ -43,10 +43,7 @@ export function SiteFooter() {
           <Link to="/terms" className="w-fit hover:underline">
             Terms & Conditions
           </Link>
-          <a
-            href="mailto:studio@collaborate.art"
-            className="w-fit hover:underline"
-          >
+          <a href="mailto:studio@collaborate.art" className="w-fit hover:underline">
             studio@collaborate.art
           </a>
         </div>

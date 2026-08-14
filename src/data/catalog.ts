@@ -124,7 +124,6 @@ export const designers: Designer[] = [
   },
 ];
 
-
 export const products: Product[] = [
   {
     id: "destroyed-tee",
@@ -401,11 +400,9 @@ export const products: Product[] = [
   },
 ];
 
-
 export const categories: Category[] = ["Tops", "Outerwear", "Bottoms", "Accessories"];
 
 export const getDesigner = (slug: string) => designers.find((d) => d.slug === slug);
 export const getProduct = (id: string) => products.find((p) => p.id === id);
-export const productsByDesigner = (slug: string) =>
-  products.filter((p) => p.designer === slug);
+export const productsByDesigner = (slug: string) => products.filter((p) => p.designer === slug);
 export const formatPrice = (n: number) => `$${n.toLocaleString("en-US")}`;

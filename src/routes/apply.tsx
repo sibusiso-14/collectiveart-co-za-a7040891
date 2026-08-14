@@ -58,8 +58,8 @@ function Apply() {
               Sell where the work is taken seriously.
             </h1>
             <p className="mt-8 max-w-lg text-base leading-relaxed text-muted-foreground">
-              Collaborate.art is a multi-vendor marketplace built for independent ateliers
-              — separate vendor profiles, separate inventory, one editorial storefront.
+              Collaborate.art is a multi-vendor marketplace built for independent ateliers —
+              separate vendor profiles, separate inventory, one editorial storefront.
             </p>
           </div>
           <div className="md:col-span-5 md:col-start-8">
@@ -99,12 +99,10 @@ function Apply() {
       <section className="mx-auto max-w-[1600px] px-5 py-16 md:px-10 md:py-24">
         <div className="grid gap-10 md:grid-cols-12">
           <div className="md:col-span-4">
-            <h2 className="font-serif text-4xl leading-tight md:text-5xl">
-              Apply to sell
-            </h2>
+            <h2 className="font-serif text-4xl leading-tight md:text-5xl">Apply to sell</h2>
             <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-              Applications are reviewed by a person, not a form filter. Tell us what you
-              make and how you make it.
+              Applications are reviewed by a person, not a form filter. Tell us what you make and
+              how you make it.
             </p>
           </div>
 
@@ -120,10 +118,7 @@ function Apply() {
             <Field label="Email" name="email" type="email" />
             <Field label="Portfolio or Instagram" name="portfolio" />
             <div className="border-b border-border py-5">
-              <label
-                htmlFor="about"
-                className="label-xs block text-muted-foreground"
-              >
+              <label htmlFor="about" className="label-xs block text-muted-foreground">
                 What do you make?
               </label>
               <textarea
@@ -154,15 +149,7 @@ function Apply() {
   );
 }
 
-function Field({
-  label,
-  name,
-  type = "text",
-}: {
-  label: string;
-  name: string;
-  type?: string;
-}) {
+function Field({ label, name, type = "text" }: { label: string; name: string; type?: string }) {
   return (
     <div className="border-b border-border py-5">
       <label htmlFor={name} className="label-xs block text-muted-foreground">

@@ -15,8 +15,7 @@ export const Route = createFileRoute("/shop")({
       { property: "og:title", content: "Shop All — Collaborate.art" },
       {
         property: "og:description",
-        content:
-          "Filterable catalogue of small-run pieces from independent fashion designers.",
+        content: "Filterable catalogue of small-run pieces from independent fashion designers.",
       },
     ],
   }),
@@ -73,11 +72,7 @@ function Shop() {
               All
             </FilterButton>
             {categories.map((c) => (
-              <FilterButton
-                key={c}
-                active={category === c}
-                onClick={() => setCategory(c)}
-              >
+              <FilterButton key={c} active={category === c} onClick={() => setCategory(c)}>
                 {c}
               </FilterButton>
             ))}
@@ -140,9 +135,7 @@ function FilterGroup({ title, children }: { title: string; children: React.React
   return (
     <div className="mb-10">
       <p className="label-xs mb-4 text-muted-foreground">{title}</p>
-      <div className="flex flex-wrap gap-x-4 gap-y-2 md:flex-col md:items-start">
-        {children}
-      </div>
+      <div className="flex flex-wrap gap-x-4 gap-y-2 md:flex-col md:items-start">{children}</div>
     </div>
   );
 }
@@ -161,7 +154,9 @@ function FilterButton({
       type="button"
       onClick={onClick}
       className={`text-left text-sm transition-colors ${
-        active ? "text-foreground underline underline-offset-4" : "text-muted-foreground hover:text-foreground"
+        active
+          ? "text-foreground underline underline-offset-4"
+          : "text-muted-foreground hover:text-foreground"
       }`}
     >
       {children}

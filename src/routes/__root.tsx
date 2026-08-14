@@ -16,8 +16,6 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { Toaster } from "@/components/ui/sonner";
 import { supabase } from "@/integrations/supabase/client";
 
-
-
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -152,5 +150,3 @@ function RootComponent() {
     </QueryClientProvider>
   );
 }
-
-

@@ -1,11 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ProductCard } from "@/components/ProductCard";
-import {
-  getDesigner,
-  instagramDM,
-  instagramProfile,
-  productsByDesigner,
-} from "@/data/catalog";
+import { getDesigner, instagramDM, instagramProfile, productsByDesigner } from "@/data/catalog";
 
 export const Route = createFileRoute("/designers/$slug")({
   loader: ({ params }) => {
@@ -16,7 +11,10 @@ export const Route = createFileRoute("/designers/$slug")({
   head: ({ loaderData }) => {
     if (!loaderData) {
       return {
-        meta: [{ title: "Designer not found — Collaborate.art" }, { name: "robots", content: "noindex" }],
+        meta: [
+          { title: "Designer not found — Collaborate.art" },
+          { name: "robots", content: "noindex" },
+        ],
       };
     }
     const { designer } = loaderData;
@@ -57,9 +55,7 @@ function DesignerPage() {
         </Link>
         <div className="mt-8 grid gap-10 md:grid-cols-12">
           <div className="md:col-span-6">
-            <h1 className="font-serif text-5xl leading-[1] md:text-8xl">
-              {designer.name}
-            </h1>
+            <h1 className="font-serif text-5xl leading-[1] md:text-8xl">{designer.name}</h1>
             <p className="label-xs mt-6 text-muted-foreground">
               {designer.discipline} — {designer.location} — Est. {designer.since}
             </p>
@@ -68,9 +64,7 @@ function DesignerPage() {
             <p className="font-serif text-2xl leading-snug italic md:text-3xl">
               “{designer.statement}”
             </p>
-            <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
-              {designer.bio}
-            </p>
+            <p className="mt-6 text-sm leading-relaxed text-muted-foreground">{designer.bio}</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href={instagramDM(designer.instagram)}
@@ -102,7 +96,9 @@ function DesignerPage() {
             <div
               key={i}
               className={`aspect-[3/4] overflow-hidden bg-secondary ${
-                i < designer.lookbook.length - 1 ? "border-b border-border md:border-b-0 md:border-r" : ""
+                i < designer.lookbook.length - 1
+                  ? "border-b border-border md:border-b-0 md:border-r"
+                  : ""
               }`}
             >
               <img
