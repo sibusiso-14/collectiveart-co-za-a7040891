@@ -1,7 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { useAuth } from "@/hooks/useAuth";
-import markAsset from "@/assets/collaborate-mark-square.png.asset.json";
 
 const nav = [
   { to: "/shop", label: "Shop" },
@@ -25,11 +24,11 @@ export function SiteHeader() {
           aria-label="Collaborate.art home"
         >
           <img
-            src={markAsset.url}
+            src="/1785664352696.png"
             alt="Collaborate.art monogram"
             width={800}
             height={800}
-            className="h-9 w-9 rounded-full object-cover md:h-11 md:w-11"
+            className="h-9 w-9 rounded-full object-cover object-center md:h-11 md:w-11"
           />
           <span className="font-serif text-xl tracking-tight text-foreground md:text-2xl">
             Collaborate<span className="text-muted-foreground">.art</span>
