@@ -1,44 +1,24 @@
-import dd1 from "@/assets/dd1.jpg.asset.json";
-import dd2 from "@/assets/dd2.jpg.asset.json";
-import dd3 from "@/assets/dd3.jpg.asset.json";
-import dd4 from "@/assets/dd4.jpg.asset.json";
-import dd5 from "@/assets/dd5.jpg.asset.json";
-import dd6 from "@/assets/dd6.jpg.asset.json";
-import gb1 from "@/assets/gb1.jpg.asset.json";
-import gb2 from "@/assets/gb2.jpg.asset.json";
-import gb3 from "@/assets/gb3.jpg.asset.json";
-import gb4 from "@/assets/gb4.jpg.asset.json";
-import bc1 from "@/assets/bc1.jpg.asset.json";
-import bc2 from "@/assets/bc2.jpg.asset.json";
-import bc3 from "@/assets/bc3.jpg.asset.json";
-import bc4 from "@/assets/bc4.jpg.asset.json";
-import bc5 from "@/assets/bc5.jpg.asset.json";
-import lc1 from "@/assets/lc1.jpg.asset.json";
-import lc2 from "@/assets/lc2.jpg.asset.json";
-import lc3 from "@/assets/lc3.jpg.asset.json";
-import lc4 from "@/assets/lc4.jpg.asset.json";
-import lc5 from "@/assets/lc5.jpg.asset.json";
+import DD1 from "@/assets/dd1.jpg";
+import DD2 from "@/assets/dd2.jpg";
+import DD3 from "@/assets/dd3.jpg";
+import DD4 from "@/assets/dd4.jpg";
+import DD5 from "@/assets/dd5.jpg";
+import DD6 from "@/assets/dd6.jpg";
+import GB1 from "@/assets/gb1.jpg";
+import GB2 from "@/assets/gb2.jpg";
+import GB3 from "@/assets/gb3.jpg";
+import GB4 from "@/assets/gb4.jpg";
+import BC1 from "@/assets/bc1.jpg";
+import BC2 from "@/assets/bc2.jpg";
+import BC3 from "@/assets/bc3.jpg";
+import BC4 from "@/assets/bc4.jpg";
+import BC5 from "@/assets/bc5.jpg";
+import LC1 from "@/assets/lc1.jpg";
+import LC2 from "@/assets/lc2.jpg";
+import LC3 from "@/assets/lc3.jpg";
+import LC4 from "@/assets/lc4.jpg";
+import LC5 from "@/assets/lc5.jpg";
 
-const DD1 = dd1.url;
-const DD2 = dd2.url;
-const DD3 = dd3.url;
-const DD4 = dd4.url;
-const DD5 = dd5.url;
-const DD6 = dd6.url;
-const GB1 = gb1.url;
-const GB2 = gb2.url;
-const GB3 = gb3.url;
-const GB4 = gb4.url;
-const BC1 = bc1.url;
-const BC2 = bc2.url;
-const BC3 = bc3.url;
-const BC4 = bc4.url;
-const BC5 = bc5.url;
-const LC1 = lc1.url;
-const LC2 = lc2.url;
-const LC3 = lc3.url;
-const LC4 = lc4.url;
-const LC5 = lc5.url;
 
 export const heroImage = 2F1785664352696 ;
 
@@ -408,4 +388,9 @@ export const getDesigner = (slug: string) => designers.find((d) => d.slug === sl
 export const getProduct = (id: string) => products.find((p) => p.id === id);
 export const productsByDesigner = (slug: string) =>
   products.filter((p) => p.designer === slug);
-export const formatPrice = (n: number) => `$${n.toLocaleString("en-US")}`;
+export const formatPrice = (n: number) =>
+  new Intl.NumberFormat("en-ZA", {
+    style: "currency",
+    currency: "ZAR",
+    minimumFractionDigits: 0,
+  }).format(n);

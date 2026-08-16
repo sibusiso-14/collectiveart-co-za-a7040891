@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
-import markAsset from "@/assets/collaborate-mark-square.png.asset.json";
+import mark from "@/assets/collaborate-mark-square.png";
 import { ProductCard } from "@/components/ProductCard";
 import { designers, products } from "@/data/catalog";
 
@@ -34,7 +34,7 @@ function Home() {
       <section className="relative overflow-hidden border-b border-border bg-background">
         {/* Large logo watermark */}
         <img
-          src={markAsset.url}
+         src={mark}
           alt=""
           aria-hidden="true"
           width={800}
@@ -180,7 +180,7 @@ function Home() {
       <section className="relative overflow-hidden py-20 md:py-32">
         {/* Oversized monogram watermark */}
         <img
-          src={markAsset.url}
+          src={mark}
           alt=""
           aria-hidden="true"
           loading="lazy"
