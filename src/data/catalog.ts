@@ -20,7 +20,7 @@ import LC4 from "@/assets/lc4.jpg";
 import LC5 from "@/assets/lc5.jpg";
 
 
-export const heroImage = 2F1785664352696 ;
+export const heroImage = GB4;
 
 export type Category = "Tops" | "Outerwear" | "Bottoms" | "Accessories";
 
