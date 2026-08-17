@@ -222,7 +222,7 @@ export const products: Product[] = [
     name: "Cross Panel Leather Pant",
     category: "Bottoms",
     designer: "galbakaline",
-    images: [GB2, GB4],
+    images: [GB4, GB2],
     fabric: "Panelled leather, oxblood and black",
     care: "Wipe clean. Condition twice yearly.",
     description:
@@ -306,7 +306,7 @@ export const products: Product[] = [
     name: "Balaclava Cropped Tank",
     category: "Tops",
     designer: "designing-balaclava",
-    images: [BC2, BC5],
+    images: [BC5, BC2],
     fabric: "Cotton rib jersey, black",
     care: "Machine wash cold. Hang dry.",
     description:
