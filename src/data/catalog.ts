@@ -43,7 +43,6 @@ export const instagramDM = (handle: string) => `https://ig.me/m/${handle}`;
 export type Product = {
   id: string;
   name: string;
-  price: number;
   category: Category;
   designer: string; // slug
   images: string[];
@@ -109,7 +108,6 @@ export const products: Product[] = [
   {
     id: "destroyed-tee",
     name: "Destroyed Layered Tee",
-    price: 120,
     category: "Tops",
     designer: "damnation-designs",
     images: [DD1, DD2, DD6],
@@ -122,7 +120,6 @@ export const products: Product[] = [
   {
     id: "damnation-graphic-tee",
     name: "Damnation Skate Graphic Tee",
-    price: 95,
     category: "Tops",
     designer: "damnation-designs",
     images: [DD5, DD6, DD4],
@@ -135,7 +132,6 @@ export const products: Product[] = [
   {
     id: "skate-crossbody",
     name: "Crossbody Skateboard Bag",
-    price: 180,
     category: "Accessories",
     designer: "damnation-designs",
     images: [DD3, DD1],
@@ -148,7 +144,6 @@ export const products: Product[] = [
   {
     id: "frayed-shorts",
     name: "Frayed Patchwork Shorts",
-    price: 140,
     category: "Bottoms",
     designer: "damnation-designs",
     images: [DD4, DD6],
@@ -161,7 +156,6 @@ export const products: Product[] = [
   {
     id: "stacked-trouser",
     name: "Stacked Padded Trouser",
-    price: 210,
     category: "Bottoms",
     designer: "damnation-designs",
     images: [DD2, DD1],
@@ -174,7 +168,6 @@ export const products: Product[] = [
   {
     id: "frayed-bucket-hat",
     name: "Frayed Bucket Hat",
-    price: 70,
     category: "Accessories",
     designer: "damnation-designs",
     images: [DD6, DD4],
@@ -187,7 +180,6 @@ export const products: Product[] = [
   {
     id: "fur-hoodie",
     name: "Signature Fur Hoodie",
-    price: 320,
     category: "Outerwear",
     designer: "galbakaline",
     images: [GB1, GB2],
@@ -200,7 +192,6 @@ export const products: Product[] = [
   {
     id: "galba-hoodie",
     name: "Galbakaline Flame Hoodie",
-    price: 180,
     category: "Tops",
     designer: "galbakaline",
     images: [GB2, GB1],
@@ -213,7 +204,6 @@ export const products: Product[] = [
   {
     id: "cross-leather-pant",
     name: "Cross Panel Leather Pant",
-    price: 390,
     category: "Bottoms",
     designer: "galbakaline",
     images: [GB2, GB4],
@@ -226,7 +216,6 @@ export const products: Product[] = [
   {
     id: "denim-patch-set",
     name: "Denim Patchwork Hooded Set",
-    price: 450,
     category: "Outerwear",
     designer: "galbakaline",
     images: [GB3, GB1],
@@ -239,7 +228,6 @@ export const products: Product[] = [
   {
     id: "reversible-shell",
     name: "Reversible Waterproof Jacket",
-    price: 280,
     category: "Outerwear",
     designer: "galbakaline",
     images: [GB4, GB3],
@@ -252,7 +240,6 @@ export const products: Product[] = [
   {
     id: "galaxy-zip-hoodie",
     name: "Contagious Galaxy Zip Hoodie",
-    price: 260,
     category: "Outerwear",
     designer: "designing-balaclava",
     images: [BC4, BC5],
@@ -265,7 +252,6 @@ export const products: Product[] = [
   {
     id: "balaclava-zip-hoodie-white",
     name: "Balaclava Zip Hoodie — Bone",
-    price: 240,
     category: "Outerwear",
     designer: "designing-balaclava",
     images: [BC3, BC4],
@@ -278,7 +264,6 @@ export const products: Product[] = [
   {
     id: "balaclava-tank",
     name: "Balaclava Knit Tank",
-    price: 85,
     category: "Tops",
     designer: "designing-balaclava",
     images: [BC1, BC3],
@@ -291,7 +276,6 @@ export const products: Product[] = [
   {
     id: "contrast-cargo-denim",
     name: "Contrast Stitch Cargo Denim",
-    price: 190,
     category: "Bottoms",
     designer: "designing-balaclava",
     images: [BC2, BC1],
@@ -304,7 +288,6 @@ export const products: Product[] = [
   {
     id: "balaclava-crop-tank",
     name: "Balaclava Cropped Tank",
-    price: 75,
     category: "Tops",
     designer: "designing-balaclava",
     images: [BC2, BC5],
@@ -317,7 +300,6 @@ export const products: Product[] = [
   {
     id: "quantum-strider-trouser",
     name: "Quantum Strider Panelled Trouser",
-    price: 290,
     category: "Bottoms",
     designer: "last-cloud-designs",
     images: [LC3, LC5],
@@ -330,7 +312,6 @@ export const products: Product[] = [
   {
     id: "aetheline-satin-stack",
     name: "Aetheline Stacked Satin Pant",
-    price: 260,
     category: "Bottoms",
     designer: "last-cloud-designs",
     images: [LC4, LC3],
@@ -343,7 +324,6 @@ export const products: Product[] = [
   {
     id: "aetheline-crop-set",
     name: "Aetheline Mesh Crop Tee",
-    price: 110,
     category: "Tops",
     designer: "last-cloud-designs",
     images: [LC5, LC4],
@@ -356,7 +336,6 @@ export const products: Product[] = [
   {
     id: "lastcloud-mint-set",
     name: "To The World Mint Set",
-    price: 240,
     category: "Outerwear",
     designer: "last-cloud-designs",
     images: [LC2, LC1],
@@ -369,7 +348,6 @@ export const products: Product[] = [
   {
     id: "denim-cut-kids-set",
     name: "Denim Cut Two-Piece — Kids",
-    price: 150,
     category: "Outerwear",
     designer: "last-cloud-designs",
     images: [LC1, LC2],
@@ -388,9 +366,3 @@ export const getDesigner = (slug: string) => designers.find((d) => d.slug === sl
 export const getProduct = (id: string) => products.find((p) => p.id === id);
 export const productsByDesigner = (slug: string) =>
   products.filter((p) => p.designer === slug);
-export const formatPrice = (n: number) =>
-  new Intl.NumberFormat("en-ZA", {
-    style: "currency",
-    currency: "ZAR",
-    minimumFractionDigits: 0,
-  }).format(n);

@@ -1,13 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { useState } from "react";
-import {
-  formatPrice,
-  getDesigner,
-  getProduct,
-  instagramDM,
-  instagramProfile,
-  productsByDesigner,
-} from "@/data/catalog";
+import { getDesigner, getProduct, instagramDM, instagramProfile, productsByDesigner } from "@/data/catalog";
 import { ProductCard } from "@/components/ProductCard";
 
 export const Route = createFileRoute("/product/$productId")({
@@ -88,12 +81,6 @@ function ProductPage() {
             <h1 className="mt-4 font-serif text-4xl leading-tight md:text-5xl">
               {product.name}
             </h1>
-            <p className="mt-4 text-lg">
-              {formatPrice(product.price)}{" "}
-              <span className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                guide price
-              </span>
-            </p>
             <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
               {product.description}
             </p>

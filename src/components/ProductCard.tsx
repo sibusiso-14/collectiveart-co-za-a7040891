@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { formatPrice, getDesigner, type Product } from "@/data/catalog";
+import { getDesigner, type Product } from "@/data/catalog";
 
 export function ProductCard({
   product,
@@ -33,7 +33,7 @@ export function ProductCard({
             {designer?.name}
           </p>
         </div>
-        <span className="shrink-0 text-sm">{formatPrice(product.price)}</span>
+        
       </div>
     </Link>
   );

@@ -23,35 +23,23 @@ export const Route = createFileRoute("/shop")({
   component: Shop,
 });
 
-const priceBands = [
-  { label: "Under $300", min: 0, max: 299 },
-  { label: "$300 — $700", min: 300, max: 700 },
-  { label: "Over $700", min: 701, max: Infinity },
-];
-
 function Shop() {
   const [category, setCategory] = useState<Category | null>(null);
   const [designer, setDesigner] = useState<string | null>(null);
-  const [band, setBand] = useState<number | null>(null);
 
   const filtered = useMemo(
     () =>
       products.filter((p) => {
         if (category && p.category !== category) return false;
         if (designer && p.designer !== designer) return false;
-        if (band !== null) {
-          const b = priceBands[band];
-          if (p.price < b.min || p.price > b.max) return false;
-        }
         return true;
       }),
-    [category, designer, band],
+    [category, designer],
   );
 
   const clear = () => {
     setCategory(null);
     setDesigner(null);
-    setBand(null);
   };
 
   return (
@@ -94,17 +82,6 @@ function Shop() {
                 onClick={() => setDesigner(d.slug)}
               >
                 {d.name}
-              </FilterButton>
-            ))}
-          </FilterGroup>
-
-          <FilterGroup title="Price">
-            <FilterButton active={band === null} onClick={() => setBand(null)}>
-              Any
-            </FilterButton>
-            {priceBands.map((b, i) => (
-              <FilterButton key={b.label} active={band === i} onClick={() => setBand(i)}>
-                {b.label}
               </FilterButton>
             ))}
           </FilterGroup>
