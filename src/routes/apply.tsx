@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { products } from "@/data/catalog";
+import { supabase } from "@/integrations/supabase/client";
 
 export const Route = createFileRoute("/apply")({
   head: () => ({
@@ -47,6 +48,8 @@ const steps = [
 
 function Apply() {
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   return (
     <div>
@@ -110,8 +113,31 @@ function Apply() {
 
           <form
             className="md:col-span-7 md:col-start-6"
-            onSubmit={(e) => {
+            onSubmit={async (e) => {
               e.preventDefault();
+              setError(null);
+              setSending(true);
+
+              const form = e.currentTarget;
+              const data = new FormData(form);
+
+              const { error: fnError } = await supabase.functions.invoke("send-application", {
+                body: {
+                  name: data.get("name"),
+                  label: data.get("label"),
+                  email: data.get("email"),
+                  portfolio: data.get("portfolio"),
+                  about: data.get("about"),
+                },
+              });
+
+              setSending(false);
+
+              if (fnError) {
+                setError("Something went wrong — please try again or email us directly.");
+                return;
+              }
+
               setSent(true);
             }}
           >
@@ -138,10 +164,14 @@ function Apply() {
 
             <button
               type="submit"
-              className="mt-10 border border-foreground bg-foreground px-10 py-4 text-[0.7rem] uppercase tracking-[0.22em] text-background transition-colors duration-300 hover:bg-background hover:text-foreground"
+              disabled={sending || sent}
+              className="mt-10 border border-foreground bg-foreground px-10 py-4 text-[0.7rem] uppercase tracking-[0.22em] text-background transition-colors duration-300 hover:bg-background hover:text-foreground disabled:opacity-50"
             >
-              {sent ? "Application received" : "Submit application"}
+              {sent ? "Application received" : sending ? "Sending…" : "Submit application"}
             </button>
+            {error && (
+              <p className="mt-4 text-sm text-destructive">{error}</p>
+            )}
             {sent && (
               <p className="mt-4 text-sm text-muted-foreground">
                 Thank you — we'll be in touch within ten days.
