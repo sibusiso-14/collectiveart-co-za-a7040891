@@ -18,6 +18,10 @@ import LC2 from "@/assets/lc2.jpg";
 import LC3 from "@/assets/lc3.jpg";
 import LC4 from "@/assets/lc4.jpg";
 import LC5 from "@/assets/lc5.jpg";
+import SK1 from "@/assets/SK1.jpg";
+import SK2 from "@/assets/SK2.jpg";
+import SK3 from "@/assets/SK3.jpg";
+import SK4 from "@/assets/SK4.jpg";
 
 
 export const heroImage = GB4;
@@ -100,6 +104,18 @@ export const designers: Designer[] = [
     portrait: LC3,
     lookbook: [LC4, LC2, LC5],
     instagram: "lastcloud_designs",
+  },
+  {
+    slug: "shonakidd",
+    name: "ShonaKidd",
+    location: "Cosmo City, Johannesburg",
+    discipline: "Music-inspired streetwear & printed tees",
+    since: "2025",
+    bio: "ShonaKidd is a fashion and lifestyle brand born from the connection between music, street culture and self-expression, carrying Zimbabwean heritage into the streets of Johannesburg. Pieces for people who move differently, think independently and define their own identity through what they wear.",
+    statement: "Define Your Style.",
+    portrait: SK1,
+    lookbook: [SK2, SK3, SK4],
+    instagram: "shonakiddwtw",
   },
 ];
 
@@ -356,6 +372,30 @@ export const products: Product[] = [
     description:
       "The SS2025 unisex kids two-piece: a short-sleeve denim camp shirt and cargo short traced in red stitch, with the embroidered Last Cloud mark on the pocket.",
     sizes: ["4Y", "6Y", "8Y", "10Y"],
+  },
+  {
+    id: "shonakidd-flow-rider-tee",
+    name: "Flow Rider Printed Tee",
+    category: "Tops",
+    designer: "shonakidd",
+    images: [SK1, SK2],
+    fabric: "Heavyweight cotton jersey, screen print",
+    care: "Machine wash cold inside out. Tumble dry low.",
+    description:
+      "A bold graphic tee built for professional flow riders — ShonaKidd's music-and-streetwear energy in a heavyweight cotton print.",
+    sizes: ["S", "M", "L", "XL"],
+  },
+  {
+    id: "shonakidd-define-your-style-tee",
+    name: "Define Your Style Tee",
+    category: "Tops",
+    designer: "shonakidd",
+    images: [SK3, SK4],
+    fabric: "Heavyweight cotton jersey, screen print",
+    care: "Machine wash cold inside out. Tumble dry low.",
+    description:
+      "Where fashion meets the flow — a statement tee for anyone who isn't afraid to define their own identity.",
+    sizes: ["S", "M", "L", "XL"],
   },
 ];
 
