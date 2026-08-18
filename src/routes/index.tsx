@@ -7,7 +7,7 @@ import { designers, products } from "@/data/catalog";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "CollaborateArt — South Africa's Finest Curated Fashion Designers" },
+      { title: "Collaborate.art — South Africa's Finest Curated Fashion Designers" },
       {
         name: "description",
         content:
@@ -15,7 +15,7 @@ export const Route = createFileRoute("/")({
       },
       {
         property: "og:title",
-        content: "CollaborateArt — South Africa's Finest Curated Fashion Designers",
+        content: "Collaborate.art — South Africa's Finest Curated Fashion Designers",
       },
       {
         property: "og:description",
