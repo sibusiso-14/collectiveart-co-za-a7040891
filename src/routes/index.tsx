@@ -72,6 +72,21 @@ function Home() {
         </div>
       </section>
 
+      {/* Explicit app purpose statement for clarity */}
+      <section className="border-b border-border py-12 md:py-16">
+        <div className="mx-auto max-w-[1600px] px-5 md:px-10">
+          <h2 className="font-serif text-2xl md:text-3xl">What is Collaborate.art?</h2>
+          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
+            Collaborate.art is an online marketplace where shoppers can browse and buy
+            small-run fashion pieces directly from independent South African designers.
+            Designers apply to list their collections, shoppers create an account to
+            browse the catalogue and place orders, and brand ambassadors can apply to
+            promote featured designers. Signing in with Google lets you save your
+            account details and manage orders and applications on the site.
+          </p>
+        </div>
+      </section>
+
       {/* Image compilation — the wardrobe at a glance */}
       <section className="border-b border-border py-10 md:py-16">
         <div className="mx-auto max-w-[1600px] px-5 md:px-10">
