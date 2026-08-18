@@ -212,10 +212,10 @@ function TermsPage() {
           <p className="text-muted-foreground">
             Questions about these terms? Contact us at{" "}
             <a
-              href="mailto:studio@collaborate.art"
+              href="mailto:collaborateart@outlook.com"
               className="underline underline-offset-4 transition-colors hover:text-foreground"
             >
-              studio@collaborate.art
+              collaborateart@outlook.com
             </a>
             .
           </p>

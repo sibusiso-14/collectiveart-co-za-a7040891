@@ -44,10 +44,10 @@ export function SiteFooter() {
             Terms & Conditions
           </Link>
           <a
-            href="mailto:studio@collaborate.art"
+            href="mailto:collaborateart@outlook.com"
             className="w-fit hover:underline"
           >
-            studio@collaborate.art
+            collaborateart@outlook.com
           </a>
         </div>
 
