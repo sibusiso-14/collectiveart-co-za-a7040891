@@ -53,6 +53,11 @@ function Home() {
           <p className="mt-5 max-w-md text-lg leading-relaxed text-foreground/80">
             The blueprint of life is threaded on fabric.
           </p>
+          <p className="mt-3 max-w-xl text-sm leading-relaxed text-foreground/70">
+            Collaborate.art is a curated marketplace connecting shoppers directly with
+            independent South African fashion designers — browse small-run collections,
+            order straight from the atelier, and discover new talent.
+          </p>
           <div className="mt-10 flex flex-wrap items-center gap-8">
             <Link
               to="/shop"
