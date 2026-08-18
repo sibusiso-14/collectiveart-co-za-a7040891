@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
+import { supabase } from "../integrations/supabase/client";
 
 export const Route = createFileRoute("/ambassadors")({
   head: () => ({
@@ -48,6 +49,8 @@ const perks = [
 
 function Ambassadors() {
   const [sent, setSent] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [submitting, setSubmitting] = useState(false);
 
   return (
     <div>
@@ -106,8 +109,23 @@ function Ambassadors() {
 
           <form
             className="md:col-span-7 md:col-start-6"
-            onSubmit={(e) => {
+            onSubmit={async (e) => {
               e.preventDefault();
+              setSubmitting(true);
+              setError(null);
+              const formData = new FormData(e.currentTarget);
+              const { error } = await supabase.from("ambassadors").insert({
+                name: formData.get("amb-name") as string,
+                email: formData.get("amb-email") as string,
+                social: formData.get("amb-social") as string,
+                city: formData.get("amb-city") as string,
+                about: formData.get("amb-about") as string,
+              });
+              setSubmitting(false);
+              if (error) {
+                setError("Something went wrong. Please try again.");
+                return;
+              }
               setSent(true);
             }}
           >
