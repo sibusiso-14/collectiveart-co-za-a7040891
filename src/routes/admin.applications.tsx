@@ -34,9 +34,14 @@ function AdminApplications() {
   const [applications, setApplications] = useState<Application[] | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+  const [deletingId, setDeletingId] = useState<string | null>(null);
 
   useEffect(() => {
     let cancelled = false;
+    load();
+    return () => {
+      cancelled = true;
+    };
 
     async function load() {
       const [creatorsResult, ambassadorsResult] = await Promise.all([
@@ -70,12 +75,24 @@ function AdminApplications() {
       setApplications(combined);
       setLoading(false);
     }
-
-    load();
-    return () => {
-      cancelled = true;
-    };
   }, []);
+
+  async function handleDelete(app: Application) {
+    const confirmed = window.confirm(`Delete the application from "${app.name}"? This can't be undone.`);
+    if (!confirmed) return;
+
+    setDeletingId(app.id);
+    const table = app.type === "creator" ? "applications" : "ambassadors";
+    const { error: deleteError } = await supabase.from(table).delete().eq("id", app.id);
+    setDeletingId(null);
+
+    if (deleteError) {
+      window.alert("Could not delete this application. Please try again.");
+      return;
+    }
+
+    setApplications((prev) => (prev ? prev.filter((a) => a.id !== app.id) : prev));
+  }
 
   return (
     <div className="mx-auto max-w-4xl px-5 py-14 md:px-10 md:py-20">
@@ -104,9 +121,19 @@ function AdminApplications() {
                     {app.type === "creator" ? "Creator" : "Ambassador"}
                   </span>
                 </div>
-                <p className="text-xs text-muted-foreground">
-                  {new Date(app.created_at).toLocaleString()}
-                </p>
+                <div className="flex items-center gap-4">
+                  <p className="text-xs text-muted-foreground">
+                    {new Date(app.created_at).toLocaleString()}
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => handleDelete(app)}
+                    disabled={deletingId === app.id}
+                    className="text-xs uppercase tracking-wide text-destructive underline underline-offset-4 disabled:opacity-50"
+                  >
+                    {deletingId === app.id ? "Deleting…" : "Delete"}
+                  </button>
+                </div>
               </div>
               {app.type === "creator" && app.label && (
                 <p className="mt-1 text-sm text-muted-foreground">{app.label}</p>
