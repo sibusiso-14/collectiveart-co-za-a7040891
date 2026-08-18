@@ -19,6 +19,7 @@ import { Route as ShopRouteImport } from './routes/shop'
 import { Route as StylistsRouteImport } from './routes/stylists'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as AuthenticatedAccountRouteImport } from './routes/_authenticated/account'
+import { Route as AdminApplicationsRouteImport } from './routes/admin.applications'
 import { Route as DesignersIndexRouteImport } from './routes/designers.index'
 import { Route as DesignersSlugRouteImport } from './routes/designers.$slug'
 import { Route as ProductProductIdRouteImport } from './routes/product.$productId'
@@ -72,6 +73,11 @@ const AuthenticatedAccountRoute = AuthenticatedAccountRouteImport.update({
   path: '/account',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const AdminApplicationsRoute = AdminApplicationsRouteImport.update({
+  id: '/admin/applications',
+  path: '/admin/applications',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DesignersIndexRoute = DesignersIndexRouteImport.update({
   id: '/designers/',
   path: '/designers/',
@@ -98,6 +104,7 @@ export interface FileRoutesByFullPath {
   '/stylists': typeof StylistsRoute
   '/terms': typeof TermsRoute
   '/account': typeof AuthenticatedAccountRoute
+  '/admin/applications': typeof AdminApplicationsRoute
   '/designers/$slug': typeof DesignersSlugRoute
   '/product/$productId': typeof ProductProductIdRoute
   '/designers/': typeof DesignersIndexRoute
@@ -112,6 +119,7 @@ export interface FileRoutesByTo {
   '/stylists': typeof StylistsRoute
   '/terms': typeof TermsRoute
   '/account': typeof AuthenticatedAccountRoute
+  '/admin/applications': typeof AdminApplicationsRoute
   '/designers/$slug': typeof DesignersSlugRoute
   '/product/$productId': typeof ProductProductIdRoute
   '/designers': typeof DesignersIndexRoute
@@ -128,6 +136,7 @@ export interface FileRoutesById {
   '/stylists': typeof StylistsRoute
   '/terms': typeof TermsRoute
   '/_authenticated/account': typeof AuthenticatedAccountRoute
+  '/admin/applications': typeof AdminApplicationsRoute
   '/designers/$slug': typeof DesignersSlugRoute
   '/product/$productId': typeof ProductProductIdRoute
   '/designers/': typeof DesignersIndexRoute
@@ -144,6 +153,7 @@ export interface FileRouteTypes {
     | '/stylists'
     | '/terms'
     | '/account'
+    | '/admin/applications'
     | '/designers/$slug'
     | '/product/$productId'
     | '/designers/'
@@ -158,6 +168,7 @@ export interface FileRouteTypes {
     | '/stylists'
     | '/terms'
     | '/account'
+    | '/admin/applications'
     | '/designers/$slug'
     | '/product/$productId'
     | '/designers'
@@ -173,6 +184,7 @@ export interface FileRouteTypes {
     | '/stylists'
     | '/terms'
     | '/_authenticated/account'
+    | '/admin/applications'
     | '/designers/$slug'
     | '/product/$productId'
     | '/designers/'
@@ -188,6 +200,7 @@ export interface RootRouteChildren {
   ShopRoute: typeof ShopRoute
   StylistsRoute: typeof StylistsRoute
   TermsRoute: typeof TermsRoute
+  AdminApplicationsRoute: typeof AdminApplicationsRoute
   DesignersSlugRoute: typeof DesignersSlugRoute
   ProductProductIdRoute: typeof ProductProductIdRoute
   DesignersIndexRoute: typeof DesignersIndexRoute
@@ -265,6 +278,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAccountRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/admin/applications': {
+      id: '/admin/applications'
+      path: '/admin/applications'
+      fullPath: '/admin/applications'
+      preLoaderRoute: typeof AdminApplicationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/designers/': {
       id: '/designers/'
       path: '/designers'
@@ -310,6 +330,7 @@ const rootRouteChildren: RootRouteChildren = {
   ShopRoute: ShopRoute,
   StylistsRoute: StylistsRoute,
   TermsRoute: TermsRoute,
+  AdminApplicationsRoute: AdminApplicationsRoute,
   DesignersSlugRoute: DesignersSlugRoute,
   ProductProductIdRoute: ProductProductIdRoute,
   DesignersIndexRoute: DesignersIndexRoute,

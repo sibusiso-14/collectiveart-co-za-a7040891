@@ -121,14 +121,12 @@ function Apply() {
               const form = e.currentTarget;
               const data = new FormData(form);
 
-              const { error: fnError } = await supabase.functions.invoke("send-application", {
-                body: {
-                  name: data.get("name"),
-                  label: data.get("label"),
-                  email: data.get("email"),
-                  portfolio: data.get("portfolio"),
-                  about: data.get("about"),
-                },
+              const { error: fnError } = await supabase.from("applications").insert({
+                name: data.get("name") as string,
+                label: data.get("label") as string,
+                email: data.get("email") as string,
+                portfolio: data.get("portfolio") as string,
+                about: data.get("about") as string,
               });
 
               setSending(false);
