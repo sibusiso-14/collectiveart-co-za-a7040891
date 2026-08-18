@@ -43,6 +43,9 @@ export function SiteFooter() {
           <Link to="/terms" className="w-fit hover:underline">
             Terms & Conditions
           </Link>
+          <Link to="/privacy" className="w-fit hover:underline">
+            Privacy Policy
+          </Link>
           <a
             href="mailto:collaborateart@outlook.com"
             className="w-fit hover:underline"

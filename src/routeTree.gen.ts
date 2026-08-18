@@ -14,6 +14,7 @@ import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/
 import { Route as AmbassadorsRouteImport } from './routes/ambassadors'
 import { Route as ApplyRouteImport } from './routes/apply'
 import { Route as AuthRouteImport } from './routes/auth'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ResetPasswordRouteImport } from './routes/reset-password'
 import { Route as ShopRouteImport } from './routes/shop'
 import { Route as StylistsRouteImport } from './routes/stylists'
@@ -46,6 +47,11 @@ const ApplyRoute = ApplyRouteImport.update({
 const AuthRoute = AuthRouteImport.update({
   id: '/auth',
   path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ResetPasswordRoute = ResetPasswordRouteImport.update({
@@ -99,6 +105,7 @@ export interface FileRoutesByFullPath {
   '/ambassadors': typeof AmbassadorsRoute
   '/apply': typeof ApplyRoute
   '/auth': typeof AuthRoute
+  '/privacy': typeof PrivacyRoute
   '/reset-password': typeof ResetPasswordRoute
   '/shop': typeof ShopRoute
   '/stylists': typeof StylistsRoute
@@ -114,6 +121,7 @@ export interface FileRoutesByTo {
   '/ambassadors': typeof AmbassadorsRoute
   '/apply': typeof ApplyRoute
   '/auth': typeof AuthRoute
+  '/privacy': typeof PrivacyRoute
   '/reset-password': typeof ResetPasswordRoute
   '/shop': typeof ShopRoute
   '/stylists': typeof StylistsRoute
@@ -131,6 +139,7 @@ export interface FileRoutesById {
   '/ambassadors': typeof AmbassadorsRoute
   '/apply': typeof ApplyRoute
   '/auth': typeof AuthRoute
+  '/privacy': typeof PrivacyRoute
   '/reset-password': typeof ResetPasswordRoute
   '/shop': typeof ShopRoute
   '/stylists': typeof StylistsRoute
@@ -148,6 +157,7 @@ export interface FileRouteTypes {
     | '/ambassadors'
     | '/apply'
     | '/auth'
+    | '/privacy'
     | '/reset-password'
     | '/shop'
     | '/stylists'
@@ -163,6 +173,7 @@ export interface FileRouteTypes {
     | '/ambassadors'
     | '/apply'
     | '/auth'
+    | '/privacy'
     | '/reset-password'
     | '/shop'
     | '/stylists'
@@ -179,6 +190,7 @@ export interface FileRouteTypes {
     | '/ambassadors'
     | '/apply'
     | '/auth'
+    | '/privacy'
     | '/reset-password'
     | '/shop'
     | '/stylists'
@@ -196,6 +208,7 @@ export interface RootRouteChildren {
   AmbassadorsRoute: typeof AmbassadorsRoute
   ApplyRoute: typeof ApplyRoute
   AuthRoute: typeof AuthRoute
+  PrivacyRoute: typeof PrivacyRoute
   ResetPasswordRoute: typeof ResetPasswordRoute
   ShopRoute: typeof ShopRoute
   StylistsRoute: typeof StylistsRoute
@@ -241,6 +254,13 @@ declare module '@tanstack/react-router' {
       path: '/auth'
       fullPath: '/auth'
       preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/reset-password': {
@@ -326,6 +346,7 @@ const rootRouteChildren: RootRouteChildren = {
   AmbassadorsRoute: AmbassadorsRoute,
   ApplyRoute: ApplyRoute,
   AuthRoute: AuthRoute,
+  PrivacyRoute: PrivacyRoute,
   ResetPasswordRoute: ResetPasswordRoute,
   ShopRoute: ShopRoute,
   StylistsRoute: StylistsRoute,
