@@ -6,7 +6,8 @@ export const Route = createFileRoute("/admin/applications")({
   component: AdminApplications,
 });
 
-type Application = {
+type CreatorApplication = {
+  type: "creator";
   id: string;
   name: string;
   label: string | null;
@@ -15,6 +16,19 @@ type Application = {
   about: string;
   created_at: string;
 };
+
+type AmbassadorApplication = {
+  type: "ambassador";
+  id: string;
+  name: string;
+  email: string;
+  social: string | null;
+  city: string | null;
+  about: string;
+  created_at: string;
+};
+
+type Application = CreatorApplication | AmbassadorApplication;
 
 function AdminApplications() {
   const [applications, setApplications] = useState<Application[] | null>(null);
@@ -25,20 +39,35 @@ function AdminApplications() {
     let cancelled = false;
 
     async function load() {
-      const { data, error: fetchError } = await supabase
-        .from("applications")
-        .select("*")
-        .order("created_at", { ascending: false });
+      const [creatorsResult, ambassadorsResult] = await Promise.all([
+        supabase.from("applications").select("*").order("created_at", { ascending: false }),
+        supabase.from("ambassadors").select("*").order("created_at", { ascending: false }),
+      ]);
 
       if (cancelled) return;
 
-      if (fetchError) {
+      if (creatorsResult.error || ambassadorsResult.error) {
         setError(
           "Could not load applications. You may not have admin access, or you're not signed in.",
         );
-      } else {
-        setApplications(data as Application[]);
+        setLoading(false);
+        return;
       }
+
+      const creators: Application[] = (creatorsResult.data ?? []).map((a) => ({
+        ...a,
+        type: "creator" as const,
+      }));
+      const ambassadors: Application[] = (ambassadorsResult.data ?? []).map((a) => ({
+        ...a,
+        type: "ambassador" as const,
+      }));
+
+      const combined = [...creators, ...ambassadors].sort(
+        (a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime(),
+      );
+
+      setApplications(combined);
       setLoading(false);
     }
 
@@ -67,15 +96,23 @@ function AdminApplications() {
       {applications && applications.length > 0 && (
         <div className="mt-10 flex flex-col gap-8">
           {applications.map((app) => (
-            <div key={app.id} className="border-b border-border pb-8">
+            <div key={`${app.type}-${app.id}`} className="border-b border-border pb-8">
               <div className="flex flex-wrap items-baseline justify-between gap-2">
-                <p className="font-serif text-xl">{app.name}</p>
+                <div className="flex items-baseline gap-3">
+                  <p className="font-serif text-xl">{app.name}</p>
+                  <span className="rounded-full border border-border px-2 py-0.5 text-[0.65rem] uppercase tracking-wide text-muted-foreground">
+                    {app.type === "creator" ? "Creator" : "Ambassador"}
+                  </span>
+                </div>
                 <p className="text-xs text-muted-foreground">
                   {new Date(app.created_at).toLocaleString()}
                 </p>
               </div>
-              {app.label && (
+              {app.type === "creator" && app.label && (
                 <p className="mt-1 text-sm text-muted-foreground">{app.label}</p>
+              )}
+              {app.type === "ambassador" && app.city && (
+                <p className="mt-1 text-sm text-muted-foreground">{app.city}</p>
               )}
               <p className="mt-3 text-sm">
                 <span className="text-muted-foreground">Email: </span>
@@ -83,10 +120,16 @@ function AdminApplications() {
                   {app.email}
                 </a>
               </p>
-              {app.portfolio && (
+              {app.type === "creator" && app.portfolio && (
                 <p className="mt-1 text-sm">
                   <span className="text-muted-foreground">Portfolio: </span>
                   {app.portfolio}
+                </p>
+              )}
+              {app.type === "ambassador" && app.social && (
+                <p className="mt-1 text-sm">
+                  <span className="text-muted-foreground">Social: </span>
+                  {app.social}
                 </p>
               )}
               <p className="mt-3 whitespace-pre-wrap text-sm leading-relaxed">{app.about}</p>
