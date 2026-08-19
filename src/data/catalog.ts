@@ -22,6 +22,18 @@ import SK1 from "@/assets/SK1.jpg";
 import SK2 from "@/assets/SK2.jpg";
 import SK3 from "@/assets/SK3.jpg";
 import SK4 from "@/assets/SK4.jpg";
+import LC3New from "@/assets/LC3.JPG";
+import LC4New from "@/assets/LC4.JPG";
+import LC5New from "@/assets/LC5.jpg";
+import LC6 from "@/assets/LC6.jpg";
+import LC7 from "@/assets/LC7.jpg";
+import LC8 from "@/assets/LC8.JPG";
+import LC9 from "@/assets/LC9.JPG";
+import LC11 from "@/assets/LC11.jpg";
+import LC12 from "@/assets/LC12.JPG";
+import LC13 from "@/assets/LC13.JPG";
+import LC15 from "@/assets/LC15.png";
+import LC20 from "@/assets/LC20.JPG";
 
 
 export const heroImage = GB4;
@@ -366,7 +378,7 @@ export const products: Product[] = [
     name: "Denim Cut Two-Piece — Kids",
     category: "Outerwear",
     designer: "last-cloud-designs",
-    images: [LC1, LC2],
+    images: [LC1, LC2, LC13],
     fabric: "Chambray denim, red contrast stitch",
     care: "Cold wash separately. Tumble dry low.",
     description:
