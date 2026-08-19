@@ -138,7 +138,7 @@ export const products: Product[] = [
     name: "Destroyed Layered Tee",
     category: "Tops",
     designer: "damnation-designs",
-    images: [DD1, DD2, DD6],
+    images: [DD1, DD2],
     fabric: "Heavyweight cotton jersey, hand-distressed",
     care: "Cold wash inside out. Hang dry. Do not bleach.",
     description:
@@ -162,7 +162,7 @@ export const products: Product[] = [
     name: "Crossbody Skateboard Bag",
     category: "Accessories",
     designer: "damnation-designs",
-    images: [DD3, DD1],
+    images: [DD3],
     fabric: "Coated canvas with webbing straps",
     care: "Spot clean with a damp cloth.",
     description:
@@ -218,23 +218,11 @@ export const products: Product[] = [
     sizes: ["S", "M", "L", "XL"],
   },
   {
-    id: "galba-hoodie",
-    name: "Galbakaline Flame Hoodie",
-    category: "Tops",
-    designer: "galbakaline",
-    images: [GB2, GB1],
-    fabric: "Cotton fleece with fur-trim sleeves",
-    care: "Cold wash inside out. Hang dry.",
-    description:
-      "A cream heavyweight hoodie with flame-streaked sleeves and hood, finished with the Galbakaline stamp across the chest.",
-    sizes: ["S", "M", "L", "XL"],
-  },
-  {
     id: "cross-leather-pant",
     name: "Cross Panel Leather Pant",
     category: "Bottoms",
     designer: "galbakaline",
-    images: [GB4, GB2],
+    images: [GB2],
     fabric: "Panelled leather, oxblood and black",
     care: "Wipe clean. Condition twice yearly.",
     description:
