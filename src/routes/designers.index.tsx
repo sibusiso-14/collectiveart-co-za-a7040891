@@ -25,8 +25,8 @@ function DesignerIndex() {
     <div className="mx-auto max-w-[1600px] px-5 py-14 md:px-10 md:py-20">
       <header className="border-b border-border pb-10">
         <p className="label-xs text-muted-foreground">The Roster</p>
-        <h1 className="mt-3 max-w-[14ch] font-serif text-4xl leading-tight md:text-6xl">
-          Four labels. No middle ground.
+                <h1 className="mt-3 max-w-[14ch] font-serif text-4xl leading-tight md:text-6xl">
+          Independent labels. No middle ground.
         </h1>
       </header>
 
