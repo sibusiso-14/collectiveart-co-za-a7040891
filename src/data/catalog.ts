@@ -72,7 +72,7 @@ export const designers: Designer[] = [
   {
     slug: "damnation-designs",
     name: "Damnation Designs",
-    location: "Maseru, LS",
+    location: "Cosmo City, Johannesburg",
     discipline: "Skatewear & destroyed knits",
     since: "2021",
     bio: "Damnation Designs builds skate-worn silhouettes out of destroyed jersey, frayed denim and hand-pulled graphics. Every piece is cut, shredded and rebuilt by hand in small drops.",
@@ -84,7 +84,7 @@ export const designers: Designer[] = [
   {
     slug: "galbakaline",
     name: "Galbakaline",
-    location: "Maseru, LS",
+    location: "Cosmo City, Johannesburg",
     discipline: "Fur, denim & outerwear",
     since: "2022",
     bio: "Galbakaline makes premium hoodies and outerwear from luxurious fur, reclaimed denim and technical shells, finished with hand-drawn character graphics. Comfort meets style in every stitch.",
@@ -96,7 +96,7 @@ export const designers: Designer[] = [
   {
     slug: "designing-balaclava",
     name: "Designing Balaclava",
-    location: "Maseru, LS",
+    location: "Cosmo City, Johannesburg",
     discipline: "Balaclava-marked knits & studio outerwear",
     since: "2023",
     bio: "Designing Balaclava builds a studio-lit wardrobe around one mark: the balaclava. Galaxy-shimmer zip hoodies, contrast-stitch cargo denim and light knit tanks, cut clean and released in short runs.",
@@ -108,7 +108,7 @@ export const designers: Designer[] = [
   {
     slug: "last-cloud-designs",
     name: "Last Cloud Designs",
-    location: "Maseru, LS",
+    location: "Cosmo City, Johannesburg",
     discipline: "Panelled satin, denim tailoring & streetwear",
     since: "2024",
     bio: "Last Cloud Designs works in story-driven collections — panelled satin trousers, red-stitch denim two-pieces and soft-green streetwear sets, all cut in studio and released as short narrative drops.",
