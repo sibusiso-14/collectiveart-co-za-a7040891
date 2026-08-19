@@ -230,23 +230,11 @@ export const products: Product[] = [
     sizes: ["28", "30", "32", "34", "36"],
   },
   {
-    id: "denim-patch-set",
-    name: "Denim Patchwork Hooded Set",
-    category: "Outerwear",
-    designer: "galbakaline",
-    images: [GB3, GB1],
-    fabric: "Reclaimed denim patchwork, raw edges",
-    care: "Cold wash alone. Expect fading.",
-    description:
-      "A hooded jacket and trouser cut entirely from reclaimed denim offcuts, each panel placed by hand so no two sets repeat.",
-    sizes: ["S", "M", "L", "XL"],
-  },
-  {
     id: "reversible-shell",
     name: "Reversible Waterproof Jacket",
     category: "Outerwear",
     designer: "galbakaline",
-    images: [GB4, GB3],
+    images: [GB4],
     fabric: "Waterproof shell, reversible to white lining",
     care: "Wipe clean. Do not tumble dry.",
     description:
