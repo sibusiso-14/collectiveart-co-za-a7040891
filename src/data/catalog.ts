@@ -366,7 +366,7 @@ export const products: Product[] = [
     name: "To The World Mint Set",
     category: "Outerwear",
     designer: "last-cloud-designs",
-    images: [LC2, LC1],
+    images: [LC2],
     fabric: "Cotton twill, soft mint",
     care: "Machine wash cold. Hang dry.",
     description:
@@ -378,7 +378,7 @@ export const products: Product[] = [
     name: "Denim Cut Two-Piece — Kids",
     category: "Outerwear",
     designer: "last-cloud-designs",
-    images: [LC1, LC2, LC13],
+    images: [LC1, LC13],
     fabric: "Chambray denim, red contrast stitch",
     care: "Cold wash separately. Tumble dry low.",
     description:
