@@ -409,6 +409,102 @@ export const products: Product[] = [
       "Where fashion meets the flow — a statement tee for anyone who isn't afraid to define their own identity.",
     sizes: ["S", "M", "L", "XL"],
   },
+  {
+    id: "cool-summer-bag",
+    name: "Cool Summer Bag",
+    category: "Accessories",
+    designer: "last-cloud-designs",
+    images: [LC6],
+    fabric: "Lightweight canvas",
+    care: "Spot clean only.",
+    description:
+      "A breezy warm-weather tote from Last Cloud Designs, built for everyday carry.",
+    sizes: ["One Size"],
+  },
+  {
+    id: "cloudy-bag",
+    name: "Cloudy Bag",
+    category: "Accessories",
+    designer: "last-cloud-designs",
+    images: [LC7],
+    fabric: "Soft-structure canvas",
+    care: "Spot clean only.",
+    description:
+      "The Cloudy Bag, part of the Last Cloud Designs accessories line.",
+    sizes: ["One Size"],
+  },
+  {
+    id: "nebula-trousers",
+    name: "Nebula Trousers",
+    category: "Bottoms",
+    designer: "last-cloud-designs",
+    images: [LC15],
+    fabric: "Structured woven blend",
+    care: "Machine wash cold. Hang dry.",
+    description:
+      "Nebula Trousers from Last Cloud Designs — a tailored silhouette with a wide leg.",
+    sizes: ["S", "M", "L", "XL"],
+  },
+  {
+    id: "ss2025-tshirt-cream-white",
+    name: "SS2025 T-Shirt — Cream White",
+    category: "Tops",
+    designer: "last-cloud-designs",
+    images: [LC20],
+    fabric: "Cotton jersey",
+    care: "Machine wash cold. Hang dry.",
+    description:
+      "Part of the SS2025 collection — a clean cream white tee from Last Cloud Designs.",
+    sizes: ["S", "M", "L", "XL"],
+  },
+  {
+    id: "ss2025-mojito-kids-two-piece",
+    name: "SS2025 Mojito — Kids Unisex Two Piece",
+    category: "Tops",
+    designer: "last-cloud-designs",
+    images: [LC3New, LC4New, LC12],
+    fabric: "Cotton blend",
+    care: "Machine wash cold. Hang dry.",
+    description:
+      "The SS2025 Mojito two-piece, sized for kids — from the Last Cloud Designs summer collection.",
+    sizes: ["4Y", "6Y", "8Y", "10Y"],
+  },
+  {
+    id: "ss2025-mojito-unisex-two-piece",
+    name: "SS2025 Mojito — Unisex Two Piece",
+    category: "Tops",
+    designer: "last-cloud-designs",
+    images: [LC4New],
+    fabric: "Cotton blend",
+    care: "Machine wash cold. Hang dry.",
+    description:
+      "The SS2025 Mojito two-piece in adult sizing — from the Last Cloud Designs summer collection.",
+    sizes: ["S", "M", "L", "XL"],
+  },
+  {
+    id: "ss2025-rosa-gallica-two-piece",
+    name: "SS2025 Rosa Gallica — Unisex Two Piece",
+    category: "Tops",
+    designer: "last-cloud-designs",
+    images: [LC8, LC9],
+    fabric: "Cotton blend",
+    care: "Machine wash cold. Hang dry.",
+    description:
+      "The Rosa Gallica two-piece from the SS2025 Last Cloud Designs collection.",
+    sizes: ["S", "M", "L", "XL"],
+  },
+  {
+    id: "ss2026-two-piece-brown",
+    name: "SS2026 Two Piece",
+    category: "Tops",
+    designer: "last-cloud-designs",
+    images: [LC5New, LC11],
+    fabric: "Cotton blend",
+    care: "Machine wash cold. Hang dry.",
+    description:
+      "An early look from the SS2026 Last Cloud Designs collection.",
+    sizes: ["S", "M", "L", "XL"],
+  },
 ];
 
 
