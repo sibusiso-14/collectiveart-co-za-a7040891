@@ -10,13 +10,13 @@ export const Route = createFileRoute("/apply")({
       {
         name: "description",
         content:
-          "Apply to sell on Collaborate.art. Your own boutique page, inventory tools and automated commission splits with monthly payouts.",
+          "Apply to sell on Collaborate.art. Your own boutique page, inventory tools, and a storefront built for independent designers.",
       },
       { property: "og:title", content: "Become a Creator — Collaborate.art" },
       {
         property: "og:description",
         content:
-          "Independent designers: open a boutique, list inventory and get paid on a split payout schedule.",
+          "Independent designers: open a boutique, list your inventory, and keep 100% of what you sell.",
       },
     ],
   }),
@@ -41,8 +41,8 @@ const steps = [
   },
   {
     n: "04",
-    title: "Get paid",
-    body: "Checkout splits automatically: 88% to you, 12% platform commission. Payouts land in your account every second Friday, with a per-order ledger.",
+    title: "Keep 100% of your sales",
+    body: "There's no commission on what you sell. You set your prices, and every sale is yours.",
   },
 ];
 
@@ -61,8 +61,8 @@ function Apply() {
               Sell where the work is taken seriously.
             </h1>
             <p className="mt-8 max-w-lg text-base leading-relaxed text-muted-foreground">
-              Collaborate.art is a multi-vendor marketplace built for independent ateliers
-              — separate vendor profiles, separate inventory, one editorial storefront.
+              Collaborate.art gives independent designers their own storefront — your own
+              profile, your own inventory, no commission on what you sell.
             </p>
           </div>
           <div className="md:col-span-5 md:col-start-8">
