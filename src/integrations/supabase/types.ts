@@ -14,66 +14,63 @@ export type Database = {
   }
   public: {
     Tables: {
-      bot_messages: {
+      ambassadors: {
         Row: {
-          content: string
+          about: string
+          city: string | null
           created_at: string
+          email: string
           id: string
-          role: string
-          session_id: string
+          name: string
+          social: string | null
         }
         Insert: {
-          content: string
+          about: string
+          city?: string | null
           created_at?: string
+          email: string
           id?: string
-          role: string
-          session_id: string
+          name: string
+          social?: string | null
         }
         Update: {
-          content?: string
+          about?: string
+          city?: string | null
           created_at?: string
+          email?: string
           id?: string
-          role?: string
-          session_id?: string
+          name?: string
+          social?: string | null
         }
         Relationships: []
       }
-      customer_enquiries: {
+      applications: {
         Row: {
+          about: string
           created_at: string
-          designer: string | null
-          email: string | null
+          email: string
           id: string
-          message: string
+          label: string | null
           name: string
-          phone: string | null
-          session_id: string | null
-          status: string
-          updated_at: string
+          portfolio: string | null
         }
         Insert: {
+          about: string
           created_at?: string
-          designer?: string | null
-          email?: string | null
+          email: string
           id?: string
-          message: string
+          label?: string | null
           name: string
-          phone?: string | null
-          session_id?: string | null
-          status?: string
-          updated_at?: string
+          portfolio?: string | null
         }
         Update: {
+          about?: string
           created_at?: string
-          designer?: string | null
-          email?: string | null
+          email?: string
           id?: string
-          message?: string
+          label?: string | null
           name?: string
-          phone?: string | null
-          session_id?: string | null
-          status?: string
-          updated_at?: string
+          portfolio?: string | null
         }
         Relationships: []
       }
@@ -104,6 +101,36 @@ export type Database = {
           id?: string
           instagram_handle?: string | null
           updated_at?: string
+        }
+        Relationships: []
+      }
+      stylists: {
+        Row: {
+          about: string
+          city: string | null
+          created_at: string
+          email: string
+          id: string
+          name: string
+          portfolio: string | null
+        }
+        Insert: {
+          about: string
+          city?: string | null
+          created_at?: string
+          email: string
+          id?: string
+          name: string
+          portfolio?: string | null
+        }
+        Update: {
+          about?: string
+          city?: string | null
+          created_at?: string
+          email?: string
+          id?: string
+          name?: string
+          portfolio?: string | null
         }
         Relationships: []
       }

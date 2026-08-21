@@ -28,7 +28,18 @@ type AmbassadorApplication = {
   created_at: string;
 };
 
-type Application = CreatorApplication | AmbassadorApplication;
+type StylistApplication = {
+  type: "stylist";
+  id: string;
+  name: string;
+  email: string;
+  portfolio: string | null;
+  city: string | null;
+  about: string;
+  created_at: string;
+};
+
+type Application = CreatorApplication | AmbassadorApplication | StylistApplication;
 
 function AdminApplications() {
   const [applications, setApplications] = useState<Application[] | null>(null);
@@ -44,14 +55,15 @@ function AdminApplications() {
     };
 
     async function load() {
-      const [creatorsResult, ambassadorsResult] = await Promise.all([
+      const [creatorsResult, ambassadorsResult, stylistsResult] = await Promise.all([
         supabase.from("applications").select("*").order("created_at", { ascending: false }),
         supabase.from("ambassadors").select("*").order("created_at", { ascending: false }),
+        supabase.from("stylists").select("*").order("created_at", { ascending: false }),
       ]);
 
       if (cancelled) return;
 
-      if (creatorsResult.error || ambassadorsResult.error) {
+      if (creatorsResult.error || ambassadorsResult.error || stylistsResult.error) {
         setError(
           "Could not load applications. You may not have admin access, or you're not signed in.",
         );
@@ -67,8 +79,12 @@ function AdminApplications() {
         ...a,
         type: "ambassador" as const,
       }));
+      const stylists: Application[] = (stylistsResult.data ?? []).map((s) => ({
+        ...s,
+        type: "stylist" as const,
+      }));
 
-      const combined = [...creators, ...ambassadors].sort(
+      const combined = [...creators, ...ambassadors, ...stylists].sort(
         (a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime(),
       );
 
@@ -82,7 +98,8 @@ function AdminApplications() {
     if (!confirmed) return;
 
     setDeletingId(app.id);
-    const table = app.type === "creator" ? "applications" : "ambassadors";
+    const table =
+      app.type === "creator" ? "applications" : app.type === "ambassador" ? "ambassadors" : "stylists";
     const { error: deleteError } = await supabase.from(table).delete().eq("id", app.id);
     setDeletingId(null);
 
@@ -118,7 +135,7 @@ function AdminApplications() {
                 <div className="flex items-baseline gap-3">
                   <p className="font-serif text-xl">{app.name}</p>
                   <span className="rounded-full border border-border px-2 py-0.5 text-[0.65rem] uppercase tracking-wide text-muted-foreground">
-                    {app.type === "creator" ? "Creator" : "Ambassador"}
+                    {app.type === "creator" ? "Creator" : app.type === "ambassador" ? "Ambassador" : "Stylist"}
                   </span>
                 </div>
                 <div className="flex items-center gap-4">
@@ -141,6 +158,9 @@ function AdminApplications() {
               {app.type === "ambassador" && app.city && (
                 <p className="mt-1 text-sm text-muted-foreground">{app.city}</p>
               )}
+              {app.type === "stylist" && app.city && (
+                <p className="mt-1 text-sm text-muted-foreground">{app.city}</p>
+              )}
               <p className="mt-3 text-sm">
                 <span className="text-muted-foreground">Email: </span>
                 <a href={`mailto:${app.email}`} className="underline underline-offset-4">
@@ -157,6 +177,12 @@ function AdminApplications() {
                 <p className="mt-1 text-sm">
                   <span className="text-muted-foreground">Social: </span>
                   {app.social}
+                </p>
+              )}
+              {app.type === "stylist" && app.portfolio && (
+                <p className="mt-1 text-sm">
+                  <span className="text-muted-foreground">Portfolio: </span>
+                  {app.portfolio}
                 </p>
               )}
               <p className="mt-3 whitespace-pre-wrap text-sm leading-relaxed">{app.about}</p>
