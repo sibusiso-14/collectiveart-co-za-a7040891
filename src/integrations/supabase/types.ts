@@ -107,6 +107,7 @@ export type Database = {
       stylists: {
         Row: {
           about: string
+          approved: boolean
           city: string | null
           created_at: string
           email: string
@@ -116,6 +117,7 @@ export type Database = {
         }
         Insert: {
           about: string
+          approved?: boolean
           city?: string | null
           created_at?: string
           email: string
@@ -125,6 +127,7 @@ export type Database = {
         }
         Update: {
           about?: string
+          approved?: boolean
           city?: string | null
           created_at?: string
           email?: string

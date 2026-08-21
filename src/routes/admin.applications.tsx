@@ -37,6 +37,7 @@ type StylistApplication = {
   city: string | null;
   about: string;
   created_at: string;
+  approved: boolean;
 };
 
 type Application = CreatorApplication | AmbassadorApplication | StylistApplication;
@@ -46,6 +47,7 @@ function AdminApplications() {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [deletingId, setDeletingId] = useState<string | null>(null);
+  const [approvingId, setApprovingId] = useState<string | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -111,6 +113,28 @@ function AdminApplications() {
     setApplications((prev) => (prev ? prev.filter((a) => a.id !== app.id) : prev));
   }
 
+  async function handleToggleApprove(app: StylistApplication) {
+    setApprovingId(app.id);
+    const { error: updateError } = await supabase
+      .from("stylists")
+      .update({ approved: !app.approved })
+      .eq("id", app.id);
+    setApprovingId(null);
+
+    if (updateError) {
+      window.alert("Could not update approval status. Please try again.");
+      return;
+    }
+
+    setApplications((prev) =>
+      prev
+        ? prev.map((a) =>
+            a.id === app.id && a.type === "stylist" ? { ...a, approved: !app.approved } : a,
+          )
+        : prev,
+    );
+  }
+
   return (
     <div className="mx-auto max-w-4xl px-5 py-14 md:px-10 md:py-20">
       <h1 className="font-serif text-4xl md:text-5xl">Applications</h1>
@@ -142,6 +166,20 @@ function AdminApplications() {
                   <p className="text-xs text-muted-foreground">
                     {new Date(app.created_at).toLocaleString()}
                   </p>
+                  {app.type === "stylist" && (
+                    <button
+                      type="button"
+                      onClick={() => handleToggleApprove(app)}
+                      disabled={approvingId === app.id}
+                      className="text-xs uppercase tracking-wide underline underline-offset-4 disabled:opacity-50"
+                    >
+                      {approvingId === app.id
+                        ? "Updating…"
+                        : app.approved
+                          ? "Unapprove"
+                          : "Approve"}
+                    </button>
+                  )}
                   <button
                     type="button"
                     onClick={() => handleDelete(app)}

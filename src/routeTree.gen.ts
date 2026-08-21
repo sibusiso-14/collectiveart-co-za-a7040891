@@ -17,13 +17,15 @@ import { Route as AuthRouteImport } from './routes/auth'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ResetPasswordRouteImport } from './routes/reset-password'
 import { Route as ShopRouteImport } from './routes/shop'
-import { Route as StylistsRouteImport } from './routes/stylists'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as AuthenticatedAccountRouteImport } from './routes/_authenticated/account'
 import { Route as AdminApplicationsRouteImport } from './routes/admin.applications'
 import { Route as DesignersIndexRouteImport } from './routes/designers.index'
 import { Route as DesignersSlugRouteImport } from './routes/designers.$slug'
 import { Route as ProductProductIdRouteImport } from './routes/product.$productId'
+import { Route as StylistsIndexRouteImport } from './routes/stylists.index'
+import { Route as StylistsStylistIdRouteImport } from './routes/stylists.$stylistId'
+import { Route as StylistsApplyRouteImport } from './routes/stylists.apply'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -64,11 +66,6 @@ const ShopRoute = ShopRouteImport.update({
   path: '/shop',
   getParentRoute: () => rootRouteImport,
 } as any)
-const StylistsRoute = StylistsRouteImport.update({
-  id: '/stylists',
-  path: '/stylists',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
@@ -99,6 +96,21 @@ const ProductProductIdRoute = ProductProductIdRouteImport.update({
   path: '/product/$productId',
   getParentRoute: () => rootRouteImport,
 } as any)
+const StylistsIndexRoute = StylistsIndexRouteImport.update({
+  id: '/stylists/',
+  path: '/stylists/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StylistsStylistIdRoute = StylistsStylistIdRouteImport.update({
+  id: '/stylists/$stylistId',
+  path: '/stylists/$stylistId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StylistsApplyRoute = StylistsApplyRouteImport.update({
+  id: '/stylists/apply',
+  path: '/stylists/apply',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -108,13 +120,15 @@ export interface FileRoutesByFullPath {
   '/privacy': typeof PrivacyRoute
   '/reset-password': typeof ResetPasswordRoute
   '/shop': typeof ShopRoute
-  '/stylists': typeof StylistsRoute
   '/terms': typeof TermsRoute
   '/account': typeof AuthenticatedAccountRoute
   '/admin/applications': typeof AdminApplicationsRoute
   '/designers/$slug': typeof DesignersSlugRoute
   '/product/$productId': typeof ProductProductIdRoute
+  '/stylists/$stylistId': typeof StylistsStylistIdRoute
+  '/stylists/apply': typeof StylistsApplyRoute
   '/designers/': typeof DesignersIndexRoute
+  '/stylists/': typeof StylistsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -124,13 +138,15 @@ export interface FileRoutesByTo {
   '/privacy': typeof PrivacyRoute
   '/reset-password': typeof ResetPasswordRoute
   '/shop': typeof ShopRoute
-  '/stylists': typeof StylistsRoute
   '/terms': typeof TermsRoute
   '/account': typeof AuthenticatedAccountRoute
   '/admin/applications': typeof AdminApplicationsRoute
   '/designers/$slug': typeof DesignersSlugRoute
   '/product/$productId': typeof ProductProductIdRoute
+  '/stylists/$stylistId': typeof StylistsStylistIdRoute
+  '/stylists/apply': typeof StylistsApplyRoute
   '/designers': typeof DesignersIndexRoute
+  '/stylists': typeof StylistsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -142,13 +158,15 @@ export interface FileRoutesById {
   '/privacy': typeof PrivacyRoute
   '/reset-password': typeof ResetPasswordRoute
   '/shop': typeof ShopRoute
-  '/stylists': typeof StylistsRoute
   '/terms': typeof TermsRoute
   '/_authenticated/account': typeof AuthenticatedAccountRoute
   '/admin/applications': typeof AdminApplicationsRoute
   '/designers/$slug': typeof DesignersSlugRoute
   '/product/$productId': typeof ProductProductIdRoute
+  '/stylists/$stylistId': typeof StylistsStylistIdRoute
+  '/stylists/apply': typeof StylistsApplyRoute
   '/designers/': typeof DesignersIndexRoute
+  '/stylists/': typeof StylistsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -160,13 +178,15 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/reset-password'
     | '/shop'
-    | '/stylists'
     | '/terms'
     | '/account'
     | '/admin/applications'
     | '/designers/$slug'
     | '/product/$productId'
+    | '/stylists/$stylistId'
+    | '/stylists/apply'
     | '/designers/'
+    | '/stylists/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -176,13 +196,15 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/reset-password'
     | '/shop'
-    | '/stylists'
     | '/terms'
     | '/account'
     | '/admin/applications'
     | '/designers/$slug'
     | '/product/$productId'
+    | '/stylists/$stylistId'
+    | '/stylists/apply'
     | '/designers'
+    | '/stylists'
   id:
     | '__root__'
     | '/'
@@ -193,13 +215,15 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/reset-password'
     | '/shop'
-    | '/stylists'
     | '/terms'
     | '/_authenticated/account'
     | '/admin/applications'
     | '/designers/$slug'
     | '/product/$productId'
+    | '/stylists/$stylistId'
+    | '/stylists/apply'
     | '/designers/'
+    | '/stylists/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -211,12 +235,14 @@ export interface RootRouteChildren {
   PrivacyRoute: typeof PrivacyRoute
   ResetPasswordRoute: typeof ResetPasswordRoute
   ShopRoute: typeof ShopRoute
-  StylistsRoute: typeof StylistsRoute
   TermsRoute: typeof TermsRoute
   AdminApplicationsRoute: typeof AdminApplicationsRoute
   DesignersSlugRoute: typeof DesignersSlugRoute
   ProductProductIdRoute: typeof ProductProductIdRoute
+  StylistsStylistIdRoute: typeof StylistsStylistIdRoute
+  StylistsApplyRoute: typeof StylistsApplyRoute
   DesignersIndexRoute: typeof DesignersIndexRoute
+  StylistsIndexRoute: typeof StylistsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -277,13 +303,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ShopRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/stylists': {
-      id: '/stylists'
-      path: '/stylists'
-      fullPath: '/stylists'
-      preLoaderRoute: typeof StylistsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/terms': {
       id: '/terms'
       path: '/terms'
@@ -326,6 +345,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProductProductIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/stylists/': {
+      id: '/stylists/'
+      path: '/stylists'
+      fullPath: '/stylists/'
+      preLoaderRoute: typeof StylistsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/stylists/$stylistId': {
+      id: '/stylists/$stylistId'
+      path: '/stylists/$stylistId'
+      fullPath: '/stylists/$stylistId'
+      preLoaderRoute: typeof StylistsStylistIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/stylists/apply': {
+      id: '/stylists/apply'
+      path: '/stylists/apply'
+      fullPath: '/stylists/apply'
+      preLoaderRoute: typeof StylistsApplyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -349,12 +389,14 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyRoute: PrivacyRoute,
   ResetPasswordRoute: ResetPasswordRoute,
   ShopRoute: ShopRoute,
-  StylistsRoute: StylistsRoute,
   TermsRoute: TermsRoute,
   AdminApplicationsRoute: AdminApplicationsRoute,
   DesignersSlugRoute: DesignersSlugRoute,
   ProductProductIdRoute: ProductProductIdRoute,
+  StylistsStylistIdRoute: StylistsStylistIdRoute,
+  StylistsApplyRoute: StylistsApplyRoute,
   DesignersIndexRoute: DesignersIndexRoute,
+  StylistsIndexRoute: StylistsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
