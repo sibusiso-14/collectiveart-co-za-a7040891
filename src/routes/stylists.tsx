@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
 import { products } from "@/data/catalog";
 
 export const Route = createFileRoute("/stylists")({
@@ -26,6 +27,8 @@ export const Route = createFileRoute("/stylists")({
 
 function Stylists() {
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const looks = products.slice(0, 12);
 
   return (
@@ -80,8 +83,35 @@ function Stylists() {
 
           <form
             className="md:col-span-7 md:col-start-6"
-            onSubmit={(e) => {
+            onSubmit={async (e) => {
               e.preventDefault();
+              setError(null);
+
+              const formData = new FormData(e.currentTarget);
+              const name = formData.get("stylist-name") as string;
+              const email = formData.get("stylist-email") as string;
+              const portfolio = formData.get("stylist-portfolio") as string;
+              const city = formData.get("stylist-city") as string;
+              const about = formData.get("stylist-about") as string;
+
+              setSubmitting(true);
+
+              const { error: insertError } = await supabase.from("stylists").insert({
+                name,
+                email,
+                portfolio: portfolio || null,
+                city: city || null,
+                about,
+              });
+
+              setSubmitting(false);
+
+              if (insertError) {
+                console.error(insertError);
+                setError("Something went wrong. Please try again.");
+                return;
+              }
+
               setSent(true);
             }}
           >
@@ -105,14 +135,18 @@ function Stylists() {
 
             <button
               type="submit"
-              className="mt-10 border border-foreground bg-foreground px-10 py-4 text-[0.7rem] uppercase tracking-[0.22em] text-background transition-colors duration-300 hover:bg-background hover:text-foreground"
+              disabled={submitting || sent}
+              className="mt-10 border border-foreground bg-foreground px-10 py-4 text-[0.7rem] uppercase tracking-[0.22em] text-background transition-colors duration-300 hover:bg-background hover:text-foreground disabled:opacity-50"
             >
-              {sent ? "Application received" : "Apply as a stylist"}
+              {sent ? "Application received" : submitting ? "Sending…" : "Apply as a stylist"}
             </button>
             {sent && (
               <p className="mt-4 text-sm text-muted-foreground">
                 Thank you — we'll be in touch shortly.
               </p>
+            )}
+            {error && (
+              <p className="mt-4 text-sm text-red-500">{error}</p>
             )}
           </form>
         </div>
