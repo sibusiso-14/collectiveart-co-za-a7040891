@@ -20,7 +20,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "A curated marketplace connecting you directly to independent South African fashion designers. Small runs, made to order, settled with the atelier.",
+          "A curated gallery showcasing independent South African fashion designers and their small-run collections.",
       },
     ],
   }),
@@ -54,16 +54,16 @@ function Home() {
             The blueprint of life is threaded on fabric.
           </p>
           <p className="mt-3 max-w-xl text-sm leading-relaxed text-foreground/70">
-            Collaborate.art is a curated marketplace connecting shoppers directly with
-            independent South African fashion designers — browse small-run collections,
-            order straight from the atelier, and discover new talent.
+            Collaborate.art is a curated gallery connecting you directly with
+            independent South African fashion designers — browse small-run collections
+            and discover new talent.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-8">
             <Link
               to="/shop"
               className="inline-flex items-center border border-foreground bg-foreground px-8 py-4 text-[0.7rem] uppercase tracking-[0.22em] text-primary-foreground transition-colors duration-300 hover:bg-transparent hover:text-foreground"
             >
-              Shop
+              Collection
             </Link>
             <Link to="/designers" className="label-xs rule-link">
               Designers
@@ -77,12 +77,13 @@ function Home() {
         <div className="mx-auto max-w-[1600px] px-5 md:px-10">
           <h2 className="font-serif text-2xl md:text-3xl">What is Collaborate.art?</h2>
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
-            Collaborate.art is an online marketplace where shoppers can browse and buy
-            small-run fashion pieces directly from independent South African designers.
-            Designers apply to list their collections, shoppers create an account to
-            browse the catalogue and place orders, and brand ambassadors can apply to
-            promote featured designers. Signing in with Google lets you save your
-            account details and manage orders and applications on the site.
+            Collaborate.art is a curated gallery where you can discover small-run
+            fashion pieces from independent South African designers and connect with
+            them directly. Designers apply to showcase their collections, visitors
+            create an account to browse the catalogue and reach out to designers, and
+            brand ambassadors can apply to promote featured designers. Signing in with
+            Google lets you save your account details and manage your applications on
+            the site.
           </p>
         </div>
       </section>

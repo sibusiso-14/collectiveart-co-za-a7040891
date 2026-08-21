@@ -6,13 +6,13 @@ import { categories, designers, products, type Category } from "@/data/catalog";
 export const Route = createFileRoute("/shop")({
   head: () => ({
     meta: [
-      { title: "Shop All — Collaborate.art" },
+      { title: "The Collection — Collaborate.art" },
       {
         name: "description",
         content:
-          "Browse every piece on Collaborate.art. Filter by category, designer and price across independent ateliers.",
+          "Browse every piece on Collaborate.art. Filter by category and designer across independent ateliers.",
       },
-      { property: "og:title", content: "Shop All — Collaborate.art" },
+      { property: "og:title", content: "The Collection — Collaborate.art" },
       {
         property: "og:description",
         content:
@@ -47,7 +47,7 @@ function Shop() {
       <header className="grid gap-4 border-b border-border pb-10 md:grid-cols-[minmax(0,1fr)_auto] md:items-end">
         <div className="min-w-0">
           <p className="label-xs text-muted-foreground">Catalogue</p>
-          <h1 className="mt-3 font-serif text-4xl md:text-6xl">Shop All</h1>
+          <h1 className="mt-3 font-serif text-4xl md:text-6xl">The Collection</h1>
         </div>
         <p className="shrink-0 text-sm text-muted-foreground">
           {filtered.length} {filtered.length === 1 ? "piece" : "pieces"}

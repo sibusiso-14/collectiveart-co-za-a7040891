@@ -10,7 +10,7 @@ export function SiteFooter() {
             Where independent fashion meets art.
           </p>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
-            A curated marketplace for independent ateliers. Every piece is made in small
+            A curated gallery for independent ateliers. Every piece is made in small
             runs by the designer who signed it.
           </p>
         </div>
