@@ -59,9 +59,6 @@ export function SiteHeader() {
               {isAuthenticated ? "Account" : "Sign in"}
             </Link>
           )}
-          <span className="hidden text-[0.7rem] uppercase tracking-[0.22em] text-foreground/70 md:inline">
-            Bag (0)
-          </span>
 
           <button
             type="button"
