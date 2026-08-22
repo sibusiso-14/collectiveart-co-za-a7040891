@@ -22,6 +22,10 @@ import SK1 from "@/assets/SK1.jpg";
 import SK2 from "@/assets/SK2.jpg";
 import SK3 from "@/assets/SK3.jpg";
 import SK4 from "@/assets/SK4.jpg";
+import GOAT1 from "@/assets/chronic-wear-3-piece.jpg";
+import GOAT2 from "@/assets/chronic-wear-3-piece1.jpg";
+import GOAT3 from "@/assets/chronic-wear-3-piece2.jpg";
+import GOAT4 from "@/assets/chronic-wear-3-piece3.jpg";
 import LC3New from "@/assets/LC3.JPG";
 import LC4New from "@/assets/LC4.JPG";
 import LC5New from "@/assets/LC5.jpg";
@@ -155,6 +159,18 @@ export const designers: Designer[] = [
     portrait: SK1,
     lookbook: [SK2, SK3, SK4],
     instagram: "shonakiddwtw",
+  },
+  {
+    slug: "absolute-goat",
+    name: "Absolute Goat",
+    location: "Cosmo City, Johannesburg",
+    discipline: "Bold statement streetwear",
+    since: "2025",
+    bio: "Absolute Goat represents Chronic Wear — bold statement streetwear built around striking black-and-white colourways and unapologetic design, for those who wear their identity loud.",
+    statement: "Chronic Wear.",
+    portrait: GOAT1,
+    lookbook: [GOAT2, GOAT3, GOAT4],
+    instagram: "absolute_goat00000",
   },
 ];
 
@@ -531,6 +547,42 @@ export const products: Product[] = [
     description:
       "A custom hand-painted two-piece set from ANXIETY — confident, understood, and one of a kind.",
     sizes: ["S", "M", "L", "XL"],
+  },
+  {
+    id: "absolute-goat-chronic-wear-hat",
+    name: "Chronic Wear Bucket Hat",
+    category: "Accessories",
+    designer: "absolute-goat",
+    images: [GOAT2, GOAT1],
+    fabric: "Cotton twill",
+    care: "Spot clean only.",
+    description:
+      "A statement bucket hat carrying the Chronic Wear mark in a striking black-and-white colourway — the finishing piece of the set.",
+    sizes: ["One size"],
+  },
+  {
+    id: "absolute-goat-chronic-wear-top",
+    name: "Chronic Wear Graphic Top",
+    category: "Tops",
+    designer: "absolute-goat",
+    images: [GOAT3, GOAT1],
+    fabric: "Heavyweight cotton jersey, screen print",
+    care: "Machine wash cold inside out. Tumble dry low.",
+    description:
+      "A bold graphic top built around the Chronic Wear identity — heavyweight cotton in Absolute Goat's signature black-and-white colourway.",
+    sizes: ["S", "M", "L", "XL"],
+  },
+  {
+    id: "absolute-goat-chronic-wear-shorts",
+    name: "Chronic Wear Below-Knee Shorts",
+    category: "Bottoms",
+    designer: "absolute-goat",
+    images: [GOAT4, GOAT1],
+    fabric: "Heavyweight cotton twill",
+    care: "Machine wash cold. Tumble dry low.",
+    description:
+      "Below-knee shorts cut from heavyweight twill and stamped with the Chronic Wear mark — part of Absolute Goat's 3-piece statement set.",
+    sizes: ["28", "30", "32", "34", "36"],
   },
 ];
 
