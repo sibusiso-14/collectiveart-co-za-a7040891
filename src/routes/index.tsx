@@ -94,7 +94,10 @@ function Home() {
           <p className="label-xs text-muted-foreground">The Wardrobe</p>
         </div>
         <div className="mt-6 grid grid-cols-3 gap-1 md:grid-cols-6 md:gap-1.5">
-          {products.slice(-18).map((p) => (
+          {products
+            .filter((p, i, arr) => arr.findIndex((x) => x.images[0] === p.images[0]) === i)
+            .slice(-18)
+            .map((p) => (
             <Link
               key={p.id}
               to="/product/$productId"
