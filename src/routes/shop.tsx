@@ -29,11 +29,13 @@ function Shop() {
 
   const filtered = useMemo(
     () =>
-      products.filter((p) => {
-        if (category && p.category !== category) return false;
-        if (designer && p.designer !== designer) return false;
-        return true;
-      }),
+      products
+        .filter((p) => {
+          if (category && p.category !== category) return false;
+          if (designer && p.designer !== designer) return false;
+          return true;
+        })
+        .sort((a, b) => a.name.localeCompare(b.name)),
     [category, designer],
   );
 
