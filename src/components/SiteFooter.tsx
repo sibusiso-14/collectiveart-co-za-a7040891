@@ -20,7 +20,7 @@ export function SiteFooter() {
             Explore
           </span>
           <Link to="/shop" className="w-fit hover:underline">
-            Shop all
+                        Browse All  
           </Link>
           <Link to="/designers" className="w-fit hover:underline">
             Designers
