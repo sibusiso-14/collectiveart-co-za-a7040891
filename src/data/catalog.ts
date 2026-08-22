@@ -18,22 +18,21 @@ import LC2 from "@/assets/lc2.jpg";
 import LC3 from "@/assets/lc3.jpg";
 import LC4 from "@/assets/lc4.jpg";
 import LC5 from "@/assets/lc5.jpg";
-import SK1 from "@/assets/SK1.jpg";
-import SK2 from "@/assets/SK2.jpg";
-import SK3 from "@/assets/SK3.jpg";
-import SK4 from "@/assets/SK4.jpg";
-import LC3New from "@/assets/LC3.JPG";
-import LC4New from "@/assets/LC4.JPG";
-import LC5New from "@/assets/LC5.jpg";
-import LC6 from "@/assets/LC6.jpg";
-import LC7 from "@/assets/LC7.jpg";
-import LC8 from "@/assets/LC8.JPG";
-import LC9 from "@/assets/LC9.JPG";
-import LC11 from "@/assets/LC11.jpg";
-import LC12 from "@/assets/LC12.JPG";
-import LC13 from "@/assets/LC13.JPG";
-import LC15 from "@/assets/LC15.png";
-import LC20 from "@/assets/LC20.JPG";
+import AnxietyDenim from "@/assets/anxiety-denim.jpg";
+import AnxietyDenim1 from "@/assets/anxiety-denim1.jpg";
+import AnxietyDenim2 from "@/assets/anxiety-denim2.jpg";
+import AnxietyDenim3 from "@/assets/anxiety-denim3.jpg";
+import AnxietyCrop from "@/assets/anxiety-crop.jpg";
+import AnxietyCrop1 from "@/assets/anxiety-crop1.jpg";
+import AnxietyCrop2 from "@/assets/anxiety-crop2.jpg";
+import AnxietyCrop3 from "@/assets/anxiety-crop3.jpg";
+import AnxietyCustom from "@/assets/anxiety-custom.jpg";
+import AnxietyCustom1 from "@/assets/anxiety-custom1.jpg";
+import AnxietyCustom2 from "@/assets/anxiety-custom2.jpg";
+import AnxietyCustom3 from "@/assets/anxiety-custom3.jpg";
+import AnxietyCustomTwoPiece from "@/assets/anxiety-custom-two-piece.jpg";
+import AnxietyCustomTwoPiece1 from "@/assets/anxiety-custom-two-piece1.jpg";
+import AnxietyCustomTwoPiece2 from "@/assets/anxiety-custom-two-piece2.jpg";
 
 
 export const heroImage = GB4;
@@ -59,6 +58,7 @@ export const instagramDM = (handle: string) => `https://ig.me/m/${handle}`;
 export type Product = {
   id: string;
   name: string;
+  price: number;
   category: Category;
   designer: string; // slug
   images: string[];
@@ -72,7 +72,7 @@ export const designers: Designer[] = [
   {
     slug: "damnation-designs",
     name: "Damnation Designs",
-    location: "Cosmo City, Johannesburg",
+    location: "Maseru, LS",
     discipline: "Skatewear & destroyed knits",
     since: "2021",
     bio: "Damnation Designs builds skate-worn silhouettes out of destroyed jersey, frayed denim and hand-pulled graphics. Every piece is cut, shredded and rebuilt by hand in small drops.",
@@ -84,7 +84,7 @@ export const designers: Designer[] = [
   {
     slug: "galbakaline",
     name: "Galbakaline",
-    location: "Cosmo City, Johannesburg",
+    location: "Maseru, LS",
     discipline: "Fur, denim & outerwear",
     since: "2022",
     bio: "Galbakaline makes premium hoodies and outerwear from luxurious fur, reclaimed denim and technical shells, finished with hand-drawn character graphics. Comfort meets style in every stitch.",
@@ -96,7 +96,7 @@ export const designers: Designer[] = [
   {
     slug: "designing-balaclava",
     name: "Designing Balaclava",
-    location: "Cosmo City, Johannesburg",
+    location: "Maseru, LS",
     discipline: "Balaclava-marked knits & studio outerwear",
     since: "2023",
     bio: "Designing Balaclava builds a studio-lit wardrobe around one mark: the balaclava. Galaxy-shimmer zip hoodies, contrast-stitch cargo denim and light knit tanks, cut clean and released in short runs.",
@@ -108,7 +108,7 @@ export const designers: Designer[] = [
   {
     slug: "last-cloud-designs",
     name: "Last Cloud Designs",
-    location: "Cosmo City, Johannesburg",
+    location: "Maseru, LS",
     discipline: "Panelled satin, denim tailoring & streetwear",
     since: "2024",
     bio: "Last Cloud Designs works in story-driven collections — panelled satin trousers, red-stitch denim two-pieces and soft-green streetwear sets, all cut in studio and released as short narrative drops.",
@@ -118,16 +118,16 @@ export const designers: Designer[] = [
     instagram: "lastcloud_designs",
   },
   {
-    slug: "shonakidd",
-    name: "ShonaKidd",
-    location: "Cosmo City, Johannesburg",
-    discipline: "Music-inspired streetwear & printed tees",
-    since: "2025",
-    bio: "ShonaKidd is a fashion and lifestyle brand born from the connection between music, street culture and self-expression, carrying Zimbabwean heritage into the streets of Johannesburg. Pieces for people who move differently, think independently and define their own identity through what they wear.",
-    statement: "Define Your Style.",
-    portrait: SK1,
-    lookbook: [SK2, SK3, SK4],
-    instagram: "shonakiddwtw",
+    slug: "anxiety",
+    name: "ANXIETY",
+    location: "Cosmo City, Randburg",
+    discipline: "Streetwear & wearable art",
+    since: "2021",
+    bio: "ANXIETY is a streetwear clothing brand born in South Africa for the anxious generation. We turn inner struggles, overthinking, and raw emotion into wearable art. Each piece is designed to make you feel seen, confident, and understood — because anxiety isn't weakness, it's power.",
+    statement: "Don't let your anxiety bring you down.",
+    portrait: AnxietyCustom,
+    lookbook: [AnxietyCustom1, AnxietyDenim, AnxietyDenim1],
+    instagram: "anxiety.stop",
   },
 ];
 
@@ -136,9 +136,10 @@ export const products: Product[] = [
   {
     id: "destroyed-tee",
     name: "Destroyed Layered Tee",
+    price: 0,
     category: "Tops",
     designer: "damnation-designs",
-    images: [DD1, DD2],
+    images: [DD1, DD2, DD6],
     fabric: "Heavyweight cotton jersey, hand-distressed",
     care: "Cold wash inside out. Hang dry. Do not bleach.",
     description:
@@ -148,6 +149,7 @@ export const products: Product[] = [
   {
     id: "damnation-graphic-tee",
     name: "Damnation Skate Graphic Tee",
+    price: 95,
     category: "Tops",
     designer: "damnation-designs",
     images: [DD5, DD6, DD4],
@@ -160,9 +162,10 @@ export const products: Product[] = [
   {
     id: "skate-crossbody",
     name: "Crossbody Skateboard Bag",
+    price: 180,
     category: "Accessories",
     designer: "damnation-designs",
-    images: [DD3],
+    images: [DD3, DD1],
     fabric: "Coated canvas with webbing straps",
     care: "Spot clean with a damp cloth.",
     description:
@@ -172,6 +175,7 @@ export const products: Product[] = [
   {
     id: "frayed-shorts",
     name: "Frayed Patchwork Shorts",
+    price: 140,
     category: "Bottoms",
     designer: "damnation-designs",
     images: [DD4, DD6],
@@ -184,6 +188,7 @@ export const products: Product[] = [
   {
     id: "stacked-trouser",
     name: "Stacked Padded Trouser",
+    price: 210,
     category: "Bottoms",
     designer: "damnation-designs",
     images: [DD2, DD1],
@@ -196,6 +201,7 @@ export const products: Product[] = [
   {
     id: "frayed-bucket-hat",
     name: "Frayed Bucket Hat",
+    price: 70,
     category: "Accessories",
     designer: "damnation-designs",
     images: [DD6, DD4],
@@ -208,6 +214,7 @@ export const products: Product[] = [
   {
     id: "fur-hoodie",
     name: "Signature Fur Hoodie",
+    price: 320,
     category: "Outerwear",
     designer: "galbakaline",
     images: [GB1, GB2],
@@ -218,11 +225,25 @@ export const products: Product[] = [
     sizes: ["S", "M", "L", "XL"],
   },
   {
+    id: "galba-hoodie",
+    name: "Galbakaline Flame Hoodie",
+    price: 180,
+    category: "Tops",
+    designer: "galbakaline",
+    images: [GB2, GB1],
+    fabric: "Cotton fleece with fur-trim sleeves",
+    care: "Cold wash inside out. Hang dry.",
+    description:
+      "A cream heavyweight hoodie with flame-streaked sleeves and hood, finished with the Galbakaline stamp across the chest.",
+    sizes: ["S", "M", "L", "XL"],
+  },
+  {
     id: "cross-leather-pant",
     name: "Cross Panel Leather Pant",
+    price: 390,
     category: "Bottoms",
     designer: "galbakaline",
-    images: [GB2],
+    images: [GB2, GB4],
     fabric: "Panelled leather, oxblood and black",
     care: "Wipe clean. Condition twice yearly.",
     description:
@@ -230,11 +251,25 @@ export const products: Product[] = [
     sizes: ["28", "30", "32", "34", "36"],
   },
   {
-    id: "reversible-shell",
-    name: "Reversible Waterproof Jacket",
+    id: "denim-patch-set",
+    name: "Denim Patchwork Hooded Set",
+    price: 450,
     category: "Outerwear",
     designer: "galbakaline",
-    images: [GB4],
+    images: [GB3, GB1],
+    fabric: "Reclaimed denim patchwork, raw edges",
+    care: "Cold wash alone. Expect fading.",
+    description:
+      "A hooded jacket and trouser cut entirely from reclaimed denim offcuts, each panel placed by hand so no two sets repeat.",
+    sizes: ["S", "M", "L", "XL"],
+  },
+  {
+    id: "reversible-shell",
+    name: "Reversible Waterproof Jacket",
+    price: 280,
+    category: "Outerwear",
+    designer: "galbakaline",
+    images: [GB4, GB3],
     fabric: "Waterproof shell, reversible to white lining",
     care: "Wipe clean. Do not tumble dry.",
     description:
@@ -243,7 +278,8 @@ export const products: Product[] = [
   },
   {
     id: "galaxy-zip-hoodie",
-    name: "Contagious Galaxy Zip Hoodie — Black",
+    name: "Contagious Galaxy Zip Hoodie",
+    price: 260,
     category: "Outerwear",
     designer: "designing-balaclava",
     images: [BC4, BC5],
@@ -256,9 +292,10 @@ export const products: Product[] = [
   {
     id: "balaclava-zip-hoodie-white",
     name: "Balaclava Zip Hoodie — Bone",
+    price: 240,
     category: "Outerwear",
     designer: "designing-balaclava",
-    images: [BC3],
+    images: [BC3, BC4],
     fabric: "Heavyweight brushed fleece, bone",
     care: "Cold wash inside out. Hang dry.",
     description:
@@ -268,9 +305,10 @@ export const products: Product[] = [
   {
     id: "balaclava-tank",
     name: "Balaclava Knit Tank",
+    price: 85,
     category: "Tops",
     designer: "designing-balaclava",
-    images: [BC1, BC2],
+    images: [BC1, BC3],
     fabric: "Fine marled knit, ribbed hem",
     care: "Hand wash cold. Dry flat.",
     description:
@@ -278,8 +316,35 @@ export const products: Product[] = [
     sizes: ["S", "M", "L", "XL"],
   },
   {
+    id: "contrast-cargo-denim",
+    name: "Contrast Stitch Cargo Denim",
+    price: 190,
+    category: "Bottoms",
+    designer: "designing-balaclava",
+    images: [BC2, BC1],
+    fabric: "Washed black denim, white contrast stitch",
+    care: "Cold wash separately. Expect fading.",
+    description:
+      "Wide-leg washed black cargo denim traced in white contrast stitch, with drop side pockets and a relaxed stack at the hem.",
+    sizes: ["28", "30", "32", "34", "36"],
+  },
+  {
+    id: "balaclava-crop-tank",
+    name: "Balaclava Cropped Tank",
+    price: 75,
+    category: "Tops",
+    designer: "designing-balaclava",
+    images: [BC2, BC5],
+    fabric: "Cotton rib jersey, black",
+    care: "Machine wash cold. Hang dry.",
+    description:
+      "A cropped black rib tank with the small balaclava mark at the chest — the everyday base layer of the studio wardrobe.",
+    sizes: ["XS", "S", "M", "L"],
+  },
+  {
     id: "quantum-strider-trouser",
     name: "Quantum Strider Panelled Trouser",
+    price: 290,
     category: "Bottoms",
     designer: "last-cloud-designs",
     images: [LC3, LC5],
@@ -292,6 +357,7 @@ export const products: Product[] = [
   {
     id: "aetheline-satin-stack",
     name: "Aetheline Stacked Satin Pant",
+    price: 260,
     category: "Bottoms",
     designer: "last-cloud-designs",
     images: [LC4, LC3],
@@ -304,6 +370,7 @@ export const products: Product[] = [
   {
     id: "aetheline-crop-set",
     name: "Aetheline Mesh Crop Tee",
+    price: 110,
     category: "Tops",
     designer: "last-cloud-designs",
     images: [LC5, LC4],
@@ -316,9 +383,10 @@ export const products: Product[] = [
   {
     id: "lastcloud-mint-set",
     name: "To The World Mint Set",
+    price: 240,
     category: "Outerwear",
     designer: "last-cloud-designs",
-    images: [LC2],
+    images: [LC2, LC1],
     fabric: "Cotton twill, soft mint",
     care: "Machine wash cold. Hang dry.",
     description:
@@ -328,9 +396,10 @@ export const products: Product[] = [
   {
     id: "denim-cut-kids-set",
     name: "Denim Cut Two-Piece — Kids",
+    price: 150,
     category: "Outerwear",
     designer: "last-cloud-designs",
-    images: [LC1, LC13],
+    images: [LC1, LC2],
     fabric: "Chambray denim, red contrast stitch",
     care: "Cold wash separately. Tumble dry low.",
     description:
@@ -338,123 +407,51 @@ export const products: Product[] = [
     sizes: ["4Y", "6Y", "8Y", "10Y"],
   },
   {
-    id: "shonakidd-flow-rider-tee",
-    name: "Flow Rider Printed Tee",
+    id: "anxiety-denim-two-piece",
+    name: "Denim B/W Two Piece",
     category: "Tops",
-    designer: "shonakidd",
-    images: [SK1, SK2],
-    fabric: "Heavyweight cotton jersey, screen print",
-    care: "Machine wash cold inside out. Tumble dry low.",
-    description:
-      "A bold graphic tee built for professional flow riders — ShonaKidd's music-and-streetwear energy in a heavyweight cotton print.",
-    sizes: ["S", "M", "L", "XL"],
-  },
-  {
-    id: "shonakidd-define-your-style-tee",
-    name: "Define Your Style Tee",
-    category: "Tops",
-    designer: "shonakidd",
-    images: [SK3, SK4],
-    fabric: "Heavyweight cotton jersey, screen print",
-    care: "Machine wash cold inside out. Tumble dry low.",
-    description:
-      "Where fashion meets the flow — a statement tee for anyone who isn't afraid to define their own identity.",
-    sizes: ["S", "M", "L", "XL"],
-  },
-  {
-    id: "cool-summer-bag",
-    name: "Cool Summer Bag",
-    category: "Accessories",
-    designer: "last-cloud-designs",
-    images: [LC6],
-    fabric: "Lightweight canvas",
-    care: "Spot clean only.",
-    description:
-      "A breezy warm-weather tote from Last Cloud Designs, built for everyday carry.",
-    sizes: ["One Size"],
-  },
-  {
-    id: "cloudy-bag",
-    name: "Cloudy Bag",
-    category: "Accessories",
-    designer: "last-cloud-designs",
-    images: [LC7],
-    fabric: "Soft-structure canvas",
-    care: "Spot clean only.",
-    description:
-      "The Cloudy Bag, part of the Last Cloud Designs accessories line.",
-    sizes: ["One Size"],
-  },
-  {
-    id: "nebula-trousers",
-    name: "Nebula Trousers",
-    category: "Bottoms",
-    designer: "last-cloud-designs",
-    images: [LC15],
-    fabric: "Structured woven blend",
+    designer: "anxiety",
+    images: [AnxietyDenim, AnxietyDenim1, AnxietyDenim2, AnxietyDenim3],
+    fabric: "Denim, black and white",
     care: "Machine wash cold. Hang dry.",
     description:
-      "Nebula Trousers from Last Cloud Designs — a tailored silhouette with a wide leg.",
+      "A black and white denim two-piece from ANXIETY — wearable art for the anxious generation.",
     sizes: ["S", "M", "L", "XL"],
   },
   {
-    id: "ss2025-tshirt-cream-white",
-    name: "SS2025 T-Shirt — Cream White",
+    id: "anxiety-crop-top",
+    name: "Crop Top",
     category: "Tops",
-    designer: "last-cloud-designs",
-    images: [LC20],
-    fabric: "Cotton jersey",
-    care: "Machine wash cold. Hang dry.",
-    description:
-      "Part of the SS2025 collection — a clean cream white tee from Last Cloud Designs.",
-    sizes: ["S", "M", "L", "XL"],
-  },
-  {
-    id: "ss2025-mojito-kids-two-piece",
-    name: "SS2025 Mojito — Kids Unisex Two Piece",
-    category: "Tops",
-    designer: "last-cloud-designs",
-    images: [LC3New, LC4New, LC12],
+    designer: "anxiety",
+    images: [AnxietyCrop, AnxietyCrop1, AnxietyCrop2, AnxietyCrop3],
     fabric: "Cotton blend",
     care: "Machine wash cold. Hang dry.",
     description:
-      "The SS2025 Mojito two-piece, sized for kids — from the Last Cloud Designs summer collection.",
-    sizes: ["4Y", "6Y", "8Y", "10Y"],
-  },
-  {
-    id: "ss2025-mojito-unisex-two-piece",
-    name: "SS2025 Mojito — Unisex Two Piece",
-    category: "Tops",
-    designer: "last-cloud-designs",
-    images: [LC4New],
-    fabric: "Cotton blend",
-    care: "Machine wash cold. Hang dry.",
-    description:
-      "The SS2025 Mojito two-piece in adult sizing — from the Last Cloud Designs summer collection.",
+      "An ANXIETY crop top — raw emotion turned into wearable art.",
     sizes: ["S", "M", "L", "XL"],
   },
   {
-    id: "ss2025-rosa-gallica-two-piece",
-    name: "SS2025 Rosa Gallica — Unisex Two Piece",
+    id: "anxiety-custom-tshirt",
+    name: "Custom Hand-Painted T-Shirt",
     category: "Tops",
-    designer: "last-cloud-designs",
-    images: [LC8, LC9],
-    fabric: "Cotton blend",
-    care: "Machine wash cold. Hang dry.",
+    designer: "anxiety",
+    images: [AnxietyCustom, AnxietyCustom1, AnxietyCustom2, AnxietyCustom3],
+    fabric: "Cotton, hand-painted",
+    care: "Hand wash cold. Do not tumble dry.",
     description:
-      "The Rosa Gallica two-piece from the SS2025 Last Cloud Designs collection.",
+      "A one-of-a-kind hand-painted t-shirt from ANXIETY — each piece designed to make you feel seen.",
     sizes: ["S", "M", "L", "XL"],
   },
   {
-    id: "ss2026-two-piece-brown",
-    name: "SS2026 Two Piece",
+    id: "anxiety-custom-two-piece",
+    name: "Custom Hand-Painted Two Piece",
     category: "Tops",
-    designer: "last-cloud-designs",
-    images: [LC5New, LC11],
-    fabric: "Cotton blend",
-    care: "Machine wash cold. Hang dry.",
+    designer: "anxiety",
+    images: [AnxietyCustomTwoPiece, AnxietyCustomTwoPiece1, AnxietyCustomTwoPiece2],
+    fabric: "Cotton, hand-painted",
+    care: "Hand wash cold. Do not tumble dry.",
     description:
-      "An early look from the SS2026 Last Cloud Designs collection.",
+      "A custom hand-painted two-piece set from ANXIETY — confident, understood, and one of a kind.",
     sizes: ["S", "M", "L", "XL"],
   },
 ];
@@ -466,3 +463,9 @@ export const getDesigner = (slug: string) => designers.find((d) => d.slug === sl
 export const getProduct = (id: string) => products.find((p) => p.id === id);
 export const productsByDesigner = (slug: string) =>
   products.filter((p) => p.designer === slug);
+export const formatPrice = (n: number) =>
+  new Intl.NumberFormat("en-ZA", {
+    style: "currency",
+    currency: "ZAR",
+    minimumFractionDigits: 0,
+  }).format(n);
