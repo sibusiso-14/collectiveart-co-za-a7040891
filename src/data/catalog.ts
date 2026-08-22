@@ -158,8 +158,8 @@ export const designers: Designer[
     since: "2024",
     bio: "Last Cloud Designs works in story-driven collections — panelled satin trousers, red-stitch denim two-pieces and soft-green streetwear sets, all cut in studio and released as short narrative drops.",
     statement: "Last Cloud to the world.",
-    portrait: LC3,
-    lookbook: [LC4, LC2, LC5],
+    portrait: LC5New,
+    lookbook: [LC11, LC20, LC15],
     instagram: "lastcloud_designs",
   },
   {
