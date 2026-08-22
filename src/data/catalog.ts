@@ -110,7 +110,7 @@ export const designers: Designer[
     since: "2021",
     bio: "ANXIETY is a streetwear clothing brand born in South Africa for the anxious generation. We turn inner struggles, overthinking, and raw emotion into wearable art. Each piece is designed to make you feel seen, confident, and understood — because anxiety isn't weakness, it's power.",
     statement: "Don't let your anxiety bring you down.",
-    portrait: AnxietyCustom,
+    portrait: AnxietyDenim,
     lookbook: [AnxietyCustom1, AnxietyDenim, AnxietyDenim1],
     instagram: "anxi3tystop",
   },
