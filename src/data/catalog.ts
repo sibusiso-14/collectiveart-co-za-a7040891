@@ -94,7 +94,7 @@ export const designers: Designer[] = [
     statement: "Don't let your anxiety bring you down.",
     portrait: AnxietyCustom,
     lookbook: [AnxietyCustom1, AnxietyDenim, AnxietyDenim1],
-    instagram: "anxiety.stop",
+    instagram: "anxi3tystop",
   },
   {
     slug: "damnation-designs",
