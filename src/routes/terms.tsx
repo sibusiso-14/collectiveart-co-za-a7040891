@@ -106,18 +106,18 @@ function TermsPage() {
 
         <section>
           <h2 className="font-serif text-2xl md:text-3xl">
-            3. For Designers (Seller Cohorts)
+            3. For Designers
           </h2>
 
           <h3 className="mt-6 font-serif text-xl">
-            3.1 Curation and Rotational Model
+            3.1 Curation and Listing
           </h3>
           <p className="mt-2">
-            Spaces are strictly limited to five (5) Designers per three (3)
-            month cycle ("Cohort"). Inclusion in a Cohort is at the sole
-            discretion of the Website. At the end of your designated 3-month
-            cycle, your listings will be automatically deactivated to allow the
-            next Cohort to launch.
+            Designer enrollment is open, with no fixed limit on the number
+            of Designers listed at any time. Inclusion on the Website is at
+            the sole discretion of the Website, and listings remain active
+            on an ongoing basis unless otherwise agreed or terminated in
+            line with these Terms.
           </p>
 
           <h3 className="mt-6 font-serif text-xl">3.2 Fees and EFT Payments</h3>
