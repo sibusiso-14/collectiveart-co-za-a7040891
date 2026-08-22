@@ -70,6 +70,18 @@ export type Product = {
 
 export const designers: Designer[] = [
   {
+    slug: "anxiety",
+    name: "ANXIETY",
+    location: "Cosmo City, Randburg",
+    discipline: "Streetwear & wearable art",
+    since: "2021",
+    bio: "ANXIETY is a streetwear clothing brand born in South Africa for the anxious generation. We turn inner struggles, overthinking, and raw emotion into wearable art. Each piece is designed to make you feel seen, confident, and understood — because anxiety isn't weakness, it's power.",
+    statement: "Don't let your anxiety bring you down.",
+    portrait: AnxietyCustom,
+    lookbook: [AnxietyCustom1, AnxietyDenim, AnxietyDenim1],
+    instagram: "anxiety.stop",
+  },
+  {
     slug: "damnation-designs",
     name: "Damnation Designs",
     location: "Maseru, LS",
@@ -80,18 +92,6 @@ export const designers: Designer[] = [
     portrait: DD2,
     lookbook: [DD1, DD4, DD3],
     instagram: "damnationdesigns",
-  },
-  {
-    slug: "galbakaline",
-    name: "Galbakaline",
-    location: "Maseru, LS",
-    discipline: "Fur, denim & outerwear",
-    since: "2022",
-    bio: "Galbakaline makes premium hoodies and outerwear from luxurious fur, reclaimed denim and technical shells, finished with hand-drawn character graphics. Comfort meets style in every stitch.",
-    statement: "Every stitch is a signature.",
-    portrait: GB1,
-    lookbook: [GB1, GB3, GB2],
-    instagram: "galbakaline",
   },
   {
     slug: "designing-balaclava",
@@ -106,6 +106,18 @@ export const designers: Designer[] = [
     instagram: "designingbalaclava",
   },
   {
+    slug: "galbakaline",
+    name: "Galbakaline",
+    location: "Maseru, LS",
+    discipline: "Fur, denim & outerwear",
+    since: "2022",
+    bio: "Galbakaline makes premium hoodies and outerwear from luxurious fur, reclaimed denim and technical shells, finished with hand-drawn character graphics. Comfort meets style in every stitch.",
+    statement: "Every stitch is a signature.",
+    portrait: GB1,
+    lookbook: [GB1, GB3, GB2],
+    instagram: "galbakaline",
+  },
+  {
     slug: "last-cloud-designs",
     name: "Last Cloud Designs",
     location: "Maseru, LS",
@@ -116,18 +128,6 @@ export const designers: Designer[] = [
     portrait: LC3,
     lookbook: [LC4, LC2, LC5],
     instagram: "lastcloud_designs",
-  },
-  {
-    slug: "anxiety",
-    name: "ANXIETY",
-    location: "Cosmo City, Randburg",
-    discipline: "Streetwear & wearable art",
-    since: "2021",
-    bio: "ANXIETY is a streetwear clothing brand born in South Africa for the anxious generation. We turn inner struggles, overthinking, and raw emotion into wearable art. Each piece is designed to make you feel seen, confident, and understood — because anxiety isn't weakness, it's power.",
-    statement: "Don't let your anxiety bring you down.",
-    portrait: AnxietyCustom,
-    lookbook: [AnxietyCustom1, AnxietyDenim, AnxietyDenim1],
-    instagram: "anxiety.stop",
   },
 ];
 
