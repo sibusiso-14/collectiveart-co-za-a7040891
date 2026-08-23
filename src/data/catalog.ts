@@ -22,6 +22,20 @@ import SK1 from "@/assets/SK1.jpg";
 import SK2 from "@/assets/SK2.jpg";
 import SK3 from "@/assets/SK3.jpg";
 import SK4 from "@/assets/SK4.jpg";
+import FIRE1 from "@/assets/Fire-2-piece-combo.jpeg";
+import FIRE2 from "@/assets/Fire-2-piece-combo1.jpeg";
+import FIRE3 from "@/assets/Fire-2-piece-combo2.jpeg";
+import FIRE4 from "@/assets/Fire-2-piece-combo3.jpeg";
+import HOODIENEW1 from "@/assets/Galbakaline-hoodie.JPG";
+import HOODIENEW2 from "@/assets/Galbakaline-hoodie1.jpg";
+import HOODIENEW3 from "@/assets/Galbakaline-hoodie2.JPG";
+import LEATHERNEW1 from "@/assets/Galbakaline-leather-pants.JPG";
+import LEATHERNEW2 from "@/assets/Galbakaline-leather-pants1.JPG";
+import LEATHERNEW3 from "@/assets/Galbakaline-leather-pants2.JPG";
+import LUXE1 from "@/assets/luxe-denim-2-piece.jpg";
+import LUXE2 from "@/assets/luxe-denim-2-piece1.jpg";
+import LUXE3 from "@/assets/luxe-denim-2-piece2.JPG";
+import LUXE4 from "@/assets/luxe-denim-2-piece3.JPG";
 import GOAT1 from "@/assets/chronic-wear-3-piece.jpg";
 import GOAT2 from "@/assets/chronic-wear-3-piece1.jpg";
 import GOAT3 from "@/assets/chronic-wear-3-piece2.jpg";
@@ -317,7 +331,7 @@ export const products: Product[
     name: "Cross Panel Leather Pant",
     category: "Bottoms",
     designer: "galbakaline",
-    images: [GB2],
+    images: [GB2, LEATHERNEW1, LEATHERNEW2, LEATHERNEW3],
     fabric: "Panelled leather, oxblood and black",
     care: "Wipe clean. Condition twice yearly.",
     description:
@@ -497,7 +511,7 @@ export const products: Product[
     name: "Signature Fur Hoodie",
     category: "Outerwear",
     designer: "galbakaline",
-    images: [GB1, GB2],
+    images: [GB1, GB2, HOODIENEW1, HOODIENEW2, HOODIENEW3],
     fabric: "High-pile faux fur with brushed fleece body",
     care: "Hand wash cold. Dry flat away from heat.",
     description:
@@ -586,6 +600,30 @@ export const products: Product[
     care: "Machine wash cold. Hang dry.",
     description:
       "An overshirt and short set in soft mint twill, worn over the graphic Last Cloud streetwear tee. Boxy through the shoulder, relaxed at the leg.",
+    sizes: ["S", "M", "L", "XL"],
+  },
+  {
+    id: "luxe-denim-2-piece",
+    name: "Luxe Denim 2 Piece",
+    category: "Outerwear",
+    designer: "galbakaline",
+    images: [LUXE1, LUXE2, LUXE3, LUXE4],
+    fabric: "Premium denim, reclaimed panels",
+    care: "Cold wash separately. Hang dry.",
+    description:
+      "A luxe two-piece denim set built from premium reclaimed panels, cut for a boxy, elevated silhouette.",
+    sizes: ["S", "M", "L", "XL"],
+  },
+  {
+    id: "fire-2-piece-combo",
+    name: "Fire 2 Piece Combo",
+    category: "Outerwear",
+    designer: "galbakaline",
+    images: [FIRE1, FIRE2, FIRE3, FIRE4],
+    fabric: "Technical shell with graphic detailing",
+    care: "Wipe clean. Do not tumble dry.",
+    description:
+      "A bold two-piece combo finished with Galbakaline's signature flame-streaked graphics — comfort meets style in every stitch.",
     sizes: ["S", "M", "L", "XL"],
   },
 ];
