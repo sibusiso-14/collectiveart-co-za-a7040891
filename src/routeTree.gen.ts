@@ -19,7 +19,9 @@ import { Route as ResetPasswordRouteImport } from './routes/reset-password'
 import { Route as ShopRouteImport } from './routes/shop'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as AuthenticatedAccountRouteImport } from './routes/_authenticated/account'
+import { Route as AdminAmbassadorsRouteImport } from './routes/admin.ambassadors'
 import { Route as AdminApplicationsRouteImport } from './routes/admin.applications'
+import { Route as AdminStylistsRouteImport } from './routes/admin.stylists'
 import { Route as DesignersIndexRouteImport } from './routes/designers.index'
 import { Route as DesignersSlugRouteImport } from './routes/designers.$slug'
 import { Route as ProductProductIdRouteImport } from './routes/product.$productId'
@@ -76,9 +78,19 @@ const AuthenticatedAccountRoute = AuthenticatedAccountRouteImport.update({
   path: '/account',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const AdminAmbassadorsRoute = AdminAmbassadorsRouteImport.update({
+  id: '/admin/ambassadors',
+  path: '/admin/ambassadors',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdminApplicationsRoute = AdminApplicationsRouteImport.update({
   id: '/admin/applications',
   path: '/admin/applications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminStylistsRoute = AdminStylistsRouteImport.update({
+  id: '/admin/stylists',
+  path: '/admin/stylists',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DesignersIndexRoute = DesignersIndexRouteImport.update({
@@ -122,7 +134,9 @@ export interface FileRoutesByFullPath {
   '/shop': typeof ShopRoute
   '/terms': typeof TermsRoute
   '/account': typeof AuthenticatedAccountRoute
+  '/admin/ambassadors': typeof AdminAmbassadorsRoute
   '/admin/applications': typeof AdminApplicationsRoute
+  '/admin/stylists': typeof AdminStylistsRoute
   '/designers/$slug': typeof DesignersSlugRoute
   '/product/$productId': typeof ProductProductIdRoute
   '/stylists/$stylistId': typeof StylistsStylistIdRoute
@@ -140,7 +154,9 @@ export interface FileRoutesByTo {
   '/shop': typeof ShopRoute
   '/terms': typeof TermsRoute
   '/account': typeof AuthenticatedAccountRoute
+  '/admin/ambassadors': typeof AdminAmbassadorsRoute
   '/admin/applications': typeof AdminApplicationsRoute
+  '/admin/stylists': typeof AdminStylistsRoute
   '/designers/$slug': typeof DesignersSlugRoute
   '/product/$productId': typeof ProductProductIdRoute
   '/stylists/$stylistId': typeof StylistsStylistIdRoute
@@ -160,7 +176,9 @@ export interface FileRoutesById {
   '/shop': typeof ShopRoute
   '/terms': typeof TermsRoute
   '/_authenticated/account': typeof AuthenticatedAccountRoute
+  '/admin/ambassadors': typeof AdminAmbassadorsRoute
   '/admin/applications': typeof AdminApplicationsRoute
+  '/admin/stylists': typeof AdminStylistsRoute
   '/designers/$slug': typeof DesignersSlugRoute
   '/product/$productId': typeof ProductProductIdRoute
   '/stylists/$stylistId': typeof StylistsStylistIdRoute
@@ -180,7 +198,9 @@ export interface FileRouteTypes {
     | '/shop'
     | '/terms'
     | '/account'
+    | '/admin/ambassadors'
     | '/admin/applications'
+    | '/admin/stylists'
     | '/designers/$slug'
     | '/product/$productId'
     | '/stylists/$stylistId'
@@ -198,7 +218,9 @@ export interface FileRouteTypes {
     | '/shop'
     | '/terms'
     | '/account'
+    | '/admin/ambassadors'
     | '/admin/applications'
+    | '/admin/stylists'
     | '/designers/$slug'
     | '/product/$productId'
     | '/stylists/$stylistId'
@@ -217,7 +239,9 @@ export interface FileRouteTypes {
     | '/shop'
     | '/terms'
     | '/_authenticated/account'
+    | '/admin/ambassadors'
     | '/admin/applications'
+    | '/admin/stylists'
     | '/designers/$slug'
     | '/product/$productId'
     | '/stylists/$stylistId'
@@ -236,7 +260,9 @@ export interface RootRouteChildren {
   ResetPasswordRoute: typeof ResetPasswordRoute
   ShopRoute: typeof ShopRoute
   TermsRoute: typeof TermsRoute
+  AdminAmbassadorsRoute: typeof AdminAmbassadorsRoute
   AdminApplicationsRoute: typeof AdminApplicationsRoute
+  AdminStylistsRoute: typeof AdminStylistsRoute
   DesignersSlugRoute: typeof DesignersSlugRoute
   ProductProductIdRoute: typeof ProductProductIdRoute
   StylistsStylistIdRoute: typeof StylistsStylistIdRoute
@@ -317,11 +343,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAccountRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/admin/ambassadors': {
+      id: '/admin/ambassadors'
+      path: '/admin/ambassadors'
+      fullPath: '/admin/ambassadors'
+      preLoaderRoute: typeof AdminAmbassadorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/admin/applications': {
       id: '/admin/applications'
       path: '/admin/applications'
       fullPath: '/admin/applications'
       preLoaderRoute: typeof AdminApplicationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/stylists': {
+      id: '/admin/stylists'
+      path: '/admin/stylists'
+      fullPath: '/admin/stylists'
+      preLoaderRoute: typeof AdminStylistsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/designers/': {
@@ -390,7 +430,9 @@ const rootRouteChildren: RootRouteChildren = {
   ResetPasswordRoute: ResetPasswordRoute,
   ShopRoute: ShopRoute,
   TermsRoute: TermsRoute,
+  AdminAmbassadorsRoute: AdminAmbassadorsRoute,
   AdminApplicationsRoute: AdminApplicationsRoute,
+  AdminStylistsRoute: AdminStylistsRoute,
   DesignersSlugRoute: DesignersSlugRoute,
   ProductProductIdRoute: ProductProductIdRoute,
   StylistsStylistIdRoute: StylistsStylistIdRoute,
