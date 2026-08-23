@@ -13,7 +13,7 @@ const nav = [
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
-  const { isAuthenticated, loading } = useAuth();
+  const { isAuthenticated, loading, isAdmin } = useAuth();
 
 
   return (
@@ -51,6 +51,14 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center justify-end gap-6">
+          {!loading && isAdmin && (
+            <Link
+              to="/admin"
+              className="hidden text-[0.7rem] uppercase tracking-[0.22em] text-foreground/70 transition-colors hover:text-foreground md:inline"
+            >
+              Admin
+            </Link>
+          )}
           {!loading && (
             <Link
               to={isAuthenticated ? "/account" : "/auth"}
@@ -93,6 +101,15 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
+          {isAdmin && (
+            <Link
+              to="/admin"
+              onClick={() => setOpen(false)}
+              className="border-b border-border py-4 font-serif text-2xl"
+            >
+              Admin
+            </Link>
+          )}
           <Link
             to={isAuthenticated ? "/account" : "/auth"}
             onClick={() => setOpen(false)}
