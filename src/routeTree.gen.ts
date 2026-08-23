@@ -19,6 +19,7 @@ import { Route as ResetPasswordRouteImport } from './routes/reset-password'
 import { Route as ShopRouteImport } from './routes/shop'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as AuthenticatedAccountRouteImport } from './routes/_authenticated/account'
+import { Route as AdminIndexRouteImport } from './routes/admin.index'
 import { Route as AdminAmbassadorsRouteImport } from './routes/admin.ambassadors'
 import { Route as AdminApplicationsRouteImport } from './routes/admin.applications'
 import { Route as AdminStylistsRouteImport } from './routes/admin.stylists'
@@ -77,6 +78,11 @@ const AuthenticatedAccountRoute = AuthenticatedAccountRouteImport.update({
   id: '/account',
   path: '/account',
   getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AdminIndexRoute = AdminIndexRouteImport.update({
+  id: '/admin/',
+  path: '/admin/',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const AdminAmbassadorsRoute = AdminAmbassadorsRouteImport.update({
   id: '/admin/ambassadors',
@@ -141,6 +147,7 @@ export interface FileRoutesByFullPath {
   '/product/$productId': typeof ProductProductIdRoute
   '/stylists/$stylistId': typeof StylistsStylistIdRoute
   '/stylists/apply': typeof StylistsApplyRoute
+  '/admin/': typeof AdminIndexRoute
   '/designers/': typeof DesignersIndexRoute
   '/stylists/': typeof StylistsIndexRoute
 }
@@ -161,6 +168,7 @@ export interface FileRoutesByTo {
   '/product/$productId': typeof ProductProductIdRoute
   '/stylists/$stylistId': typeof StylistsStylistIdRoute
   '/stylists/apply': typeof StylistsApplyRoute
+  '/admin': typeof AdminIndexRoute
   '/designers': typeof DesignersIndexRoute
   '/stylists': typeof StylistsIndexRoute
 }
@@ -183,6 +191,7 @@ export interface FileRoutesById {
   '/product/$productId': typeof ProductProductIdRoute
   '/stylists/$stylistId': typeof StylistsStylistIdRoute
   '/stylists/apply': typeof StylistsApplyRoute
+  '/admin/': typeof AdminIndexRoute
   '/designers/': typeof DesignersIndexRoute
   '/stylists/': typeof StylistsIndexRoute
 }
@@ -205,6 +214,7 @@ export interface FileRouteTypes {
     | '/product/$productId'
     | '/stylists/$stylistId'
     | '/stylists/apply'
+    | '/admin/'
     | '/designers/'
     | '/stylists/'
   fileRoutesByTo: FileRoutesByTo
@@ -225,6 +235,7 @@ export interface FileRouteTypes {
     | '/product/$productId'
     | '/stylists/$stylistId'
     | '/stylists/apply'
+    | '/admin'
     | '/designers'
     | '/stylists'
   id:
@@ -246,6 +257,7 @@ export interface FileRouteTypes {
     | '/product/$productId'
     | '/stylists/$stylistId'
     | '/stylists/apply'
+    | '/admin/'
     | '/designers/'
     | '/stylists/'
   fileRoutesById: FileRoutesById
@@ -267,6 +279,7 @@ export interface RootRouteChildren {
   ProductProductIdRoute: typeof ProductProductIdRoute
   StylistsStylistIdRoute: typeof StylistsStylistIdRoute
   StylistsApplyRoute: typeof StylistsApplyRoute
+  AdminIndexRoute: typeof AdminIndexRoute
   DesignersIndexRoute: typeof DesignersIndexRoute
   StylistsIndexRoute: typeof StylistsIndexRoute
 }
@@ -342,6 +355,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/account'
       preLoaderRoute: typeof AuthenticatedAccountRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/admin/': {
+      id: '/admin/'
+      path: '/admin'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AdminIndexRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/admin/ambassadors': {
       id: '/admin/ambassadors'
@@ -437,6 +457,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProductProductIdRoute: ProductProductIdRoute,
   StylistsStylistIdRoute: StylistsStylistIdRoute,
   StylistsApplyRoute: StylistsApplyRoute,
+  AdminIndexRoute: AdminIndexRoute,
   DesignersIndexRoute: DesignersIndexRoute,
   StylistsIndexRoute: StylistsIndexRoute,
 }
