@@ -160,8 +160,8 @@ export const designers: Designer[
     since: "2022",
     bio: "Galbakaline makes premium hoodies and outerwear from luxurious fur, reclaimed denim and technical shells, finished with hand-drawn character graphics. Comfort meets style in every stitch.",
     statement: "Every stitch is a signature.",
-    portrait: GB1,
-    lookbook: [GB1, GB3, GB2],
+    portrait: FIRE1,
+    lookbook: [LUXE1, HOODIENEW1, LEATHERNEW1],
     instagram: "galbakaline",
   },
   {
