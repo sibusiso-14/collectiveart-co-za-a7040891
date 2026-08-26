@@ -195,18 +195,6 @@ export const products: Product[
 
 ] = [
   {
-    id: "aetheline-crop-set",
-    name: "Aetheline Mesh Crop Tee",
-    category: "Tops",
-    designer: "last-cloud-designs",
-    images: [LC5, LC4],
-    fabric: "Printed mesh overlay on cotton jersey",
-    care: "Cold wash inside out. Hang dry.",
-    description:
-      "A cropped white tee layered with a printed mesh bodice panel — soft armour from the Echoes of Aetheline drop.",
-    sizes: ["XS", "S", "M", "L"],
-  },
-  {
     id: "aetheline-satin-stack",
     name: "Aetheline Stacked Satin Pant",
     category: "Bottoms",

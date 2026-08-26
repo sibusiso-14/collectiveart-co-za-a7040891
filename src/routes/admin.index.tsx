@@ -17,7 +17,7 @@ type Row = {
   created_at: string;
 };
 
-function useTable(table: string) {
+function useTable(table: "applications" | "ambassadors" | "stylists") {
   const [rows, setRows] = useState<Row[] | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
@@ -50,7 +50,13 @@ function useTable(table: string) {
   return { rows, error, loading };
 }
 
-function Section({ title, table }: { title: string; table: string }) {
+function Section({
+  title,
+  table,
+}: {
+  title: string;
+  table: "applications" | "ambassadors" | "stylists";
+}) {
   const { rows, error, loading } = useTable(table);
 
   return (

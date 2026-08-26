@@ -8,6 +8,7 @@ export const Route = createFileRoute("/admin/ambassadors")({
 
 type Row = {
   id: string;
+  name: string;
   city: string | null;
   email: string;
   social: string | null;
