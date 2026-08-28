@@ -96,12 +96,15 @@ function Home() {
         <div className="mt-6 grid grid-cols-3 gap-1 md:grid-cols-6 md:gap-1.5">
           {(() => {
             const seen = new Set<string>();
+            const designerCount: Record<string, number> = {};
             const pickFromCategory = (category: string, limit: number) => {
               const picked: typeof products = [];
               for (const p of products) {
                 if (p.category !== category) continue;
                 if (seen.has(p.images[0])) continue;
+                if (p.designer === "absolute-goat" && (designerCount["absolute-goat"] ?? 0) >= 1) continue;
                 seen.add(p.images[0]);
+                designerCount[p.designer] = (designerCount[p.designer] ?? 0) + 1;
                 picked.push(p);
                 if (picked.length >= limit) break;
               }
