@@ -40,7 +40,10 @@ function Shop() {
             const q = query.trim().toLowerCase();
             const designerName = designers.find((d) => d.slug === p.designer)?.name ?? "";
             const matches =
-              p.name.toLowerCase().includes(q) || designerName.toLowerCase().includes(q);
+              p.name.toLowerCase().includes(q) ||
+              designerName.toLowerCase().includes(q) ||
+              p.category.toLowerCase().includes(q) ||
+              p.fabric.toLowerCase().includes(q);
             if (!matches) return false;
           }
           return true;
