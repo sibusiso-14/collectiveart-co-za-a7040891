@@ -4,7 +4,7 @@ import { useAuth } from "@/hooks/useAuth";
 import mark from "@/assets/collaborate-mark-square.png";
 
 const nav = [
-  { to: "/shop", label: "Collection" },
+  { to: "/shop", label: "The Collection" },
   { to: "/designers", label: "Designers" },
   { to: "/stylists", label: "Stylists" },
   { to: "/ambassadors", label: "Ambassadors" },
