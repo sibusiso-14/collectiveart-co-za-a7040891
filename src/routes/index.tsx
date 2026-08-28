@@ -96,16 +96,15 @@ function Home() {
         <div className="mt-6 grid grid-cols-3 gap-1 md:grid-cols-6 md:gap-1.5">
           {(() => {
             const seen = new Set<string>();
-            const perDesigner: Record<string, number> = {};
+            const perCategory: Record<string, number> = {};
             const wardrobe: typeof products = [];
             for (const p of products) {
               if (seen.has(p.images[0])) continue;
-              const count = perDesigner[p.designer] ?? 0;
-              if (count >= 3) continue;
+              const count = perCategory[p.category] ?? 0;
+              if (count >= 2) continue;
               seen.add(p.images[0]);
-              perDesigner[p.designer] = count + 1;
+              perCategory[p.category] = count + 1;
               wardrobe.push(p);
-              if (wardrobe.length >= 10) break;
             }
             return wardrobe;
           })().map((p) => (
