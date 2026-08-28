@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { ProductCard } from "@/components/ProductCard";
-import { categories, designers, products, type Category } from "@/data/catalog";
+import { categories, designers, products, audiences, type Category, type Audience } from "@/data/catalog";
 
 export const Route = createFileRoute("/shop")({
   head: () => ({
@@ -25,23 +25,35 @@ export const Route = createFileRoute("/shop")({
 
 function Shop() {
   const [category, setCategory] = useState<Category | null>(null);
+  const [audience, setAudience] = useState<Audience | null>(null);
   const [designer, setDesigner] = useState<string | null>(null);
+  const [query, setQuery] = useState("");
 
   const filtered = useMemo(
     () =>
       products
         .filter((p) => {
           if (category && p.category !== category) return false;
+          if (audience && p.audience !== audience) return false;
           if (designer && p.designer !== designer) return false;
+          if (query.trim()) {
+            const q = query.trim().toLowerCase();
+            const designerName = designers.find((d) => d.slug === p.designer)?.name ?? "";
+            const matches =
+              p.name.toLowerCase().includes(q) || designerName.toLowerCase().includes(q);
+            if (!matches) return false;
+          }
           return true;
         })
         .sort((a, b) => a.name.localeCompare(b.name)),
-    [category, designer],
+    [category, audience, designer, query],
   );
 
   const clear = () => {
     setCategory(null);
+    setAudience(null);
     setDesigner(null);
+    setQuery("");
   };
 
   return (
@@ -56,6 +68,16 @@ function Shop() {
         </p>
       </header>
 
+      <div className="pt-8">
+        <input
+          type="text"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Search pieces or designers…"
+          className="w-full max-w-md border-b border-border bg-transparent py-3 text-base outline-none placeholder:text-muted-foreground/60"
+        />
+      </div>
+
       <div className="grid gap-12 pt-10 md:grid-cols-[220px_minmax(0,1fr)] md:gap-14">
         <aside className="md:sticky md:top-24 md:self-start">
           <FilterGroup title="Category">
@@ -69,6 +91,21 @@ function Shop() {
                 onClick={() => setCategory(c)}
               >
                 {c}
+              </FilterButton>
+            ))}
+          </FilterGroup>
+
+          <FilterGroup title="Audience">
+            <FilterButton active={audience === null} onClick={() => setAudience(null)}>
+              All
+            </FilterButton>
+            {audiences.map((a) => (
+              <FilterButton
+                key={a}
+                active={audience === a}
+                onClick={() => setAudience(a)}
+              >
+                {a}
               </FilterButton>
             ))}
           </FilterGroup>
