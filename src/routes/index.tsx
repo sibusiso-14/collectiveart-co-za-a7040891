@@ -120,7 +120,7 @@ function Home() {
               key={p.id}
               to="/product/$productId"
               params={{ productId: p.id }}
-              className="group relative block aspect-square overflow-hidden bg-secondary"
+              className="group relative block aspect-square overflow-hidden bg-secondary photo-tint"
             >
               <img
                 src={p.images[0]}
@@ -152,7 +152,7 @@ function Home() {
               params={{ slug: d.slug }}
               className="group w-[72vw] shrink-0 snap-start md:w-[30vw] lg:w-[24vw]"
             >
-              <div className="aspect-[4/5] overflow-hidden bg-secondary">
+              <div className="aspect-[4/5] overflow-hidden bg-secondary photo-tint">
                 <img
                   src={d.portrait}
                   alt={d.name}

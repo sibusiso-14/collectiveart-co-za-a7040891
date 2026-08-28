@@ -66,7 +66,7 @@ function Apply() {
             </p>
           </div>
           <div className="md:col-span-5 md:col-start-8">
-            <div className="aspect-[3/4] overflow-hidden bg-secondary">
+            <div className="aspect-[3/4] overflow-hidden bg-secondary photo-tint">
               <img
                 src={products[3].images[0]}
                 alt="Designer piece photographed in an empty studio"

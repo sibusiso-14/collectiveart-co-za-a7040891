@@ -189,3 +189,15 @@
   }
 }
 
+
+@utility photo-tint {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: oklch(0.7 0.02 75 / 8%);
+    mix-blend-mode: multiply;
+    pointer-events: none;
+  }
+}

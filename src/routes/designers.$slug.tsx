@@ -101,7 +101,7 @@ function DesignerPage() {
           {designer.lookbook.map((img: string, i: number) => (
             <div
               key={i}
-              className={`aspect-[3/4] overflow-hidden bg-secondary ${
+              className={`aspect-[3/4] overflow-hidden bg-secondary photo-tint ${
                 i < designer.lookbook.length - 1 ? "border-b border-border md:border-b-0 md:border-r" : ""
               }`}
             >

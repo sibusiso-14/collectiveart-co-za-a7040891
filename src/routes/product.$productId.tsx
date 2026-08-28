@@ -57,7 +57,7 @@ function ProductPage() {
         {/* Gallery */}
         <div className="flex flex-col gap-4 md:col-span-7">
           {product.images.map((img: string, i: number) => (
-            <div key={i} className="aspect-[4/5] overflow-hidden bg-secondary">
+            <div key={i} className="aspect-[4/5] overflow-hidden bg-secondary photo-tint">
               <img
                 src={img}
                 alt={`${product.name} view ${i + 1}`}

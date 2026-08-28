@@ -38,7 +38,7 @@ function DesignerIndex() {
             params={{ slug: d.slug }}
             className={`group block ${i % 2 === 1 ? "md:mt-24" : ""}`}
           >
-            <div className="aspect-[4/5] overflow-hidden bg-secondary">
+            <div className="aspect-[4/5] overflow-hidden bg-secondary photo-tint">
               <img
                 src={d.portrait}
                 alt={d.name}

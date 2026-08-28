@@ -18,7 +18,7 @@ export function ProductCard({
       params={{ productId: product.id }}
       className={`group block ${className}`}
     >
-      <div className={`overflow-hidden bg-secondary ${ratio}`}>
+      <div className={`overflow-hidden bg-secondary photo-tint ${ratio}`}>
         <img
           src={product.images[0]}
           alt={product.name}
