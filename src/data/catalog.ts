@@ -67,6 +67,11 @@ import AnxietyCustom3 from "@/assets/anxiety-custom3.jpg";
 import AnxietyCustomTwoPiece from "@/assets/anxiety-custom-two-piece.jpg";
 import AnxietyCustomTwoPiece1 from "@/assets/anxiety-custom-two-piece1.jpg";
 import AnxietyCustomTwoPiece2 from "@/assets/anxiety-custom-two-piece2.jpg";
+import GoatSnowDarkBag from "@/assets/Absolute-snow-dark-bag.jpg";
+import GoatSnowDarkBag1 from "@/assets/Absolute-snow-dark-bag1.jpg";
+import GoatSnowDarkPants from "@/assets/Absolute-snow-dark-pants.jpg";
+import GoatSnowDarkPants1 from "@/assets/Absolute-snow-dark-pants1.jpg";
+import GoatSnowDarkShared from "@/assets/Absolute-snow-dark-.jpg";
 
 
 export const heroImage = GB4;
@@ -246,6 +251,32 @@ export const products: Product[
     care: "Machine wash cold. Tumble dry low.",
     description:
       "Below-knee shorts cut from heavyweight twill and stamped with the Chronic Wear mark — part of Absolute Goat's 3-piece statement set.",
+    sizes: ["28", "30", "32", "34", "36"],
+  },
+  {
+    id: "absolute-goat-snow-dark-bag",
+    name: "Snow Dark Bag",
+    category: "Accessories",
+    audience: "Unisex",
+    designer: "absolute-goat",
+    images: [GoatSnowDarkBag, GoatSnowDarkBag1, GoatSnowDarkShared],
+    fabric: "Heavyweight cotton twill",
+    care: "Spot clean only.",
+    description:
+      "A statement bag from Absolute Goat's Snow Dark drop, built in heavyweight twill with the Chronic Wear mark.",
+    sizes: ["28", "30", "32", "34", "36"],
+  },
+  {
+    id: "absolute-goat-snow-dark-pants",
+    name: "Snow Dark Pants",
+    category: "Bottoms",
+    audience: "Unisex",
+    designer: "absolute-goat",
+    images: [GoatSnowDarkPants, GoatSnowDarkPants1, GoatSnowDarkShared],
+    fabric: "Heavyweight cotton twill",
+    care: "Machine wash cold. Tumble dry low.",
+    description:
+      "Snow Dark pants from Absolute Goat — heavyweight twill cut with the Chronic Wear mark.",
     sizes: ["28", "30", "32", "34", "36"],
   },
   {
