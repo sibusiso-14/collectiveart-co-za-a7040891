@@ -120,7 +120,7 @@ export const designers: Designer[
     bio: "Absolute Goat represents Chronic Wear — bold statement streetwear built around striking black-and-white colourways and unapologetic design, for those who wear their identity loud.",
     statement: "Chronic Wear.",
     portrait: GoatSnowDarkBag,
-    lookbook: [GoatSnowDarkBag, GoatSnowDarkPants, GoatSnowDarkShared, GOAT2, GOAT3, GOAT4],
+    lookbook: [GoatSnowDarkBag, GoatSnowDarkPants, GoatSnowDarkShared],
     instagram: "absolute_goat00000",
   },
   {
