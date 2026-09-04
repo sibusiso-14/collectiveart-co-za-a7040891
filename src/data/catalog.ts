@@ -71,7 +71,6 @@ import GoatSnowDarkBag from "@/assets/Absolute-snow-dark-bag.jpg";
 import GoatSnowDarkBag1 from "@/assets/Absolute-snow-dark-bag1.jpg";
 import GoatSnowDarkPants from "@/assets/Absolute-snow-dark-pants.jpg";
 import GoatSnowDarkPants1 from "@/assets/Absolute-snow-dark-pants1.jpg";
-import GoatSnowDarkShared from "@/assets/Absolute-snow-dark-.jpg";
 
 
 export const heroImage = GB4;
@@ -120,7 +119,7 @@ export const designers: Designer[
     bio: "Absolute Goat represents Chronic Wear — bold statement streetwear built around striking black-and-white colourways and unapologetic design, for those who wear their identity loud.",
     statement: "Chronic Wear.",
     portrait: GoatSnowDarkBag,
-    lookbook: [GoatSnowDarkBag, GoatSnowDarkPants, GoatSnowDarkShared],
+    lookbook: [GoatSnowDarkBag, GoatSnowDarkPants, GoatSnowDarkPants1],
     instagram: "absolute_goat00000",
   },
   {
@@ -246,7 +245,7 @@ export const products: Product[
     category: "Accessories",
     audience: "Unisex",
     designer: "absolute-goat",
-    images: [GoatSnowDarkBag, GoatSnowDarkBag1, GoatSnowDarkShared],
+    images: [GoatSnowDarkBag, GoatSnowDarkBag1],
     fabric: "Heavyweight cotton twill",
     care: "Spot clean only.",
     description:
@@ -259,7 +258,7 @@ export const products: Product[
     category: "Bottoms",
     audience: "Unisex",
     designer: "absolute-goat",
-    images: [GoatSnowDarkPants, GoatSnowDarkPants1, GoatSnowDarkShared],
+    images: [GoatSnowDarkPants, GoatSnowDarkPants1],
     fabric: "Heavyweight cotton twill",
     care: "Machine wash cold. Tumble dry low.",
     description:
