@@ -241,19 +241,6 @@ export const products: Product[
     sizes: ["S", "M", "L", "XL"],
   },
   {
-    id: "absolute-goat-chronic-wear-shorts",
-    name: "Chronic Wear Below-Knee Shorts",
-    category: "Bottoms",
-    audience: "Unisex",
-    designer: "absolute-goat",
-    images: [GOAT4, GOAT1],
-    fabric: "Heavyweight cotton twill",
-    care: "Machine wash cold. Tumble dry low.",
-    description:
-      "Below-knee shorts cut from heavyweight twill and stamped with the Chronic Wear mark — part of Absolute Goat's 3-piece statement set.",
-    sizes: ["28", "30", "32", "34", "36"],
-  },
-  {
     id: "absolute-goat-snow-dark-bag",
     name: "Snow Dark Bag",
     category: "Accessories",
@@ -277,6 +264,19 @@ export const products: Product[
     care: "Machine wash cold. Tumble dry low.",
     description:
       "Snow Dark pants from Absolute Goat — heavyweight twill cut with the Chronic Wear mark.",
+    sizes: ["28", "30", "32", "34", "36"],
+  },
+  {
+    id: "absolute-goat-chronic-wear-shorts",
+    name: "Chronic Wear Below-Knee Shorts",
+    category: "Bottoms",
+    audience: "Unisex",
+    designer: "absolute-goat",
+    images: [GOAT4, GOAT1],
+    fabric: "Heavyweight cotton twill",
+    care: "Machine wash cold. Tumble dry low.",
+    description:
+      "Below-knee shorts cut from heavyweight twill and stamped with the Chronic Wear mark — part of Absolute Goat's 3-piece statement set.",
     sizes: ["28", "30", "32", "34", "36"],
   },
   {
