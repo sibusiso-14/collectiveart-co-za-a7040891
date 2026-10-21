@@ -714,10 +714,10 @@ export const products: Product[
     category: "Tops",
     designer: "slum-jaguar-streetwear",
     images: [JAGTEE1, JAGTEE2, JAGTEE3, JAGTEE4, JAGTEE5],
-    fabric: "Cotton jersey, screen print",
+    fabric: "Cotton",
     care: "Machine wash cold inside out. Tumble dry low.",
     description:
-      "A graphic tee from Slum Jaguar Streetwear's signature range: bold artwork on a relaxed streetwear fit.",
+      "A cotton graphic tee from Slum Jaguar Streetwear's signature range: bold artwork on a relaxed streetwear fit.",
     sizes: ["S", "M", "L", "XL"],
   },
   {
