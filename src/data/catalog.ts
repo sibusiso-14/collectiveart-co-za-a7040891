@@ -726,10 +726,10 @@ export const products: Product[
     category: "Outerwear",
     designer: "slum-jaguar-streetwear",
     images: [JAGSPOVA1, JAGSPOVA2, JAGSPOVA3, JAGSPOVA4, JAGSPOVA5],
-    fabric: "Cotton blend",
+    fabric: "Lightweight, smooth, slightly crinkled, often water-resistant",
     care: "Machine wash cold. Hang dry.",
     description:
-      "A full two-piece tracksuit from Slum Jaguar Streetwear, cut for an easy, everyday streetwear fit.",
+      "A lightweight, smooth tracksuit with a slightly crinkled finish and often water-resistant, great for the jacket and sporty streetwear look.",
     sizes: ["S", "M", "L", "XL"],
   },
   {
@@ -738,10 +738,10 @@ export const products: Product[
     category: "Tops",
     designer: "slum-jaguar-streetwear",
     images: [JAGFOOT1, JAGFOOT2, JAGFOOT3, JAGFOOT4, JAGFOOT5],
-    fabric: "Cotton jersey, screen print",
+    fabric: "White heavyweight cotton jersey",
     care: "Machine wash cold inside out. Tumble dry low.",
     description:
-      "A statement tee built around the Slum Jaguar idea of leaving a footprint: graphic-led and made to be noticed.",
+      "A statement tee in white heavyweight cotton jersey, built around the Slum Jaguar idea of leaving a footprint: graphic-led and made to be noticed.",
     sizes: ["S", "M", "L", "XL"],
   },
 ];
