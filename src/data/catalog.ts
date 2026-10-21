@@ -71,6 +71,21 @@ import GoatSnowDarkBag from "@/assets/Absolute-snow-dark-bag.jpg";
 import GoatSnowDarkBag1 from "@/assets/Absolute-snow-dark-bag1.jpg";
 import GoatSnowDarkPants from "@/assets/Absolute-snow-dark-pants.jpg";
 import GoatSnowDarkPants1 from "@/assets/Absolute-snow-dark-pants1.jpg";
+import JAGTEE1 from "@/assets/jaguar-slum-tee-1.jpg";
+import JAGTEE2 from "@/assets/jaguar-slum-tee-2.jpg";
+import JAGTEE3 from "@/assets/jaguar-slum-tee-3.jpg";
+import JAGTEE4 from "@/assets/jaguar-slum-tee-4.jpg";
+import JAGTEE5 from "@/assets/jaguar-slum-tee-5.jpg";
+import JAGSPOVA1 from "@/assets/jaguar-spova-tracksuit-1.jpg";
+import JAGSPOVA2 from "@/assets/jaguar-spova-tracksuit-2.jpg";
+import JAGSPOVA3 from "@/assets/jaguar-spova-tracksuit-3.jpg";
+import JAGSPOVA4 from "@/assets/jaguar-spova-tracksuit-4.jpg";
+import JAGSPOVA5 from "@/assets/jaguar-spova-tracksuit-5.jpg";
+import JAGFOOT1 from "@/assets/jaguar-footprint-tee-1.jpg";
+import JAGFOOT2 from "@/assets/jaguar-footprint-tee-2.jpg";
+import JAGFOOT3 from "@/assets/jaguar-footprint-tee-3.jpg";
+import JAGFOOT4 from "@/assets/jaguar-footprint-tee-4.jpg";
+import JAGFOOT5 from "@/assets/jaguar-footprint-tee-5.jpg";
 
 
 export const heroImage = GB4;
@@ -193,6 +208,18 @@ export const designers: Designer[
     portrait: SK1,
     lookbook: [SK2, SK3, SK4],
     instagram: "shonakiddwtw",
+  },
+  {
+    slug: "slum-jaguar-streetwear",
+    name: "Slum Jaguar Streetwear",
+    location: "Johannesburg",
+    discipline: "Streetwear: tracksuits, caps & graphic tees",
+    since: "2003",
+    bio: "Slum Jaguar Streetwear has been building streetwear out of Johannesburg since 2003: tracksuits, caps and graphic tees with bold, story-driven designs made to be worn loud.",
+    statement: "Leave your footprint.",
+    portrait: JAGSPOVA1,
+    lookbook: [JAGTEE1, JAGFOOT1, JAGSPOVA3],
+    instagram: "slumjaguar.streetwear",
   },
 ];
 
@@ -679,6 +706,42 @@ export const products: Product[
     care: "Wipe clean. Do not tumble dry.",
     description:
       "A bold two-piece combo finished with Galbakaline's signature flame-streaked graphics — comfort meets style in every stitch.",
+    sizes: ["S", "M", "L", "XL"],
+  },
+  {
+    id: "slum-jaguar-slum-tee",
+    name: "Slum Tee",
+    category: "Tops",
+    designer: "slum-jaguar-streetwear",
+    images: [JAGTEE1, JAGTEE2, JAGTEE3, JAGTEE4, JAGTEE5],
+    fabric: "Cotton jersey, screen print",
+    care: "Machine wash cold inside out. Tumble dry low.",
+    description:
+      "A graphic tee from Slum Jaguar Streetwear's signature range: bold artwork on a relaxed streetwear fit.",
+    sizes: ["S", "M", "L", "XL"],
+  },
+  {
+    id: "slum-jaguar-spova-tracksuit",
+    name: "Spova Tracksuit",
+    category: "Outerwear",
+    designer: "slum-jaguar-streetwear",
+    images: [JAGSPOVA1, JAGSPOVA2, JAGSPOVA3, JAGSPOVA4, JAGSPOVA5],
+    fabric: "Cotton blend",
+    care: "Machine wash cold. Hang dry.",
+    description:
+      "A full two-piece tracksuit from Slum Jaguar Streetwear, cut for an easy, everyday streetwear fit.",
+    sizes: ["S", "M", "L", "XL"],
+  },
+  {
+    id: "slum-jaguar-leaving-a-footprint-tee",
+    name: "Leaving a Footprint Tee",
+    category: "Tops",
+    designer: "slum-jaguar-streetwear",
+    images: [JAGFOOT1, JAGFOOT2, JAGFOOT3, JAGFOOT4, JAGFOOT5],
+    fabric: "Cotton jersey, screen print",
+    care: "Machine wash cold inside out. Tumble dry low.",
+    description:
+      "A statement tee built around the Slum Jaguar idea of leaving a footprint: graphic-led and made to be noticed.",
     sizes: ["S", "M", "L", "XL"],
   },
 ];
