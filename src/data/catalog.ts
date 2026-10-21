@@ -216,7 +216,7 @@ export const designers: Designer[
     discipline: "Streetwear: tracksuits, caps & graphic tees",
     since: "2003",
     bio: "Slum Jaguar Streetwear has been building streetwear out of Johannesburg since 2003: tracksuits, caps and graphic tees with bold, story-driven designs made to be worn loud.",
-    statement: "Leave your footprint.",
+    statement: "Leaving A Footprint",
     portrait: JAGSPOVA1,
     lookbook: [JAGTEE1, JAGFOOT1, JAGSPOVA3],
     instagram: "slumjaguar.streetwear",

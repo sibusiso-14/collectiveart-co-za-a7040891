@@ -23,7 +23,9 @@ export function ProductCard({
           src={product.images[0]}
           alt={product.name}
           loading="lazy"
-          className="h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]"
+          className={`h-full w-full transition-transform duration-[900ms] ease-out group-hover:scale-[1.04] ${
+            product.designer === "slum-jaguar-streetwear" ? "bg-secondary object-contain" : "object-cover"
+          }`}
         />
       </div>
       <div className="mt-4 grid grid-cols-[minmax(0,1fr)_auto] items-start gap-4">

@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { useAuth } from "@/hooks/useAuth";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import mark from "@/assets/collaborate-mark-square.png";
 
 const nav = [
@@ -51,6 +52,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center justify-end gap-6">
+          <ThemeToggle />
           {!loading && isAdmin && (
             <Link
               to="/admin"

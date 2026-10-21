@@ -95,24 +95,35 @@ function Home() {
         </div>
         <div className="mt-6 grid grid-cols-3 gap-1 md:grid-cols-6 md:gap-1.5">
           {(() => {
+            const order = [
+              "slum-jaguar-streetwear",
+              "shonakidd",
+              "anxiety",
+              "last-cloud-designs",
+              "galbakaline",
+              "designing-balaclava",
+              "damnation-designs",
+              "absolute-goat",
+            ];
             const seen = new Set<string>();
-            const pickFromCategory = (category: string, limit: number) => {
-              const picked: typeof products = [];
-              for (const p of products) {
-                if (p.category !== category) continue;
-                if (seen.has(p.images[0])) continue;
-                if (p.designer === "absolute-goat" && p.id !== "absolute-goat-snow-dark-bag") continue;
+            const byDesigner = order.map((slug) =>
+              products.filter((p) => {
+                if (p.designer !== slug) return false;
+                if (slug === "absolute-goat" && p.id !== "absolute-goat-snow-dark-bag") return false;
+                return true;
+              }),
+            );
+            const picked: typeof products = [];
+            for (let round = 0; round < 6 && picked.length < 12; round++) {
+              for (const list of byDesigner) {
+                if (picked.length >= 12) break;
+                const p = list[round];
+                if (!p || seen.has(p.images[0])) continue;
                 seen.add(p.images[0]);
                 picked.push(p);
-                if (picked.length >= limit) break;
               }
-              return picked;
-            };
-            return [
-              ...pickFromCategory("Tops", 3),
-              ...pickFromCategory("Bottoms", 3),
-              ...pickFromCategory("Accessories", 3),
-            ];
+            }
+            return picked;
           })().map((p) => (
             <Link
               key={p.id}
