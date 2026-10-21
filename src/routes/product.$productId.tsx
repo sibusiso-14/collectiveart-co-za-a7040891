@@ -57,12 +57,12 @@ function ProductPage() {
         {/* Gallery */}
         <div className="flex flex-col gap-4 md:col-span-7">
           {product.images.map((img: string, i: number) => (
-            <div key={i} className="aspect-[4/5] overflow-hidden bg-secondary photo-tint">
+            <div key={i} className={`overflow-hidden bg-secondary photo-tint ${product.designer === "slum-jaguar-streetwear" ? "" : "aspect-[4/5]"}`}>
               <img
                 src={img}
                 alt={`${product.name} view ${i + 1}`}
                 loading={i === 0 ? "eager" : "lazy"}
-                className="h-full w-full object-contain"
+                className={product.designer === "slum-jaguar-streetwear" ? "block h-auto w-full" : "h-full w-full object-contain"}
               />
             </div>
           ))}
