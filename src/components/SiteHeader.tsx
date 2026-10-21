@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { useAuth } from "@/hooks/useAuth";
 import mark from "@/assets/collaborate-mark-square.png";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const nav = [
   { to: "/shop", label: "The Collection" },
