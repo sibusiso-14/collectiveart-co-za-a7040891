@@ -69,6 +69,8 @@ export function SiteHeader() {
             </Link>
           )}
 
+          <ThemeToggle />
+
           <button
             type="button"
             aria-label={open ? "Close menu" : "Open menu"}

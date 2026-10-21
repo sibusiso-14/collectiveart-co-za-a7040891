@@ -62,7 +62,7 @@ function ProductPage() {
                 src={img}
                 alt={`${product.name} view ${i + 1}`}
                 loading={i === 0 ? "eager" : "lazy"}
-                className="h-full w-full object-cover"
+                className="h-full w-full object-contain"
               />
             </div>
           ))}
